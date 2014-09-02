@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_invoice_line_tree_inh_budgetary_ext">
+			<field name="name">view.invoice.line.tree.inh.budgetary.ext</field>
+			<field name="model">account.invoice.line</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="40"/>
+			<field name="inherit_id" ref="account.view_invoice_line_tree" />
+			<field name="arch" type="xml">
+				<field name="price_subtotal" position="after">
+					<field name="financing_source_id" />
+				</field>					
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_invoice_line_form_inh_budgetary_ext">
+			<field name="name">view.invoice.line.form.inh.budgetary.ext</field>
+			<field name="model">account.invoice.line</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="account.view_invoice_line_form" />
+			<field name="arch" type="xml">
+				<field name="product_id" position="before">
+					<field name="invoice_type" invisible="1" colspan="4"/>
+				</field>
+				<field name="discount" position="after">
+					<field name="partner_id" invisible="1"/>
+					<field name="financing_source_id" domain="[('res_partner_id', '=', partner_id)]" attrs="{'invisible': [('invoice_type', '!=', 'out_invoice')]}"/>
+				</field>					
+			</field>
+		</record>
+
+	</data>
+</openerp>

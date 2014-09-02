@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+            
+     <record id="act_financingsource_saleorder_opened" model="ir.actions.act_window">
+           <field name="name">Sale Order</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">sale.order</field>
+           <field name="src_model">financing.source</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">tree,form</field>
+           <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+           <field name="context">{'search_default_financing_source_id':[active_id], 'default_financing_source_id':active_id,'partner_id': res_partner_id,'simulation_cost_ids': False}</field>
+           <field name="domain">[('financing_source_id','=',active_id),('partner_id','=',res_partner_id),('simulation_cost_ids','=',False)]</field>
+    </record>
+           	
+    <record model="ir.actions.act_window.view" id="action_view_order_tree_fs_budgetaryext1">
+          <field name="sequence" eval="1"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="onglibre_budgetary_extension.view_order_tree_budgetaryext1"/>
+          <field name="act_window_id" ref="act_financingsource_saleorder_opened"/>
+    </record>
+      
+	<record model="ir.actions.act_window.view" id="action_view_order_form_fs_budgetaryext1">
+          <field name="sequence" eval="2"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="onglibre_budgetary_extension.view_order_form_budgetaryext1"/>
+          <field name="act_window_id" ref="act_financingsource_saleorder_opened"/>
+    </record>
+    
+        <record model="ir.ui.view" id="account_invoice_supplier_tree_budgetary_ext">
+            <field name="name">account.invoice.supplier.tree.budgetary.ext</field>
+            <field name="model">account.invoice</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+              <tree colors="blue:state in ('draft');black:state in ('proforma','proforma2','open');gray:state in ('cancel')" string="Invoice">
+                  <field name="date_invoice"/>
+                  <field name="number"/>
+                  <field name="partner_id" groups="base.group_user"/>
+                  <field name="rd_serpa" />
+				  <field name="serpa_date" />
+                  <field name="name"/>
+                  <field name="journal_id" invisible="1"/>
+                  <field name="period_id" invisible="1" groups="account.group_account_user"/>
+                  <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                  <field name="user_id"/>
+                  <field name="date_due"/>
+                  <field name="origin"/>
+                  <field name="currency_id"/>
+                  <field name="residual" sum="Residual Amount"/>
+                  <field name="amount_untaxed" sum="Untaxed Amount"/>
+                  <field name="amount_total" sum="Total Amount"/>
+                  <field name="state"/>
+                  <button name="invoice_open" states="draft,proforma2" string="Approve" icon="terp-camera_test"/>
+              </tree>
+
+            </field>
+        </record>  
+    
+
+
+            <record id="act_financingsource_accountinvoice_opened" model="ir.actions.act_window">
+            <field name="name">Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice</field>
+            <field name="src_model">financing.source</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="context">{'search_default_financing_source_id':[active_id], 'default_financing_source_id':active_id,'partner_id': res_partner_id,'type':'out_invoice'}</field>
+            <field name="domain">[('financing_source_id','=',active_id),('partner_id','=',res_partner_id),('type','=','out_invoice')]</field>
+             </record>
+             
+    <record model="ir.actions.act_window.view" id="action_view_account_supplier_tree_fs_budgetaryext1">
+          <field name="sequence" eval="1"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext"/>
+          <field name="act_window_id" ref="act_financingsource_accountinvoice_opened"/>
+    </record>
+      
+	<record model="ir.actions.act_window.view" id="action_view_account_supplier_form_fs_budgetaryext1">
+          <field name="sequence" eval="2"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="account.invoice_form"/>
+          <field name="act_window_id" ref="act_financingsource_accountinvoice_opened"/>
+    </record>
+  
+    
+    
+     <!-- 
+	<act_window
+			context="{'search_default_financing_source_id':[active_id], 'default_financing_source_id':active_id, 'form_view_id':'account.invoice_form', 'type':'out_invoice','partner_id': res_partner_id}"
+			domain="[('financing_source_id','=',active_id),('type','=','out_invoice'),('partner_id','=',res_partner_id)]"
+            id="act_financingsource_accountinvoice_opened" 
+            name="Invoice" res_model="account.invoice" src_model="financing.source"
+            view_type="form" view_mode="tree,form" />	
+     -->
+    
+        <record model="ir.ui.view" id="financing_source_tree_view_inh_budgetary_ext">
+            <field name="name">financing.source.tree.view.inh.budgetary.ext</field>
+            <field name="model">financing.source</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="onglibre_financial_source.financing_source_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                	<field name="grant" position="after">
+                		<field name="total_recognized" />
+                		<field name="total_invoices_emitted" />
+                		<field name="total_invoices_billed" />
+                	</field>
+                </data>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="financing_source_form_view_inh_budgetary_ext">
+            <field name="name">financing.source.form.view.inh.budgetary.ext</field>
+            <field name="model">financing.source</field>
+            <field name="type">form</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="onglibre_financial_source.financing_source_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                	<xpath expr="//form/group[@string='Allocation']" position="after">
+					    <group colspan="1" col="1" string="Sale Order">
+                            <field name="total_recognized" />
+                            <field name="total_invoices_emitted" />
+                            <field name="total_invoices_billed" />
+                            <field name="rd_preliminary" />
+                        </group>
+					    <group colspan="1" col="4" string="Execution">
+                            <field name="limit_expense" />
+                            <field name="sum_expense_compromised" colspan="3" />
+                            <field name="sum_expense_compromised_percent" colspan="1" />
+                            <field name="sum_real_expense" colspan="3" />
+                            <field name="sum_real_expense_percent" colspan="1" />
+                            <field name="sum_paid_expense" colspan="3" />
+                            <field name="sum_paid_expense_percent" colspan="1" />
+                            <field name="sum_justified_expense" />
+                            <field name="sum_available_expense" colspan="3" />
+                            <field name="sum_available_expense_percent" colspan="1" />
+                        </group>
+                	</xpath>
+                	<xpath expr="//tree/field[@name='grant']" position="after">
+                		<field name="percentage_total_recognized" />
+                		<field name="percentage_total_invoices_emitted" />
+                		<field name="percentage_total_invoices_billed" />
+                		<field name="sum_expense_budget" />
+                		<field name="sum_expense_request" />
+                		<field name="sum_updated_expense_budget" />
+                		<field name="sum_expense_compromised" />
+                		<field name="sum_available_expense" />
+                		<field name="sum_real_expense" />
+                		<field name="sum_paid_expense" />
+                		<field name="sum_justified_expense" />
+                	</xpath>
+	                <xpath expr="//form/group/notebook/page[@string='Justification Dates']" position="after">
+						<page string="Sale Orders">
+							<field name="sale_order_ids" nolabel="1" height="300" domain="[('simulation_cost_ids','=',False)]" context="{'simulation_cost_ids':False}">
+				                <tree string="Sales Orders" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+				                    <field name="name" />
+				                    <field name="date_order"/>
+				                    <field name="partner_id"/>
+				                    <field name="user_id"/>
+				                    <field name="amount_total" sum="Total Tax Included"/>
+				                    <field name="state"/>
+				                </tree>
+							</field>								
+						</page>	
+						<page string="Sale Orders Lines">	
+							<field name="sale_order_line_ids" nolabel="1" domain="[('simulation_cost_line_id','=',False)]" context="{'simulation_cost_line_id':False}" />								
+						</page>		
+						<page string="Invoices">	
+							<field name="account_invoice_ids" nolabel="1" context="{'form_view_ref':'account.invoice_form'}" >
+				                <tree colors="blue:state in ('draft');black:state in ('proforma','proforma2','open');gray:state in ('cancel')" string="Invoice">
+				                    <field name="date_invoice"/>
+				                    <field name="number"/>
+				                    <field name="partner_id" groups="base.group_user"/>
+				                    <field name="rd_serpa" />
+									<field name="serpa_date" />
+				                    <field name="name"/>
+				                    <field name="journal_id" invisible="1"/>
+				                    <field name="period_id" invisible="1" groups="account.group_account_user"/>
+				                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+				                    <field name="user_id"/>
+				                    <field name="date_due"/>
+				                    <field name="origin"/>
+				                    <field name="currency_id"/>
+				                    <field name="residual" sum="Residual Amount"/>
+				                    <field name="amount_untaxed" sum="Untaxed Amount"/>
+				                    <field name="amount_total" sum="Total Amount"/>
+				                    <field name="state"/>
+				                    <button name="invoice_open" states="draft,proforma2" string="Approve" icon="terp-camera_test"/>
+				                </tree>
+							</field>								
+						</page>	
+						<page string="Invoice Lines">	
+							<field name="account_invoice_line_ids" nolabel="1" />								
+						</page>	
+
+	                </xpath>
+                </data>
+            </field>
+        </record>        
+        
+        <record model="ir.ui.view" id="sale_order_tree_budgetary_ext">
+            <field name="name">sale.order.tree.budgetary.ext</field>
+            <field name="model">sale.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+	                <tree string="Sales Orders" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+                        <field name="name" />
+                        <field name="date_order"/>
+                        <field name="partner_id"/>
+                        <field name="user_id"/>
+                        <field name="amount_total" sum="Total Tax Included"/>
+                        <field name="state"/>
+	                    <field name="financing_source_id" invisible="1" />
+	                </tree>
+
+            </field>
+        </record>  
+        
+        
+    </data>
+</openerp>
