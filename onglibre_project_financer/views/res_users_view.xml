@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_users_form_inh_projectfinan">
+			<field name="name">view.users.form.inh.projectfinan</field>
+			<field name="model">res.users</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">		
+				<field name="active" position="after">
+					<field name="staff_of_project" />
+				</field>				
+				<xpath expr="//form//page[@string='Access Rights']" position="after">	
+                	<page string="Project Roles" attrs="{'invisible': [('staff_of_project', '=', False)]}">
+                    	<field name = "project_role_ids" nolabel="1" />
+                    </page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

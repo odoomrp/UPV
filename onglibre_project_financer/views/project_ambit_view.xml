@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="project_ambit_tree_view">
+			<field name="name">project.ambit.tree.view</field>
+			<field name="model">project.ambit</field>
+			<field name="arch" type="xml">
+				<tree string="Project Ambits" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="project_ambit_search_view">
+			<field name="name">project.ambit.search.view</field>
+			<field name="model">project.ambit</field>
+			<field name="arch" type="xml">
+                <search string="Search Project Ambit">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>	
+			</field>
+		</record>
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="project_ambit_form_view">
+			<field name="name">project.ambit.form.view</field>
+			<field name="model">project.ambit</field>
+			<field name="arch" type="xml">
+				<form string="Project Ambit">
+					<group colspan="4">
+						<field name="name" />
+                   	</group>
+				</form>
+			</field>
+		</record>
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+		<record model="ir.actions.act_window" id="action_project_ambit_form">
+			<field name="name">Project Ambit</field>
+			<field name="res_model">project.ambit</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="project_ambit_menu_view" name="Project Ambits"
+			parent="onglibre_project_financer.menu_project_config_master_tables" action="action_project_ambit_form" />
+
+	</data>
+</openerp>

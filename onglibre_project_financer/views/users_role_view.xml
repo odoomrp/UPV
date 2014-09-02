@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="users_role_tree_view">
+			<field name="name">users.role.tree.view</field>
+			<field name="model">users.role</field>
+			<field name="arch" type="xml">
+				<tree string="User Roles" >
+					<field name="user_id" />
+					<field name="role_id" />
+					<field name="project_staff" />
+				</tree>
+			</field>
+		</record>
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="users_role_search_view">
+			<field name="name">users.role.search.view</field>
+			<field name="model">users.role</field>
+			<field name="arch" type="xml">
+                <search string="Search Users-Role">
+                    <group>
+						<field name="user_id" />
+						<field name="role_id" />
+						<field name="project_staff" />
+                    </group>
+                 </search>	
+			</field>
+		</record>
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="users_role_form_view">
+			<field name="name">users.role.form.view</field>
+			<field name="model">users.role</field>
+			<field name="arch" type="xml">
+				<form string="Users Role">
+					<group colspan="4" col="6">
+						<field name="user_id" />
+						<field name="role_id" />
+						<field name="project_staff" />
+                   	</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

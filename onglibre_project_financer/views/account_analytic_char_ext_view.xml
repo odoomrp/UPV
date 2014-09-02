@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="account.action_account_analytic_account_tree2" model="ir.actions.act_window">
+            <field name="name">Chart of Analytic Accounts</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="account.view_account_analytic_account_tree"/>
+            <field name="domain">[]</field>
+            <field name="help">The normal chart of accounts has a structure defined by the legal requirement of the country. The analytic chart of accounts structure should reflect your own business needs in term of costs/revenues reporting. They are usually structured by contracts, projects, products or departements. Most of the OpenERP operations (invoices, timesheets, expenses, etc) generate analytic entries on the related account.</field>
+        </record>
+	
+	
+		<record model="ir.ui.view" id="account_analytic_chart_view_inh_projectfinan">
+			<field name="name">account.analytic.chart.view.inh.projectfinan</field>
+			<field name="model">account.analytic.chart</field>
+			<field name="inherit_id" ref="account.account_analytic_chart_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//form[@string='Analytic Account Charts']" position="replace">
+	                <form string="Analytic Account Charts">
+	                	<group colspan="4" col="8">
+	                		<field name="project_id" colspan="8" on_change="onchange_project_id(project_id)"/>
+	                		<field name="father_id" colspan="6" />
+	                		<field name="check_father" colspan="2" on_change="onchange_check_father(check_father, check_grandfather)" attrs="{'invisible': [('father_id', '=', False)]}"/>
+	                		<field name="grandfather_id" colspan="6" />
+	                		<field name="check_grandfather" colspan="2" on_change="onchange_check_grandfather(check_father, check_grandfather)" attrs="{'invisible': [('grandfather_id', '=', False)]}"/>
+	                		<separator string="Select the Period for Analysis" colspan="8"/>
+		                    <field name="from_date" colspan="4"/>
+		                    <field name="to_date" colspan="4"/>
+		                    <label string="(Keep empty to open the current situation)" align="0.0" colspan="8"/>
+	                        <button special="cancel" string="Cancel" icon="gtk-cancel" colspan="4"/>
+	                        <button name="analytic_account_chart_open_window" string="Open Charts" type="object" icon="gtk-ok" colspan="4" attrs="{'invisible': [('check_father', '=', False),('check_grandfather', '=', False)]}"/>		               
+	                	</group>
+	                </form>		
+				</xpath>
+		
+			</field>
+		</record>
+
+	</data>
+</openerp>

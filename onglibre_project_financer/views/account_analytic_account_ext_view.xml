@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_account_analytic_account_form_inh_projectfinan">
+			<field name="name">view.account.analytic.account.form.inh.projectfinan</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+			<field name="arch" type="xml">		
+				<field name="type" position="after">
+					<field name="remainder_automatic_transfer"/>
+				</field>			
+				<xpath expr="//page[@string='Contract Information']" position="after">
+                	<page string="Budgetary Fields" >
+                		<group colspan="4" col="8">
+	                        <field name="expense_budget" />
+	                        <field name="remainder"/>
+	                        <field name="updated_expense_budget"/>
+	                        <field name="expense_compromised" />
+	                        <field name="available_expense" />
+	                        <field name="real_expense"/>
+	                        <field name="paid_expense"/>
+	                        <field name="justified_expense"/>
+	                        <field name="project_destination_id" attrs="{'invisible': [('remainder_automatic_transfer', '=', False)]}" colspan="6"/>
+                		</group>
+                    </page>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- Modificación del TREE de cuentas analíticas -->
+        <record id="account_analytic_account_tree_inh_projectfinan" model="ir.ui.view">
+            <field name="name">account.analytic.account.tree.inh.projectfinan</field>
+            <field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="costs_simulator.view_account_analytic_account_tree_inh_costsim" />
+			<field name="arch" type="xml">
+                <field name="estimated_balance" position="replace" />
+                <field name="estimated_cost" position="replace" />
+                <field name="estimated_sale" position="replace" />
+                <field name="debit" position="replace" />
+                <field name="credit" position="replace" />
+                <field name="balance" position="replace">
+                    <field name="sum_expense_budget" />
+                    <field name="sum_assigned" />
+                    <field name="sum_remainder" />
+                    <field name="sum_expense_request" />
+                    <field name="sum_updated_expense_budget" />
+                    <field name="sum_expense_compromised" />
+                    <field name="sum_available_expense" />
+                    <field name="sum_real_expense" />
+                    <field name="sum_paid_expense" />
+                    <field name="sum_justified_expense" />
+                </field>
+                <field name="currency_id" position="replace" />
+            </field>
+        </record>
+	</data>
+</openerp>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="project_center_tree_view">
+			<field name="name">project.center.tree.view</field>
+			<field name="model">project.center</field>
+			<field name="arch" type="xml">
+				<tree string="Project Centers" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="project_center_search_view">
+			<field name="name">project.center.search.view</field>
+			<field name="model">project.center</field>
+			<field name="arch" type="xml">
+                <search string="Search Project Center">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="project_center_form_view">
+			<field name="name">project.center.form.view</field>
+			<field name="model">project.center</field>
+			<field name="arch" type="xml">
+				<form string="Project Center">
+					<group colspan="4">
+						<field name="name" />
+                   	</group>
+				</form>
+			</field>
+		</record>
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+		<record model="ir.actions.act_window" id="action_project_center_form">
+			<field name="name">Project Center</field>
+			<field name="res_model">project.center</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- *** LA OPCION DE MENU *** -->
+		<menuitem id="project_center_menu_view" name="Project Centers"
+			parent="onglibre_project_financer.menu_project_config_master_tables" action="action_project_center_form" />
+
+	</data>
+</openerp>
