@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    	
+        <record model="ir.ui.view" id="wizard_import_template_employes">
+            <field name="name">wizard.import.template.employes</field>
+            <field name="model">import.template.employes</field>
+            <field name="arch" type="xml">
+                <form string="Import Templates">
+                	<group colspan="4" col="6">
+                		<field name="start_date" colspan="2" />
+                		<field name="end_date" colspan="2" />
+                		<field name="festive_template_id" colspan="2" />
+                	</group>
+                	<group colspan="4" >
+                		<field name="import_template_employes_line_ids" nolabel="1"/>
+                	</group>                              
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+					<button string="Ok" name="action_import_template_employes" type="object" icon="gtk-ok"  />
+                </form>
+            </field>
+        </record>
+   
+        <!-- DEFINICIÓN DEL WIZARD SELECCIONAR PLANTILLA -->   
+ 
+        <act_window 
+        			key2="client_action_multi" name="Import Fron Template"
+					res_model="import.template.employes" src_model="hr.employee"
+					view_id="wizard_import_template_employes"		
+					view_mode="form"
+					view_type="form"	
+					target="new"
+					id="act_import_template_employes_id"/>			
+	 
+    </data>
+</openerp>

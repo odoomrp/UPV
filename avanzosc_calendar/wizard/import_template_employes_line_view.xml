@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+		<record model="ir.ui.view" id="wizard_import_template_employes_line_tree_view">
+			<field name="name">wizard.import.template.employes.line.tree.view</field>
+			<field name="model">import.template.employes.line</field>
+			<field name="arch" type="xml">
+				<tree string="Employes" editable="top">
+                	<field name="employee_id" />
+                	<field name="selected" />
+				</tree>
+			</field>
+		</record>
+    	
+        <record model="ir.ui.view" id="wizard_import_template_employes_line">
+            <field name="name">wizard.import.template.employes.line</field>
+            <field name="model">import.template.employes.line</field>
+            <field name="arch" type="xml">
+                <form string="Employe">
+                	<field name="employee_id" />
+                	<field name="selected" />
+                </form>            
+            </field>
+        </record>
+	 
+    </data>
+</openerp>

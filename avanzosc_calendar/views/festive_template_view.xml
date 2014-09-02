@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="festive_template_tree_view">
+			<field name="name">festive.template.tree.view</field>
+			<field name="model">festive.template</field>
+			<field name="arch" type="xml">
+				<tree string="Festive Templates" >
+					<field name="name" />
+					<field name="year" />
+					<field name="festive_template_lines_ids" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="festive_template_search_view">
+			<field name="name">festive.template.search.view</field>
+			<field name="model">festive.template</field>
+			<field name="arch" type="xml">
+                <search string="Search Festive Templates">
+                    <group>
+                    	<field name="name" />
+						<field name="year" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Year" domain="[]" context="{'group_by':'year'}" />
+                   </group>
+                 </search>	
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="festive_template_form_view">
+			<field name="name">festive.template.form.view</field>
+			<field name="model">festive.template</field>
+			<field name="arch" type="xml">
+				<form string="Festive Template">
+					<group col="10" colspan="4">
+            			<field name="name" colspan="6"/>
+            			<field name="year" colspan="2"/>
+            			<button name="%(act_generate_holidays_id)d" string="Generate Holidays" type="action" />
+            		</group>
+					<notebook colspan="4">
+						<page string="Festive Template Lines">
+							<field name="festive_template_lines_ids" nolabel="1" />
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		
+		
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_festive_template_form">
+			<field name="name">Festive Template</field>
+			<field name="res_model">festive.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+		<menuitem id="menu_festive_template_group_view" name="Festive Templates" parent="hr.menu_hr_configuration" />
+		<menuitem id="custom_festive_template_menu_view" name="Festive Templates"
+			parent="menu_festive_template_group_view" action="action_festive_template_form" />		
+
+	</data>
+</openerp>

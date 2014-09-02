@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="festive_template_line_tree_view">
+			<field name="name">festive.template.line.tree.view</field>
+			<field name="model">festive.template.line</field>
+			<field name="arch" type="xml">
+				<tree string="Festive Template Lines" >
+					<field name="festive_template_id" />
+					<field name="date" />
+					<field name="name" />	
+					<field name="background_color" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="festive_template_line_search_view">
+			<field name="name">festive.template.line.search.view</field>
+			<field name="model">festive.template.line</field>
+			<field name="arch" type="xml">
+                <search string="Search Festive Template Lines">
+                    <group>
+						<field name="festive_template_id" />
+						<field name="date" />
+						<field name="name" />
+						<field name="background_color" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Festive Template" domain="[]" context="{'group_by':'festive_template_id'}" />
+						<filter string="Date" domain="[]" context="{'group_by':'date'}" />
+						<filter string="Description" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Background Color" domain="[]" context="{'group_by':'background_color'}" />
+                   </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="festive_template_line_form_view">
+			<field name="name">festive.template.line.form.view</field>
+			<field name="model">festive.template.line</field>
+			<field name="arch" type="xml">
+				<form string="Festive Template Line">
+					<field name="festive_template_id" invisible="1"/>
+					<group col="12" colspan="4">
+            			<field name="date" colspan="2"/>
+            			<field name="name" colspan="8"/>
+            			<field name="background_color" colspan="2"/>
+            		</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

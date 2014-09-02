@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>		
+
+		<act_window context="{'default_employee_id':active_id}" domain="[('employee_id','=',active_id)]" id="action_estimated_calendar_resources_form2" name="calendar" res_model="estimated.calendar.resources" src_model="hr.employee" view_type="form" view_mode="calendar,tree,form"/>
+
+        <record model="ir.ui.view" id="view_employee_form_inh_avanzosc_calendar">
+            <field name="name">view.employee.form.inh.avanzosc.calendar</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+            	<field name="parent_id" position="after">
+            	<newline/>
+            		<button name="%(act_import_templates_id)d" string="Import From Templates" type="action" />
+            		<button name="%(act_make_hours_to_work_id)d" string="Hours for a given day" type="action" />
+            	</field>
+				<xpath expr="//page[@string='Personal Information']" position="after">
+                	<page string="Calendars" >
+                    	<field name="hr_employee_calendar_ids" nolabel="1"/>
+                    </page>
+				</xpath>
+            </field>
+        </record>	
+
+	</data>
+</openerp>
