@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="financing_source_tree_view">
+			<field name="name">financing.source.tree.view</field>
+			<field name="model">financing.source</field>
+			<field name="arch" type="xml">
+				<tree string="Financing Sources">
+					<field name="name" />
+					<field name="res_partner_id" />
+					<field name="legal_support_id" />
+					<field name="financing_type_id" />
+					<field name="availability_fund" />
+					<field name="financier_fund_income_id" />
+					<field name="financier_fund_expense_id" />
+					<field name="code_call_id" />
+					<field name="funder_record_code" />
+					<field name="grant_date" />
+					<field name="eligibility_date_from" />
+					<field name="eligibility_date_to" />
+                    <field name="grant" />
+                    <field name="grant_without_overheads" />
+                    <field name="overheads" />
+                    <field name="transfered" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="financing_source_search_view">
+			<field name="name">financing.source.search.view</field>
+			<field name="model">financing.source</field>
+			<field name="arch" type="xml">
+				<search string="Search Financing Source">
+					<group>
+						<field name="name" />
+						<field name="legal_support_id" />
+						<field name="financing_type_id" />
+						<field name="availability_fund" />
+						<field name="financier_fund_income_id" />
+						<field name="financier_fund_expense_id" /> 
+						<field name="eligibility_date_from" />
+						<field name="eligibility_date_to" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Code Call" context="{'group_by':'code_call_id'}"
+							icon="terp-folder-violet" />
+						<filter string="Financing Organism" context="{'group_by':'res_partner_id'}"
+							icon="terp-folder-green" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="financing_source_form_view">
+			<field name="name">financing.source.form.view</field>
+			<field name="model">financing.source</field>
+			<field name="arch" type="xml">
+				<form string="Financing Source">
+					<group colspan="4" col="6">
+						<field name="name" />
+						<field name="code_call_id" />
+						<field name="res_partner_id" on_change="onchange_res_partner_id(name, res_partner_id)" />
+						<field name="legal_support_id" />
+						<field name="financing_type_id" />
+						<field name="availability_fund" />
+						<field name="financier_fund_income_id" domain="[('type','=','normal')]" />
+						<field name="financier_fund_expense_id" domain="[('type','=','normal')]" />
+						<field name="funder_record_code" />
+						<field name="grant_date" />
+						<field name="eligibility_date_from" />
+						<field name="eligibility_date_to" />
+					</group>
+					<group colspan="2" col="4" string="Allocation">
+						<field name="grant" />
+                        <newline />
+						<field name="grant_without_overheads" />
+                        <newline />
+						<field name="overheads" />
+                        <newline />
+						<field name="transfered" />
+                        <newline />
+                        <separator colspan="4" />
+                        <group colspan="2" col="12">
+                            <field name="total_allocated" colspan="11" />
+                            <field name="total_allocated_percent" colspan="1" />
+                            <field name="pending_allocation" colspan="11" />
+                            <field name="pending_allocation_percent" colspan="1" />
+                        </group>
+					</group>
+					<group colspan="4">
+						<notebook colspan="4">
+							<page string="Projects">
+								<field name="project_ids" nolabel="1">
+									<tree string="Projects">
+										<field name="project_id" />
+										<field name="expense_area_id" />
+										<field name="grant" />
+										<field name="amount_awarded" invisible="1" />
+									</tree>
+								</field>
+							</page>
+							<page string="Transfer Funds">
+								<field name="transfer_fund_origin_ids" nolabel="1" colspan="4">
+                                    <tree string="Transfer Funds Origin">
+                                        <field name="date" />
+                                        <field name="amount" />
+                                        <field name="financing_source_origin_id" />
+                                        <field name="financing_source_target_id" />
+                                    </tree>
+                                </field>
+								<field name="transfer_fund_target_ids" nolabel="1" colspan="4">
+                                    <tree string="Transfer Funds Target">
+                                        <field name="date" />
+                                        <field name="amount" />
+                                        <field name="financing_source_origin_id" />
+                                        <field name="financing_source_target_id" />
+                                    </tree>
+                                </field>
+							</page>
+							<page string="Justification Dates">
+								<field name="justification_date_ids" nolabel="1" context="{'my_finansource_id':active_id}"/>
+							</page>
+							<page string="Historical Extension">
+								<field name="historical_extension_ids" nolabel="1" />
+							</page>
+                            <page string="Observations">
+								<field name="observations"  />
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_financing_source_form">
+			<field name="name">Financing Source</field>
+			<field name="res_model">financing.source</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="menu_project_config_financing_source" name="Financing Source"
+			parent="base.menu_definitions" sequence="10" />
+		<menuitem id="financing_source_menu_view" name="Financing Source"
+			parent="menu_project_config_financing_source" action="action_financing_source_form" />
+			
+		<menuitem id="menu_financing_source_management" name="Financing Source"
+			parent="base.menu_main_pm" sequence="1" />
+		<menuitem id="financing_source_menu_view2" name="Financing Source"
+			parent="menu_financing_source_management" action="action_financing_source_form" />
+
+	</data>
+</openerp>

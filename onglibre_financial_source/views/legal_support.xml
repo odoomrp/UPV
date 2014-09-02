@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="legal_support_tree_view">
+			<field name="name">legal.support.tree.view</field>
+			<field name="model">legal.support</field>
+			<field name="arch" type="xml">
+				<tree string="Legal Supports" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="legal_support_search_view">
+			<field name="name">legal.support.search.view</field>
+			<field name="model">legal.support</field>
+			<field name="arch" type="xml">
+                <search string="Search Legal Support">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="legal_support_form_view">
+			<field name="name">legal.support.form.view</field>
+			<field name="model">legal.support</field>
+			<field name="arch" type="xml">
+				<form string="Legal Support" >
+					<field name="name" />
+				</form>
+			</field>
+		</record>
+		
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_legal_support_form">
+			<field name="name">Legal Support</field>
+			<field name="res_model">legal.support</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="legal_support_menu_view" name="Legal Support"
+			parent="menu_project_config_financing_source" action="action_legal_support_form" />		
+
+
+	</data>
+</openerp>

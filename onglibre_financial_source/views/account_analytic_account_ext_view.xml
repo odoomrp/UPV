@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_account_analytic_account_form_inh_finacsource">
+			<field name="name">view.account.analytic.account.form.inh.finacsource</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="onglibre_project_financer.view_account_analytic_account_form_inh_projectfinan" />
+			<field name="arch" type="xml">					
+				<xpath expr="//form//page[@string='Budgetary Fields']" position="after">	
+                    <page string="Financing Source" >
+                		<group colspan="4" col="10">
+	                        <field name="assigned" />
+                		</group>
+                    </page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

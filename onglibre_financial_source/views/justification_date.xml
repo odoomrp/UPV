@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="justification_date_tree_view">
+			<field name="name">justification.date.tree.view</field>
+			<field name="model">justification.date</field>
+			<field name="arch" type="xml">
+				<tree string="Justification Dates" >
+					<field name="name" />
+					<field name="date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="justification_date_search_view">
+			<field name="name">justification.date.search.view</field>
+			<field name="model">justification.date</field>
+			<field name="arch" type="xml">
+                <search string="Search Justification Date">
+                    <group>
+						<field name="name" />
+						<field name="date" />
+						<field name="state" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="justification_date_form_view">
+			<field name="name">justification.date.form.view</field>
+			<field name="model">justification.date</field>
+			<field name="arch" type="xml">
+				<form string="Justification Date" >
+					<group colspan="4" col="10">
+						<field name="financing_source_id" colspan="10" invisible="1"/>
+						<field name="name" colspan="8"/>
+						<field name="date" colspan="2"/>
+					</group>
+					<group colspan="4">
+						<field name="account_analytic_line_ids" colspan="4" nolabel="1" domain="[('financing_source_id','=',financing_source_id), ('expense_type','in',('invoice_aproved','justification'))]"/>
+					</group>
+					<group colspan="4" col="6">
+						<field name="state" colspan="2" />
+						<button name="button_draft" colspan="2" states="confirmed" string="Draft" icon="gtk-ok"/>
+						<button name="button_confirm" colspan="2" states="draft" string="Confirm" icon="gtk-ok"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_justification_date_form">
+			<field name="name">Justification Date</field>
+			<field name="res_model">justification.date</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="justification_date_menu_view" name="Justification Date"
+			parent="menu_project_config_financing_source" action="action_justification_date_form" />		
+
+
+	</data>
+</openerp>
