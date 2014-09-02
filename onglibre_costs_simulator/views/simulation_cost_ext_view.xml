@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_tree_inh_onglibrecostsim">
+			<field name="name">simulation.cost.tree.inh.onglibrecostsim</field>
+			<field name="model">simulation.cost</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_cost_tree_view" />
+			<field name="arch" type="xml">
+				<field name="simulation_number" position="after">
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="real_date_of_signature" />
+				</field>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_search_inh_onglibrecostsim">
+			<field name="name">simulation.cost.search.inh.onglibrecostsima</field>
+			<field name="model">simulation.cost</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_cost_search_view" />
+			<field name="arch" type="xml">
+				<field name="simulation_number" position="after">
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="real_date_of_signature" />	
+				</field>			
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_form_inh_onglibrecostsim">
+			<field name="name">simulation.cost.form.inh.onglibrecostsim</field>
+			<field name="model">simulation.cost</field>
+			<field name="inherit_id" ref="onglibre_budgetary.simulation_cost_form_view_inh_budgetary" />
+			<field name="arch" type="xml">
+				<field name="historical_date" position="attributes">
+					<attribute name="colspan">3</attribute>
+				</field>
+				<field name="historical_date" position="before">
+					<field name="start_date" colspan="3"/>	
+					<field name="duration"  on_change="onchange_duration(start_date, duration)" colspan="3" />
+					<field name="end_date" colspan="3"/>
+					<field name="real_date_of_signature" colspan="3"/>	
+				</field>	
+				<group name="button" position="attributes">
+					<attribute name="col">10</attribute>
+				</group>
+				<xpath expr="//form//button[@name='button_recalculation']" position="after">
+					<button name="button_load" string="Load Previsions" type="object" colspan="2" />
+					<button name="button_charge_dates" string="Charge Date" type="object" colspan="2" />
+				</xpath>
+
+				<xpath expr="//page[@string='Expense Areas Permitted']" position="before">
+					<page string="Previsions">
+						<field name="simulation_cost_prevision_ids" nolabel="1" />
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

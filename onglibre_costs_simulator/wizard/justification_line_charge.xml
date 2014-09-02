@@ -1,0 +1,100 @@
+<openerp>
+    <data>
+    		<record model="ir.ui.view" id="account_invoice_line_just2_tree_view">
+                <field name="name">account.invoice.just2.tree</field>
+                <field name="model">account.invoice.line.wiz</field>
+                <field name="priority" eval="30"/>
+                <field name="arch" type="xml">
+                    <tree string="Incoming invoices" colors="blue:(justified_percent&gt;0 and (paid_import-price_subtotal)&lt;0);green:justified_percent&gt;0;red:(paid_import-price_subtotal)&lt;0;" editable="top">
+		                <field name="purchase_type" string="Cost Type"/>
+		                <field name="invoice_type" invisible="1"/>
+		                <field name="state" invisible="1"/>
+		                <field name="invoice_line_id" invisible="1"/>
+		                <field name="name" string="Concept" />
+		                <field name="project_id"/>
+		                <field name="partner_id" string="Supplier"/>
+		                <field name="vat"/>
+		                <field name="invoice_id"/>
+	                    <field name="price_subtotal"/>
+	                    <field name="inv_date"/>
+	                    <field name="last_pay_date"/>
+	                    <field name="paid_import"/>
+	                    <field name="move_id"/>
+	                    <field name="justified_percent"/>
+	                    <field name="justified_import"/>
+	                    <field name="project_text_list"/>
+	                    <field name="to_justified_import" on_change="onchange_to_import(to_justified_import, price_subtotal)"/>
+	                    <field name="to_justified_percent"  on_change="onchange_to_percent(to_justified_percent, price_subtotal)"/>
+	                    <field name="check_justification"/>
+                    </tree>
+                </field>
+            </record>
+    	    <record model="ir.ui.view" id="par_just_form_view">
+                <field name="name">par.just.form</field>
+                <field name="model">par.just</field>
+                <field name="arch" type="xml">
+                    <form string="Select invoice lines">
+                    	<group colspan="4" col="8">
+		                    	<field name="inv_date_from"/>
+		                    	<field name="inv_date_to" nolabel="1"/>
+		                    	<field name="project_id" string="Project"/>
+		                    	<field name="partner_id" string="Supplier" domain="[('supplier','=',True)]"/>
+		                    	<newline/>
+		                    	<group colspan="8" col="6">
+		                    	<field name="purchase_type" string="Cost Type"/>
+		                    	<field name="price_subtotal_from" string="Amount (&gt;=)"/>
+		                    	<field name="price_subtotal_to" string="(&lt;=)"/>
+		                    	</group>
+		                  		<newline/>
+		                  		<field name="name" string="Concept" colspan="6"/>
+                        		<button name="fill_fields" type="object" string="Search" icon="gtk-find" context="{'purchase_type':purchase_type, 'inv_date_from':inv_date_from, 'inv_date_to':inv_date_to, 'project_id':project_id, 'partner_id':partner_id, 'name':name, 'price_subtotal_from':price_subtotal_from, 'price_subtotal_to':price_subtotal_to}"/>
+                        </group>
+                        <newline/>
+                        <field name="invoice_line_ids" nolabel="1" colspan="4" on_change="onchange_lines(invoice_line_ids)" height="500" context="{'tree_view_ref':'onglibre_costs_simulator.account_invoice_line_just2_tree_view'}"/>
+                        <newline/>
+                        <field name="total_to_import"/>
+                        <button name="select_lines" type="object" string="Ok" icon="gtk-ok"/>
+                    </form>
+                </field>
+            </record>
+    		<record model="ir.actions.act_window" id="action_par_just_tree_view">
+                <field name="name">Select invoice lines</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">par.just</field>
+                <field name="target">new</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+            </record>
+			<record model="ir.ui.view" id="start_par_just_form_view">
+                <field name="name">start.par.just.form</field>
+                <field name="model">start.par.just</field>
+                <field name="arch" type="xml">
+                    <form string="Select invoice lines">
+                    	<group colspan="4" col="8">
+		                    	<field name="inv_date_from"/>
+		                    	<field name="inv_date_to" nolabel="1"/>
+		                    	<field name="project_id" string="Project"/>
+		                    	<field name="partner_id" string="Supplier" domain="[('supplier','=',True)]"/>
+		                    	<newline/>
+		                    	<group colspan="8" col="6">
+		                    	<field name="purchase_type" string="Cost Type"/>
+		                    	<field name="price_subtotal_from" string="Amount (&gt;=)"/>
+		                    	<field name="price_subtotal_to" string="(&lt;=)"/>
+		                    	</group>
+		                  		<newline/>
+		                  		<field name="name" string="Concept" colspan="6"/>
+                        		<button name="fill_fields" type="object" string="Search" icon="gtk-find" context="{'purchase_type':purchase_type, 'inv_date_from':inv_date_from, 'inv_date_to':inv_date_to, 'project_id':project_id, 'partner_id':partner_id, 'name':name, 'price_subtotal_from':price_subtotal_from, 'price_subtotal_to':price_subtotal_to}"/>
+                        </group>
+                        </form>
+                </field>
+            </record>
+    		<record model="ir.actions.act_window" id="action_start_par_just_tree_view">
+                <field name="name">Select invoice lines</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">start.par.just</field>
+                <field name="target">new</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+            </record>
+    </data>
+</openerp>

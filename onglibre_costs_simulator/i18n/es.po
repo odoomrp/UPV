@@ -1,0 +1,523 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* onglibre_costs_simulator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120523-233315\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-11 08:47+0000\n"
+"PO-Revision-Date: 2013-09-11 18:59+0100\n"
+"Last-Translator: aaaa <aaaa@aaa.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.7\n"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost.line:0
+msgid "Previsión de venta"
+msgstr "Previsión de venta"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,justified_import:0
+msgid "Justified amount"
+msgstr "Importe justificado"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost.prevision:0
+msgid "month"
+msgstr "Mes"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost.prevision:0
+msgid "Group By..."
+msgstr "Agrupado por..."
+
+#. module: onglibre_costs_simulator
+#: view:account.invoice.line.wiz:0 view:par.just:0 view:start.par.just:0
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,purchase_type:0
+msgid "Purchase type"
+msgstr "Tipo compra"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,month_end_sale:0
+msgid "Month End Sale"
+msgstr "Mes final venta"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,inv_date:0 field:par.just,inv_date_from:0
+#: field:par.just,inv_date_to:0 field:start.par.just,inv_date_from:0
+#: field:start.par.just,inv_date_to:0
+msgid "Invoice Date"
+msgstr "Fecha factura"
+
+#. module: onglibre_costs_simulator
+#: help:account.invoice.line.wiz,origin:0
+msgid "Reference of the document that produced this invoice."
+msgstr "Referencia del documento que produjo esta factura"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,month_start_sale:0
+msgid "Month Start Sale"
+msgstr "Mes inicio venta"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,charge_prevision_month:0
+msgid "Charge prevision"
+msgstr "Cargo previsión"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,price_subtotal:0
+#: field:par.just,price_subtotal_from:0 field:par.just,price_subtotal_to:0
+#: field:start.par.just,price_subtotal_from:0
+#: field:start.par.just,price_subtotal_to:0
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: onglibre_costs_simulator
+#: view:par.just:0 view:start.par.just:0
+msgid "(<=)"
+msgstr "(<=)"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost.prevision:0
+msgid "Search Cost Simulation Prevision"
+msgstr "Buscar previsión simulación costes"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,financing_source_id:0
+msgid "Financing Source"
+msgstr "Fuente financiación"
+
+#. module: onglibre_costs_simulator
+#: view:par.just:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,note:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost:0
+msgid "Previsions"
+msgstr "Previsiones"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,invoice_line_tax_id:0
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,project_id:0 view:par.just:0
+#: field:par.just,project_id:0 view:start.par.just:0
+#: field:start.par.just,project_id:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost:0
+msgid "Charge Date"
+msgstr "Fecha cargo"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,purchase_line_ids:0
+msgid "Purchase Lines"
+msgstr "Líneas compra"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost,real_date_of_signature:0
+msgid "Real Date Of Signature"
+msgstr "Fecha firma real"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,vat:0
+msgid "VAT"
+msgstr "CIF/NIF"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,origin:0
+msgid "Origin"
+msgstr "Origen"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,justified_percent:0
+msgid "Justified %"
+msgstr "% Justificado"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,account_analytic_id:0
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,sales_amount_month:0
+msgid "Sales by period"
+msgstr "Ventas por periodo"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,line_financing_source_ids:0
+msgid "Financing Sources"
+msgstr "Fuentes de financiación"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,move_id:0
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_start_par_just
+msgid "start.par.just"
+msgstr "start.par.just"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_simulation_cost_line
+msgid "Simulation Cost Line"
+msgstr "Línea de Simulación de Costes"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,invoice_type:0
+msgid "Supplier Invoice"
+msgstr "Factura proveedor"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,last_pay_date:0
+msgid "Payment date"
+msgstr "Fecha de pago"
+
+#. module: onglibre_costs_simulator
+#: field:par.just,invoice_line_ids:0
+msgid "Invoice Lines"
+msgstr "Líneas factura"
+
+#. module: onglibre_costs_simulator
+#: model:ir.actions.act_window,name:onglibre_costs_simulator.action_par_just_tree_view
+#: model:ir.actions.act_window,name:onglibre_costs_simulator.action_start_par_just_tree_view
+#: view:par.just:0 view:start.par.just:0
+msgid "Select invoice lines"
+msgstr "Seleccionar líneas factura"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,uos_id:0
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: onglibre_costs_simulator
+#: field:par.just,purchase_type:0 field:start.par.just,purchase_type:0
+msgid "Purchase Type"
+msgstr "Tipo compra"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,project_text_list:0
+msgid "Projects"
+msgstr "Proyectos"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,partner_id:0 field:par.just,partner_id:0
+#: field:start.par.just,partner_id:0
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,discount:0
+msgid "Discount (%)"
+msgstr "(%)Descuento"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_simulation_cost
+msgid "Simulation Costs"
+msgstr "Simulación de Costes"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_simulation_cost_prevision
+msgid "Simulation Costs Previsions"
+msgstr "Prevision simulacion costes"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,invoice_line_id:0
+#: model:ir.model,name:onglibre_costs_simulator.model_account_invoice_line_wiz
+msgid "Invoice Line"
+msgstr "Línea factura"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,to_justified_import:0
+msgid "Import to justified"
+msgstr "Importe a justificar"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,state:0
+msgid "Invoice state"
+msgstr "Estado factura"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,justification_ids:0
+#: field:account.invoice.line.wiz,project_ids:0
+msgid "Justifications"
+msgstr "Justificaciones"
+
+#. module: onglibre_costs_simulator
+#: view:project.justification:0
+msgid "Add Lines"
+msgstr "Añadir líneas"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost,start_date:0
+msgid "Start Date"
+msgstr "Fecha inicio"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,month_start_cost:0
+msgid "Month Start Cost"
+msgstr "Mes inicio coste"
+
+#. module: onglibre_costs_simulator
+#: field:par.just,total_to_import:0
+msgid "Total to import"
+msgstr "Total importe"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,invoice_type:0
+msgid "Customer Refund"
+msgstr "Devolución cliente"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,budgetary_line_id:0
+msgid "Budgetary Line"
+msgstr "Línea presupuestaria"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,costs_amount_month:0
+msgid "Costs amount by period"
+msgstr "Importe coste por periodo"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,period_date:0
+msgid "Year-Month"
+msgstr "Año-mes"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: onglibre_costs_simulator
+#: view:account.invoice.line.wiz:0 view:par.just:0 view:start.par.just:0
+msgid "Cost Type"
+msgstr "Tipo coste"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost,simulation_cost_prevision_ids:0
+#: view:simulation.cost.prevision:0
+msgid "Simulation Cost Previsions"
+msgstr "Previsiones simulacion costes"
+
+#. module: onglibre_costs_simulator
+#: view:par.just:0 view:start.par.just:0
+msgid "Search"
+msgstr "Buscar"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,wiz_id:0
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost.prevision:0
+msgid "Costs Simulation Prevision"
+msgstr "Prevision simulación costes"
+
+#. module: onglibre_costs_simulator
+#: help:account.invoice.line.wiz,account_id:0
+msgid "The income or expense account related to the selected product."
+msgstr "Cuenta de ingreso o gasto relacionado con el producto seleccionado"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,delay_sale:0
+msgid "Delay Sale"
+msgstr "Demora venta"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,invoice_type:0
+msgid "Invoice type"
+msgstr "Tipo factura"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,justified_invoice_id:0
+msgid "Justified Imports"
+msgstr "Importes justificados"
+
+#. module: onglibre_costs_simulator
+#: view:account.invoice.line.wiz:0 view:par.just:0 field:par.just,name:0
+#: view:start.par.just:0 field:start.par.just,name:0
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: onglibre_costs_simulator
+#: view:account.invoice.line.wiz:0
+msgid "Incoming invoices"
+msgstr "Facturas entrantes"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,simulation_cost_id:0
+msgid "Simulation Cost"
+msgstr "Simulación costes"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,quantity:0
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,month:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,asset_category_id:0
+msgid "Asset Category"
+msgstr "Categoría activo"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,state:0
+msgid "Pro-forma"
+msgstr "Pro-forma"
+
+#. module: onglibre_costs_simulator
+#: sql_constraint:sale.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "¡La referencia del pedido debe ser única por compañía!"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,paid_import:0
+msgid "Amount paid"
+msgstr "Pagado"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,invoice_type:0
+msgid "Customer Invoice"
+msgstr "Factura cliente"
+
+#. module: onglibre_costs_simulator
+#: view:par.just:0 view:start.par.just:0
+msgid "Amount (>=)"
+msgstr "Importe (>=)"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,payment_prevision_month:0
+msgid "Payment prevision"
+msgstr "Previsión pago"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,account_id:0
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,to_justified_percent:0
+msgid "Percent to justified"
+msgstr "Porcentaje a justificar"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,price_unit:0
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,name:0
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: onglibre_costs_simulator
+#: model:ir.model,name:onglibre_costs_simulator.model_par_just
+msgid "par.just"
+msgstr "par.just"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,percentage_charge:0
+msgid "Percentage by charge"
+msgstr "Porcentaje por cargo"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost,end_date:0
+msgid "End Date"
+msgstr "Fecha fin"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,invoice_id:0
+msgid "Invoice Reference"
+msgstr "Referencia factura"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,invoice_type:0
+msgid "Supplier Refund"
+msgstr "Devolución proveedor"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,delay_cost:0
+msgid "Delay Cost"
+msgstr "Demora coste"
+
+#. module: onglibre_costs_simulator
+#: field:account.invoice.line.wiz,check_justification:0
+msgid "Chose"
+msgstr "Chose"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.prevision,percentage_invoice:0
+msgid "Percentage by invoice"
+msgstr "Porcentaje por factura"
+
+#. module: onglibre_costs_simulator
+#: view:simulation.cost:0
+msgid "Load Previsions"
+msgstr "Calcular previsiones"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost.line,month_end_cost:0
+msgid "Month End Cost"
+msgstr "Mes fin coste"
+
+#. module: onglibre_costs_simulator
+#: field:simulation.cost,duration:0
+#: field:simulation.cost.line,month_duration:0
+#: field:simulation.cost.line,sale_duration:0
+msgid "Duration"
+msgstr "Duración"
+
+#. module: onglibre_costs_simulator
+#: selection:account.invoice.line.wiz,state:0
+msgid "Open"
+msgstr "Abrir"
