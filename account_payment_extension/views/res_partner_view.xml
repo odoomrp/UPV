@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_partner_property_form_inh_paymentext">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="acc_number" position="after">
+                  <field name="default_bank"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_bank_form3_inh_paymentext">
+        <field name="name">view.partner.bank.form3.inh.paymentext</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="acc_number" position="after">
+                <field name="default_bank"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_bank_tree_inh_paymentext">
+        <field name="name">view.partner.bank.tree.inh.paymentext</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="default_bank"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_payment_type_res_partner_form1">
+        <field name="name">res.partner.form.payment_type1</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <field name="property_account_receivable" position="after">
+                <field name="payment_type_customer" widget="selection"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_payment_type_res_partner_form2">
+        <field name="name">res.partner.form.payment_type2</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <field name="property_account_payable" position="after">
+                <field name="payment_type_supplier" widget="selection"/>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>
