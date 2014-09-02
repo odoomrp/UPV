@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_bank_statement_form_inh_assetsservices">
+		    <field name="name">view.bank.statement.form.inh.assetsservices</field>
+		    <field name="model">account.bank.statement</field>
+		    <field name="priority" eval="17"/>
+		    <field name="inherit_id" ref="account.view_bank_statement_form"/>
+		    <field name="arch" type="xml">
+		        <data>
+		            <xpath expr="//tree[@string='Statement lines']/field[@name='bank_account_id']" position="after">
+		                <field name="analytic_account_id" />
+	                	<field name="budgetary_line_id"/>
+				        <field name="line_financing_source_ids" string="Financers"/>
+		            </xpath>
+		            <!-- 
+					<xpath expr="//form/notebook/page/field/form/field[@name='analytic_account_id']" position="after">
+		                <field name="budgetary_line_id" on_change="onchange_budgetary_line(analytic_account_id,budgetary_line_id)" context="{'tree_view_ref':'onglibre_assets_services_expenses.view_account_analytic_line_tree_assetsservices'}"/>
+			        	<newline/>
+                        <field name="line_financing_source_ids" nolabel="1" height="150" context="{'account_analytic_id':analytic_account_id,'budgetary_line_id':budgetary_line_id}" colspan="4" col="4"/>
+		            </xpath>
+		            <xpath expr="//form/notebook/page/field/form/field[@name='analytic_account_id']" position="replace">
+		            	<field name="analytic_account_id" on_change="onchange_account()" groups="analytic.group_analytic_accounting" domain="[('company_id', '=', parent.company_id), ('type', '&lt;&gt;', 'view')]"/>
+		            </xpath>
+		            -->
+		        </data>
+		    </field>
+		</record>
+    
+		<record model="ir.ui.view" id="view_bank_statement_form2_inh_assetsservices">
+		    <field name="name">view.bank.statement.form2.inh.assetsservices</field>
+		    <field name="model">account.bank.statement</field>
+		    <field name="type">form</field>
+		    <field name="priority" eval="17"/>
+		    <field name="inherit_id" ref="account.view_bank_statement_form2"/>
+		    <field name="arch" type="xml">
+		        <data>
+		            <xpath expr="//tree[@string='Statement lines']/field[@name='amount']" position="after">
+		                <field name="analytic_account_id" />
+	                	<field name="budgetary_line_id"/>
+				        <field name="line_financing_source_ids" string="Financers"/>
+		            </xpath>
+		            
+		            <xpath expr="//form[@string='Statement lines']/group/field[@name='sequence']" position="after">
+		                <field name="analytic_account_id" on_change="onchange_account()" domain="[('company_id', '=', parent.company_id), ('type', '&lt;&gt;', 'view')]" groups="analytic.group_analytic_accounting" />
+		                <field name="budgetary_line_id" on_change="onchange_budgetary_line(analytic_account_id,budgetary_line_id)" context="{'tree_view_ref':'onglibre_assets_services_expenses.view_account_analytic_line_tree_assetsservices'}"/>
+			        	<newline/>
+                        <field name="line_financing_source_ids" nolabel="1" height="150" context="{'account_analytic_id':analytic_account_id,'budgetary_line_id':budgetary_line_id}" colspan="4" col="4"/>
+		            </xpath>
+		        </data>
+		    </field>
+		</record>
+    </data>
+</openerp>

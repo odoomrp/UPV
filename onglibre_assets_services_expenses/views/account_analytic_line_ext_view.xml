@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="view_account_analytic_line_tree_assetsservices" model="ir.ui.view">
+			<field name="name">view.account.analytic.line.tree.assetsservices</field>
+			<field name="model">account.analytic.line</field>
+            <field name="priority" eval="17"/>
+			<field name="arch" type="xml">
+				<tree string="Budgets" >
+					<field name="account_id" />
+					<field name="name"/>
+                    <field name="expense_area_id"/>
+				</tree>
+			</field>
+		</record>	
+		
+		<record id="view_account_analytic_line_tree_assetsservices2" model="ir.ui.view">
+			<field name="name">view.account.analytic.line.tree.assetsservices2</field>
+			<field name="model">account.analytic.line</field>
+            <field name="priority" eval="17"/>
+			<field name="arch" type="xml">
+				<tree string="Budgets" >
+					<field name="name"/>
+					<field name="financing_percentage" />
+                    <field name="expense_area_id"/>
+				</tree>
+			</field>
+		</record>	
+		
+	</data>
+</openerp>
