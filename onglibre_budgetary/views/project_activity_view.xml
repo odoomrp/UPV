@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_activity_tree_view">
+			<field name="name">project.activity.tree.view</field>
+			<field name="model">project.activity</field>
+			<field name="arch" type="xml">
+				<tree string="Activity">
+					<field name="name" />
+					<field name="subactivity_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_activity_form_view">
+			<field name="name">project.activity.form.view</field>
+			<field name="model">project.activity</field>
+			<field name="arch" type="xml">
+				<form string="Activity">
+					<group colspan="2">
+						<field name="name" />
+					</group>
+					<notebook colspan="4">
+						<page string="Subactivitys">
+							<field name="subactivity_ids" nolabel="1"/>		
+						</page>
+					</notebook>					
+				</form>
+			</field>
+		</record>	
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_project_activity">
+			<field name="name">Activity</field>
+			<field name="res_model">project.activity</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_master_tables_group_view" name="Master Tables Group"
+			parent="base.menu_main_pm" sequence="70"/>
+		<menuitem id="project_activity_menu_view" name="Activitys" sequence="10"
+			parent="project_master_tables_group_view" action="action_project_activity" />
+
+	</data>
+</openerp>

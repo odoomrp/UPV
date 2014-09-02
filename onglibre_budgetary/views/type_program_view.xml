@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="type_program_tree_view">
+			<field name="name">type.program.tree.view</field>
+			<field name="model">type.program</field>
+			<field name="arch" type="xml">
+				<tree string="Convocatoria" >
+					<field name="name" />
+					<field name="description" />
+					<field name="administration_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="type_program_form_view">
+			<field name="name">type.program.form.view</field>
+			<field name="model">type.program</field>
+			<field name="arch" type="xml">
+				<form string="Convocatoria">
+					<field name="name"/>
+					<field name="administration_id"/>
+					<notebook colspan="4">
+					<page string="Description">
+						<separator string="Description" />
+						<field name="description" colspan="4" nolabel="1"/>
+					</page>
+					</notebook>
+				</form>
+							
+				
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_custom_type_program_form">
+			<field name="name">Convocatoria</field>
+			<field name="res_model">type.program</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+			
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+			
+		<menuitem id="custom_type_program_menu_view" name="Convocatorias" sequence="65"
+			parent="project_master_tables_group_view" action="action_custom_type_program_form" />
+
+	</data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+
+    <data noupdate="1">
+
+		<!-- AQUI DEFINO LOS DISTINTOS TIPOS DE SECUENCIA PARA PED. COMPRA -->
+		<record id="seq_type_amortization" model="ir.sequence.type">
+			<field name="name">Amortization</field>
+			<field name="code">Amortization</field>
+		</record>	
+
+		<!-- DEFINO LAS SECUENCIAS -->
+		<record id="seq_type_amortization2" model="ir.sequence">
+			<field name="name">Amortization</field>
+			<field name="code">Amortization</field>
+			<field eval="5" name="padding"/>
+			<field name="prefix">POA-</field>
+		</record>
+    
+    	<!-- DEFINO LOS DISTINTOS TIPOS DE COMPRA -->
+		<record id="seq_type_amortization3" model="purchase.type">
+			<field name="name">Amortization</field>
+			<field eval="seq_type_amortization2" name="sequence"/>
+		</record>
+
+    </data>
+</openerp>

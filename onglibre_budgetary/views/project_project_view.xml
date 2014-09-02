@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_project_project_filter_inh_budgetary">
+			<field name="name">view.project.project.filter.inh.budgetary</field>
+			<field name="model">project.project</field>
+			<field name="type">search</field>
+			<field name="inherit_id" ref="project.view_project_project_filter" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="department_id" />
+					<field name="crm_case_resource_type_id" />
+					<field name="project_type_id" />
+                	<field name="subsector_id" />
+                	<field name="project_activity_id" />
+                	<field name="project_subactivity_id" />
+                	<field name="administration_id" />
+                	<field name="type_program_id" />
+                	<field name="project_research_line_id" />
+                	<field name="project_research_subline_id" />
+                	<field name="project_pyramid_test_id" />
+                	<field name="project_aeronautical_program_id" />
+                	<field name="project_location_id" />
+				</field>
+				<filter name="Parent" position="after">
+					<separator orientation="vertical"/>
+					<filter string="Department" name="Department" icon="terp-folder-blue" domain = "[]" context="{'group_by':'department_id'}"/>
+					<filter string="Campaign" name="Campaign" icon="terp-folder-blue" domain = "[]" context="{'group_by':'crm_case_resource_type_id'}"/>
+					<filter string="Type Project" name="TypeProject" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_type_id'}"/>
+					<filter string="Subsector" name="Subsector" icon="terp-folder-blue" domain = "[]" context="{'group_by':'subsector_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Activity" name="Activity" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_activity_id'}"/>
+                    <filter string="SubActivity" name="SubActivity" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_subactivity_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Administration" name="Administration" icon="terp-folder-blue" domain = "[]" context="{'group_by':'administration_id'}"/>
+                    <filter string="Type Program" name="TypeProgram" icon="terp-folder-blue" domain = "[]" context="{'group_by':'type_program_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Research Line" name="ResearchLine" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_research_line_id'}"/>
+                    <filter string="Research Subline" name="ResearchSubline" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_research_subline_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Pyramid Test" name="PyramidTest" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_pyramid_test_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Aeronautical Program" name="AeronauticalProgram" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_aeronautical_program_id'}"/>
+                    <filter string="Project Location" name="ProjectLocation" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_location_id'}"/>
+				</filter>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_project_inh_budgetary">
+			<field name="name">view.project.inh.budgetary</field>
+			<field name="model">project.project</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="project.view_project" />
+			<field name="arch" type="xml">
+				<field name="state" position="after">
+					<field name="department_id" />
+					<field name="crm_case_resource_type_id" />
+					<field name="project_type_id" />
+                	<field name="subsector_id" />
+                	<field name="project_activity_id" />
+                	<field name="project_subactivity_id" />
+                	<field name="administration_id" />
+                	<field name="type_program_id" />
+                	<field name="project_research_line_id" />
+                	<field name="project_research_subline_id" />
+                	<field name="project_pyramid_test_id" />
+                	<!--<field name="final_customer_id" />
+                	--><field name="project_aeronautical_program_id" />
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="project_project_ext2_form_view_inh_budgetary">
+			<field name="name">project.project.ext2.form.view.inh.budgetary</field>
+			<field name="model">project.project</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="onglibre_project_financer.edit_project_inh_projectfinan" />
+			<field name="arch" type="xml">
+				<field name="analytic_account_id2" position="before">
+					<field name="simulation_cost_id" readonly="1" />
+				</field>
+				<field name="date" position="after">
+					<field name="final_partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1}"/>
+				</field>
+				<notebook position="inside">
+					<page string="Other Information">
+                			<group colspan="4" col="4">
+                				<group colspan="4" col="8">
+                					<field name="department_id" />
+                					<field name="project_type_id"/>
+                					<field name="crm_case_resource_type_id" />
+                					<field name="project_location_id"/>
+                				</group>
+                				<newline/>
+                				<group colspan="2" col="4">
+                					<separator string="Tipo de actividad" colspan="4"/>
+                					<field name="project_activity_id" colspan="4"/>
+                					<field name="project_subactivity_id" domain="[('activity_id','=',project_activity_id)]" colspan="4"/>
+                					<separator string="Programa de ayudas/Administración" colspan="4"/>
+                					<field name="administration_id" colspan="4" />
+                					<field name="type_program_id" colspan="4" domain="[('administration_id','=',administration_id)]"/>
+                					<separator string="Aeronave y tipo de componente" colspan="4"/>
+                					<field name="project_aeronautical_program_id" colspan="4"/>
+                					<field name="project_pyramid_test_id" colspan="4"/>
+                				</group>
+                				<group colspan="2" col="4">
+                					<separator string="Línea de investigación" colspan="4"/>
+                					<field name="project_research_line_id" colspan="4"/>
+                    				<field name="project_research_subline_id"  domain="[('project_research_line_id','=',project_research_line_id)]" colspan="4"/>
+                					<separator string="Sector de actividad" colspan="4"/>
+                					<field name="sector_id" colspan="4"/>
+                					<field name="subsector_id" colspan="4" domain="[('sector_id','=',sector_id)]"/>
+                					<separator string="Resumen" colspan="4"/>
+                					<group colspan="4" string=" ">
+                						<field name="resume" colspan="4" nolabel="1" height="200"/>
+                					</group>
+                				</group>
+                			</group>
+					</page>
+				</notebook>
+
+				<notebook position="inside">
+					<page string="Indicators">
+                		<field name="product_ids" nolabel="1"/>
+                		<newline/>
+                		<field name="publication_ids" nolabel="1"/>
+					</page>
+				</notebook>
+
+			</field>
+		</record>
+
+		<act_window context="{'search_default_account_id': [analytic_account_id2], 'group_by': ['account_id', 'expense_area_id', 'type']}"
+					domain="[('type','!=',False),('type','not in',('budgetary','financing_source'))]"
+	            	id="act_project_project_account_analytic_line_opened"
+	            	name="Economic Information"
+	            	res_model="account.analytic.line"
+	            	src_model="project.project"
+	            	view_type="form"
+	            	view_mode="tree,form"
+	                view_id="onglibre_project_financer.view_account_analytic_line_tree_inh_projectfinan" />
+
+	</data>
+</openerp>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_financing_tree_view_inh_budgetary">
+			<field name="name">project.financing.tree.view.inh.budgetary</field>
+			<field name="model">project.financing</field>
+			<field name="inherit_id" ref="onglibre_financial_source.project_financing_tree_view" />
+			<field name="arch" type="xml">
+				<field name="priority" position="before">
+					<field name="simulation_cost_id" invisible="1" />
+					<field name="simulation_cost_state" invisible="1" />
+				</field>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+		
+		<record model="ir.ui.view" id="project_financing_form_view_inh_budgetary">
+			<field name="name">project.financing.form.view.inh.budgetary</field>
+			<field name="model">project.financing</field>
+			<field name="inherit_id" ref="onglibre_financial_source.project_financing_form_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//form/group/separator[@string='Project Information']" position="before">
+				    <separator string="Simulation Cost Information" colspan="4" />
+					<field name="simulation_cost_id" />
+					<field name="simulation_cost_state"  />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- ******************* VISTA FORM ******************** -->
+		
+		<record model="ir.ui.view" id="project_financing_form_view_budgetary3">
+			<field name="name">project.financing.form.view.budgetary3</field>
+			<field name="model">project.financing</field>
+			<field name="arch" type="xml">
+                <form string="Project Financing">
+                    <field name="simulation_cost_id" invisible="1"/>
+                    <field name="simulation_cost_state" invisible="1"/>
+                    <field name="expense_area_ids" invisible="1" />
+                    <group colspan="4" col="4" >
+                        <field name="priority" invisible="1"/>
+                        <field name="expense_area_id" invisible="1" domain="[('simulation_cost_id','=',simulation_cost_id),('id','in',expense_area_ids[0][2])]" context="{'simulation_cost_id':simulation_cost_id}," attrs="{'invisible':[('simulation_cost_state','in',['draft','financing'])]}"/>
+                    </group>
+                    <group colspan="4" col="4" >
+                        <field name="project_percent" invisible="1"/>
+                        <field name="project_id" invisible="1"/>
+                    </group>
+                    <group colspan="4" col="4" >
+                        <separator string="Financial Source Information" colspan="4" />
+                        <field name="financing_source_id" required="1"/>
+                        <field name="financial_source_percent" invisible="1"/>
+                    </group>
+                    <group colspan="4" col="6" >
+                        <field name="grant" invisible="1"/>
+                        <field name="amount_awarded" invisible="1"/>
+                        <field name="overheads" invisible="1"/>
+                    </group>
+                </form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

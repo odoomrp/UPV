@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="expense_area_form_inh_budgetary">
+			<field name="name">expense.area.form.inh.budgetary</field>
+			<field name="model">expense.area</field>
+			<field name="inherit_id" ref="onglibre_financial_source.expense_area_form_view" />
+			<field name="arch" type="xml">
+				<field name="category_ids" position="after">
+					<separator string="Simulation" colspan="4" />
+					<field name="simulation_cost_ids" nolabel="1" colspan="4" />				
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

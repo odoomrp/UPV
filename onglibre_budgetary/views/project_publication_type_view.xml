@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_publication_type_tree_view">
+			<field name="name">project.publication.type.tree.view</field>
+			<field name="model">project.publication.type</field>
+			<field name="arch" type="xml">
+				<tree string="Publication Types">
+					<field name="name" />
+					<field name="publication_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_publication_type_form_view">
+			<field name="name">project.publication.type.form.view</field>
+			<field name="model">project.publication.type</field>
+			<field name="arch" type="xml">
+				<form string="Publication Type">
+					<group colspan="2">
+						<field name="name" />
+					</group>
+					<notebook colspan="4">
+						<page string="Publications">
+							<field name="publication_ids" nolabel="1"/>		
+						</page>
+					</notebook>		
+				</form>
+			</field>
+		</record>	
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_publication_type_call">
+			<field name="name">Publication Types</field>
+			<field name="res_model">project.publication.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_publication_type_menu_view" name="Publication Types" sequence="40"
+			parent="project_master_tables_group_view" action="action_publication_type_call" />
+
+	</data>
+</openerp>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="simulation_template_line_tree_inh_budgetary">
+			<field name="name">simulation.template.line.tree.inh.budgetary</field>
+			<field name="model">simulation.template.line</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_template_line_tree_view" />
+			<field name="arch" type="xml">
+				<field name="amortization_rate" position="replace" />
+				<field name="indirect_cost_rate" position="replace" />
+                <field name="type_cost" position="replace" />
+				<field name="description" position="after">
+					<field name="expense_area_id" />
+				</field>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="simulation_template_line_form_inh_budgetary">
+			<field name="name">simulation.template.line.form.inh.budgetary</field>
+			<field name="model">simulation.template.line</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_template_line_form_view" />
+			<field name="arch" type="xml">
+				<field name="product_id" position="replace">
+                    <field name="template_id" invisible="1" />
+					<field name="expense_area_id" colspan="2" on_change="onchange_expense_area(expense_area_id, template_id)" />
+                    <field name="product_id"  colspan="2" on_change="onchange_product(product_id)" />
+				</field>
+				<field name="name" position="replace">
+					<field name="name" colspan="2"/>
+				</field>
+				<field name="type_cost" position="replace">
+                    <field name="type_cost" invisible="1" />
+                </field>
+				<group name="costs" position="replace" />
+			</field>
+		</record>
+
+	</data>
+</openerp>

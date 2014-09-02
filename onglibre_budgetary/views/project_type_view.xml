@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_type_tree_view_inh_budgetary">
+			<field name="name">project.type.tree.view.inh.budgetary</field>
+			<field name="model">project.type</field>
+			<field name="inherit_id" ref="onglibre_project_financer.project_type_tree_view" />
+			<field name="arch" type="xml">
+				<field name="name" position="after"> 
+					<field name="description" />
+					<field name="project_type_sequence_id" />
+					<field name="generate_by_lines" />
+					<field name="administrative" />
+				</field> 					
+			</field>
+
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_type_form_view_inh_budgetary">
+			<field name="name">project.type.form.view.inh.budgetary</field>
+			<field name="model">project.type</field>
+			<field name="inherit_id" ref="onglibre_project_financer.project_type_form_view" />
+			<field name="arch" type="xml">
+				<field name="name" position="replace">
+					<field name="name" colspan="4"/>
+					<field name="sale_journal_id" colspan="2" domain="[('type','=','sale')]" context="{'type':'sale'}" />
+					<field name="project_type_sequence_id" colspan="2" domain="[('code','like','sale.order')]" context="{'type_code':'sale.order'}"/>
+					<field name="generate_by_lines" colspan="2" />
+					<field name="administrative" />
+					<group colspan="2" />
+				</field>
+				
+				<xpath expr="//form/group" position="after">
+					<newline/>
+					<separator string="Description" colspan="4"/>
+					<group col="4" colspan="6">
+						<field name="description" colspan="6" nolabel="1"/>
+					</group>
+				</xpath>
+
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

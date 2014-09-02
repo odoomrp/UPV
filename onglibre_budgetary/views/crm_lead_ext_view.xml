@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="crm_case_form_view_oppor_inh_budgetary">
+			<field name="name">crm.case.form.view.oppor.inh.budgetary</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+			<field name="arch" type="xml">
+				<notebook position="inside">
+					<page string="Cost Simulations">
+                		<field name="simulation_cost_ids" nolabel="1"/>
+					</page>
+				</notebook>	
+				<field name="planned_revenue" position="after">
+					<field name="launch_date"/>
+				</field>	
+			</field>
+		</record>
+		<record model="ir.ui.view" id="crm_lead_form_view_inh_budgetary">
+			<field name="name">crm.lead.form.view.inh.budgetary</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="attributes">
+					<attribute name="on_change">onchange_partner_id(partner_id, email_from)</attribute>
+					<attribute name="domain">[('customer','=',True)]</attribute>
+				</field>
+				<field name="referred" position="after">
+					<field name="active"/>
+				</field>
+				<field name="date_closed" position="after">
+					<field name="launch_date"/>
+				</field>
+				<button string="Convert to Opportunity" position="replace">
+                         <button
+                         name="convert_oppor"
+                         string="Convert to Opportunity"
+                         help="Convert to Opportunity" icon="gtk-go-forward"
+                         type="object"
+                         />
+                </button>
+			</field>
+		</record>
+	</data>
+</openerp>

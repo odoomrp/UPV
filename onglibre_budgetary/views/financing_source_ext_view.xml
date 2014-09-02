@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="financing_source_form_view_inh_budgetaryt">
+            <field name="name">financing.source.form.view.inh.budgetary</field>
+            <field name="model">financing.source</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="onglibre_financial_source.financing_source_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+	                <xpath expr="//form/group/notebook/page[@string='Projects']" position="after">
+						<page string="Analytic Lines">
+                            <group colspan="4">
+                                <field name="account_analytic_line_ids" context="{'group_by': ['financing_source_id', 'account_id']}" nolabel="1" widget="one2many_list" colspan="4" readonly="1" height="600"
+                                        domain="[('type','not in', ('budgetary', 'financing_source'))]">
+                                    <tree string="Analytic Tree">
+                                        <field name="financing_source_id" readonly="1"/>
+                                        <field name="account_id" readonly="1"/>
+                                        <field name="expense_area_id" readonly="1"/>
+                                        <field name="type" readonly="1"/>
+                                        <field name="name" readonly="1" />
+                                        <field name="expense_budget" widget="float" readonly="0"/>
+                                        <field name="assigned" widget="float" readonly="0"/>
+                                        <field name="updated_expense_budget" widget="float" readonly="0"/>
+                                        <field name="available_expense" widget="float" readonly="0"/>
+                                        <field name="remainder" widget="float" readonly="0"/>
+                                        <field name="expense_request" widget="float" readonly="0"/>
+                                        <field name="expense_compromised" widget="float" readonly="0"/>
+                                        <field name="real_expense" widget="float" readonly="0"/>
+                                        <field name="paid_expense" widget="float" readonly="0"/>
+                                        <field name="justified_expense" widget="float" readonly="0" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+	                </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

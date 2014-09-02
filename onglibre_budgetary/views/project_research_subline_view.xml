@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_research_subline_tree_view">
+			<field name="name">project.research.subline.tree.view</field>
+			<field name="model">project.research.subline</field>
+			<field name="arch" type="xml">
+				<tree string="Subline">
+					<field name="code"/>
+					<field name="name" />
+					<field name="project_research_line_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_research_subline_form_view">
+			<field name="name">project.research.subline.form.view</field>
+			<field name="model">project.research.subline</field>
+			<field name="arch" type="xml">
+				<form string="Subline">
+					<group colspan="4">
+						<field name="code"/>
+						<field name="name" />
+						<field name="project_research_line_id" />
+					</group>	
+				</form>
+			</field>
+		</record>	
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_project_research_subline">
+			<field name="name">Subline</field>
+			<field name="res_model">project.research.subline</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_research_subline_menu_view" name="Sublines" sequence="25"
+			parent="project_master_tables_group_view" action="action_project_research_subline" />
+
+	</data>
+</openerp>
