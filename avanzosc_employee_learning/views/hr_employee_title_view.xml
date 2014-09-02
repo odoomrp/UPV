@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="hr_employee_title_tree_view">
+			<field name="name">hr.employee.title.tree.view</field>
+			<field name="model">hr.employee.title</field>
+			<field name="arch" type="xml">
+				<tree string="Titles" >
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="hr_employee_title_search_view">
+			<field name="name">hr.employee.title.search.view</field>
+			<field name="model">hr.employee.title</field>
+			<field name="arch" type="xml">
+                <search string="Search Titles">
+                    <group>
+                    	<field name="name" />
+						<field name="code" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+                   </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="hr_employee_title_form_view">
+			<field name="name">hr.employee.title.form.view</field>
+			<field name="model">hr.employee.title</field>
+			<field name="arch" type="xml">
+				<form string="Title">
+					<group colspan="4">
+            			<field name="name" colspan="2"/>
+            			<field name="code" colspan="2"/>
+            		</group>
+				</form>
+			</field>
+		</record>
+		
+		
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_hr_employee_title_form">
+			<field name="name">Title</field>
+			<field name="res_model">hr.employee.title</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+		<menuitem id="menu_hr_employee_title_group_view" name="Titles" parent="hr.menu_hr_configuration" />
+		<menuitem id="custom_hr_employee_title_menu_view" name="Titles"
+			parent="menu_hr_employee_title_group_view" action="action_hr_employee_title_form" />		
+
+	</data>
+</openerp>
