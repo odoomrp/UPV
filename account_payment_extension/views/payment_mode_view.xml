@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_payment_mode_form_require_bank_account" model="ir.ui.view">
+        <field name="name">payment.mode.form.require_bank_account</field>
+        <field name="model">payment.mode</field>
+        <field name="inherit_id" ref="account_payment.view_payment_mode_form"/>
+        <field name="arch" type="xml">
+            <field name="bank_id" position="before">
+                <field name="require_bank_account"/>
+                <field name="type"/>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>

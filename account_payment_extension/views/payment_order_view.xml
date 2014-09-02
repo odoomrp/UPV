@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!-- Filter invoices by payment type. Allow negative payment amounts -->
+    <record id="view_payment_order_form_ext1" model="ir.ui.view">
+        <field name="name">payment.order.form.ext1</field>
+        <field name="model">payment.order</field>
+        <field name="inherit_id" ref="account_payment.view_payment_order_form"/>
+        <field name="arch" type="xml">
+            <button name="cancel" position="after">
+                <button name="cancel_from_done" states="done" type="object" string="Cancel" icon="gtk-cancel"/>
+            </button>
+            <button name="%(account_payment.action_create_payment_order)d" position="replace">
+                <field name="payment_type" invisible="1"/>
+                <field name="type" invisible="1"/>
+                <group>
+                    <field name="create_account_moves"/>
+                    <field name="period_id" attrs="{'required': [('create_account_moves', '!=', 'bank-statement')], 'invisible': [('create_account_moves', '=', 'bank-statement')]}"/>
+                </group>
+				<button colspan="2"
+                        name="%(action_create_payment_extension_order)d"
+                        string="Select invoices to pay/receive payment"
+                        type="action" attrs="{'invisible':[('state','=','done')]}"
+                        icon="gtk-find"/>
+            </button>
+            <field name="move_line_id" position="replace">
+                <group col="6" colspan="4">
+                    <field name="move_line_id"
+                           on_change="onchange_move_line(move_line_id,parent.mode,parent.date_prefered,parent.date_scheduled,currency,company_currency,context)"
+                           select="1"/>
+                    <field name="account_id"/>
+                    <field name="payment_move_id"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_payment_line_form_ext1" model="ir.ui.view">
+        <field name="name">payment.line.ext1</field>
+        <field name="model">payment.line</field>
+        <field name="inherit_id" ref="account_payment.view_payment_line_form"/>
+        <field name="arch" type="xml">
+            <field name="move_line_id" position="replace">
+                <group col="6" colspan="4">
+                    <field name="move_line_id"
+                           on_change="onchange_move_line(move_line_id, False, currency, company_currency)"
+                           select="1"/>
+                    <field name="account_id"/>
+                    <field name="payment_move_id"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_payment.action_payment_order_tree" model="ir.actions.act_window">
+        <field name="name">Pay. payment order</field>
+        <field name="res_model">payment.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','payable')]</field>
+        <field name="context">{'type':'payable'}</field>
+    </record>
+
+    <record id="action_rec_payment_order_tree" model="ir.actions.act_window">
+        <field name="name">Rec. payment order</field>
+        <field name="res_model">payment.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','receivable')]</field>
+        <field name="context">{'type':'receivable'}</field>
+    </record>
+
+    <menuitem action="action_rec_payment_order_tree" id="menu_action_rec_payment_order_form" parent="account_payment.menu_main_payment" sequence="2"/>
+
+</data>
+</openerp>

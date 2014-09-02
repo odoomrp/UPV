@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_payments_tree" model="ir.ui.view">
+        <field name="name">Payments</field>
+        <field name="model">account.move.line</field>
+        <field name="field_parent">partner_id</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <tree string="Payments" editable="top"
+                        colors="grey:reconcile_id!=0;blue:amount_to_pay==0;red:date_maturity&lt;time.strftime('%%Y-%%m-%%d')">
+                <field name="invoice" readonly="1"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="account_id" readonly="1"/>
+                <field name="debit" readonly="1" sum="Total Debit"/>
+                <field name="credit" readonly="1" sum="Total Credit"/>
+                <field name="amount_to_pay" readonly="1" sum="Total Amount to Pay"/>
+                <field name="payment_type" readonly="1"/>
+                <field name="partner_bank_id" domain="[('partner_id','=',partner_id)]"/>
+                <field name="received_check"/>
+                <field name="date_maturity"/>
+                <field name="move_id" readonly="1"/>
+                <field name="reconcile_id" readonly="1"/>
+                <field name="reconcile_partial_id" readonly="1"/>
+		<field name="journal_id" invisible="1"/>
+		<field name="period_id" invisible="1"/>
+               <button name="pay_move_lines" type="object" string="Payment" icon="gtk-go-forward"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_payments_filter" model="ir.ui.view">
+        <field name="name">Invoice Payments Select</field>
+        <field name="model">account.move.line</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <search string="Search Invoice Payments">
+               <group col='10' colspan='4'>
+                    <filter icon="terp-sale" string="Receive" domain="[('account_id.type','=','receivable')]" help="Receivable payments"/>
+                    <filter icon="terp-purchase" string="Pay" domain="[('account_id.type','=','payable')]" help="Payable payments"/>
+                    <separator orientation="vertical"/>
+                    <filter icon="terp-dolar_ok!" string="Unreconciled" domain="[('reconcile_id','=',False)]" help="Unreconciled payments"/>
+                    <field name="account_id"/>
+                    <field name="partner_id"/>
+                    <field name="invoice"/>
+                    <field name="date_maturity"/>
+                    <newline/>
+                    <field name="amount_to_pay"/>
+                    <field name="payment_type" widget="selection"/>
+                    <field name="partner_bank_id"/>
+                    <field name="received_check"/>
+               </group>
+               <newline/>
+                <group expand="0" string="Group By...">
+                    <filter string="Partner" icon="terp-partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Journal" icon="terp-folder-orange" domain="[]" context="{'group_by':'journal_id'}"/>
+                    <filter string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                    <separator orientation="vertical"/>
+                    <filter string="Period" icon="terp-go-month" domain="[]" context="{'group_by':'period_id'}"/>
+                    <filter string="Effective date" icon="terp-go-month" domain="[]" context="{'group_by':'date_maturity'}"/>
+                    <filter string="Due Date" icon="terp-go-month" domain="[]" context="{'group_by':'date_maturity'}"/>
+                </group>
+           </search>
+        </field>
+    </record>
+
+    <!--Invoice Payments-->
+    <record model="ir.actions.act_window" id="action_invoice_payments">
+        <field name="name">Invoice payments</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_payments_tree"/>
+        <field name="search_view_id" ref="view_payments_filter"/>
+        <field name="domain">[('account_id.type', 'in', ['receivable', 'payable']), ('invoice', '&lt;&gt;', False)]</field>
+    </record>
+
+    <menuitem name="Invoice payments"
+              parent="account_payment.menu_main_payment"
+              action="action_invoice_payments"
+              id="menu_action_invoice_payments"
+              sequence="4"/>
+
+</data>
+</openerp>
