@@ -43,7 +43,7 @@ class AccountAnalyticLine(orm.Model):
             if obj.type == 'budgetary':
                 cond = [('is_project', '=', True),
                         ('account_id', '=', obj.account_id.id)]
-                line_list = self.search(cr, uid, cond, context)
+                line_list = self.search(cr, uid, cond, context=context)
                 if line_list:
                     res[obj.id] = line_list[0]
                 else:
@@ -86,9 +86,9 @@ class AccountAnalyticLine(orm.Model):
                                     'active': True,
                                     'project_id': project_id,
                                     'journal_id': journal_obj.search(
-                                        cr, uid, [], context)[0],
+                                        cr, uid, [], context=context)[0],
                                     'general_account_id': account_obj.search(
-                                        cr, uid, [], context)[0],
+                                        cr, uid, [], context=context)[0],
                                     'date': time.strftime('%Y-%m-%d')
                                     }
                             line_id = self.create(cr, uid, vals, context)
