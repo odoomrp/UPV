@@ -253,16 +253,74 @@
             </field>
         </record>
         
-        <record id="sale.action_order_form" model="ir.actions.act_window">
+        <record id="sale.action_orders" model="ir.actions.act_window">
             <field name="name">Sales Orders Without Simulation Cost</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar,graph</field>
             <field name="search_view_id" ref="sale.view_sales_order_filter"/>
-            <field name="context">{}</field>
-            <field name="domain">[('simulation_cost_ids','=',False)]</field>
-            <field name="help">Sales Orders help you manage quotations and orders from your customers. OpenERP suggests that you start by creating a quotation. Once it is confirmed, the quotation will be converted into a Sales Order. OpenERP can handle several types of products so that a sales order may trigger tasks, delivery orders, manufacturing orders, purchases and so on. Based on the configuration of the sales order, a draft invoice will be generated so that you just have to confirm it when you want to bill your customer.</field>
+            <field name="context">{
+                    'search_default_my_sale_orders_filter': 1
+                }
+            </field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')), ('simulation_cost_ids','=',False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a quotation that can be converted into a sales
+                    order.
+                </p><p>
+                    Odoo will help you efficiently handle the complete sales flow:
+                    quotation, sales order, delivery, invoicing and payment.
+                </p>
+            </field>
+        </record>
+        
+        <record id="sale.action_orders_exception" model="ir.actions.act_window">
+            <field name="name">Sales in Exception</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="domain">[('state','in',('shipping_except','invoice_except')), ('simulation_cost_ids','=',False)]</field>
+            <field name="filter" eval="True"/>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+        </record>
+
+        <record id="sale.action_orders_in_progress" model="ir.actions.act_window">
+            <field name="name">Sales Order in Progress</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="domain">[('state','in',('progress','waiting_date','manual')), ('simulation_cost_ids','=',False)]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+        </record>
+
+
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{'search_default_my_sale_orders_filter': 1}</field>
+            <field name="domain">[('state','in',('draft','sent','cancel')), ('simulation_cost_ids','=',False)]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+              </p><p>
+                Odoo will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
         </record>
         
 		<record model="ir.actions.act_window.view" id="action_view_order_tree_budgetaryext1">
