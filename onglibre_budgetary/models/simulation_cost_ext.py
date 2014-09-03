@@ -3473,7 +3473,12 @@ class SimulationCost(orm.Model):
 
     def onchange_expense_area(self, cr, uid, ids, expense_area_ids,
                               simulation_category_ids, context=None):
-        if not ids:
+        res = {}
+        found = False
+        for expense_area in expense_area_ids:
+            if expense_area[2]:
+                found = True
+        if not ids and found:
             return {'value': {'expense_area_ids': False,
                               'simulation_category_ids': False},
                     'warning': {'title': _('Error'),
@@ -3481,7 +3486,9 @@ class SimulationCost(orm.Model):
                                              'simulation'),
                                 }
                     }
-        res = {}
+        else:
+            if not ids:
+                return {'value': res}
         expense_area_obj = self.pool['expense.area']
         simulation_category_obj = self.pool['simulation.category']
         my_category = []
