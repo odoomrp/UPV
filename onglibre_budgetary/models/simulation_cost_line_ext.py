@@ -308,6 +308,7 @@ class SimulationCostLine(orm.Model):
                          type, amount, sale_amount, subtotal_purchase,
                          estimated_date_purchase_completion, sale_subtotal,
                          context=None):
+        print '*** ESTOY EN ONCHANGE_PRODUCT, simulation_cost_id: ' + str(simulation_cost_id)
         simulation_cost_obj = self.pool['simulation.cost']
         product_obj = self.pool['product.product']
         supplierinfo_obj = self.pool['product.supplierinfo']
@@ -329,21 +330,21 @@ class SimulationCostLine(orm.Model):
         if product_id:
             if type:
                 product = product_obj.browse(cr, uid, product_id, context)
-                if not simulation_cost_id:
-                    raise orm.except_orm(_('Error'),
-                                         _('You should save before the '
-                                           'simulation'))
-                simulation = simulation_cost_obj.browse(
-                    cr, uid, simulation_cost_id, context)
-                if simulation.simulation_category_ids:
-                    found = 0
-                    for category in simulation.simulation_category_ids:
-                        if category.category_id.id == product.categ_id.id:
-                            found = 1
-                    if found == 0:
-                        raise orm.except_orm(_('Product Error'),
-                                             _('Product with category '
-                                               'restricted'))
+#                if not simulation_cost_id:
+#                    raise orm.except_orm(_('Error'),
+#                                         _('You should save before the '
+#                                           'simulation'))
+#                simulation = simulation_cost_obj.browse(
+#                    cr, uid, simulation_cost_id, context)
+#                if simulation.simulation_category_ids:
+#                    found = 0
+#                    for category in simulation.simulation_category_ids:
+#                        if category.category_id.id == product.categ_id.id:
+#                            found = 1
+#                    if found == 0:
+#                        raise orm.except_orm(_('Product Error'),
+#                                             _('Product with category '
+#                                               'restricted'))
                 if type == 'Amortization':
                     if not product.purchase_ok:
                         raise orm.except_orm(_('Product Error'),
