@@ -62,4 +62,9 @@ class AccountAnalyticLine(orm.Model):
                 line2 = self.browse(cr, uid, fsource_id, context=context)
                 vals = {'financing_source_id': line2.financing_source_id.id}
                 self.write(cr, uid, [line.id], vals, context=context)
+            if line.simulation_cost_id:
+                if line.simulation_cost_id.project_id:
+                    project = line.simulation_cost_id.project_id
+                    vals = {'project_id': project.id}
+                    self.write(cr, uid, [line.id], vals, context=context)
         return new_id
