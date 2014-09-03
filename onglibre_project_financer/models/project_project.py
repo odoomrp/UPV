@@ -363,7 +363,7 @@ class ProjectProject(orm.Model):
         self.write(cr, uid, ids, {'state': 'open'}, context=context)
         return True
 
-    def write(self, cr, uid, ids, vals, context={}):
+    def write(self, cr, uid, ids, vals, context=None):
         analytic_account_obj = self.pool['account.analytic.account']
         analytic_line_obj = self.pool['account.analytic.line']
         simulation_obj = self.pool['simulation.cost']
@@ -385,7 +385,8 @@ class ProjectProject(orm.Model):
             if obj.parent_project_id:
                 account_id2 = obj.parent_project_id.analytic_account_id2.id
                 cond = [('project_id', '=', obj.id)]
-                simulation_ids = simulation_obj.search(cr, uid, cond, context)
+                simulation_ids = simulation_obj.search(cr, uid, cond,
+                                                       context=context)
                 if simulation_ids:
                     for simulation in simulation_obj.browse(
                             cr, uid, simulation_ids, context):
