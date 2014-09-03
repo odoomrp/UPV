@@ -3527,8 +3527,6 @@ class SimulationCost(orm.Model):
         w_error = 0
         project_financing_obj = self.pool['project.financing']
         for financing_source in financing_source_list:
-            print '*** financing_source: ' + str(financing_source)
-            print '*** financing_source[2]: ' + str(financing_source[2])
             if financing_source[2]:
                 if w_error == 0:
                     if financing_source[2].get('expense_area_id'):
