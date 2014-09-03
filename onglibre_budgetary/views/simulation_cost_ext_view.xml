@@ -147,7 +147,7 @@
                                     <field name="expense_area_ids" invisible="1" />
                                     <field name="purchase_insale" invisible="1"/>
                                     <field name="deductible_iva" invisible="1"/>
-                                    <field name="simulation_cost_id" />
+                                    <field name="simulation_cost_id" invisible="1"/>
                                     <field name="simulation_cost_state" invisible="1"/>
                                     <field name="simulation_cost_project_id" invisible="1"/>
                                     <!-- 
