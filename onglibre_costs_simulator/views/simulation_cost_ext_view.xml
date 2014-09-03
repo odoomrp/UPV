@@ -56,8 +56,8 @@
 					<button name="button_charge_dates" string="Charge Date" type="object" colspan="2" />
 				</xpath>
 
-				<xpath expr="//page[@string='Expense Areas Permitted']" position="before">
-					<page string="Previsions">
+				<xpath expr="//page[@string='Expense Areas Permitted']" position="after">
+					<page string="Previsions" invisible="1">
 						<field name="simulation_cost_prevision_ids" nolabel="1" />
 					</page>
 				</xpath>
