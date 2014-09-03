@@ -402,7 +402,7 @@ class ProjectProject(orm.Model):
                         # Voy a buscar lines de analítica
                         cond = [('project_id', '=', obj.id)]
                         analytic_line_ids = analytic_line_obj.search(
-                            cr, uid, cond, context)
+                            cr, uid, cond, context=context)
                         if analytic_line_ids:
                             analytic_line = analytic_line_obj.browse(
                                 cr, uid, analytic_line_ids[0], context)
@@ -412,7 +412,7 @@ class ProjectProject(orm.Model):
                                 cond = [('project_id', '=', obj.id),
                                         ('account_parent_id', '=', aparent.id)]
                                 analytic_line_ids = analytic_line_obj.search(
-                                    cr, uid, cond, context)
+                                    cr, uid, cond, context=context)
                                 if analytic_line_ids:
                                     nvals = {'account_parent_id': account_id2}
                                     analytic_line_obj.write(
