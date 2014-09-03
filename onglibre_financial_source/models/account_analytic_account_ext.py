@@ -34,7 +34,7 @@ class AccountAnalyticAccount(orm.Model):
                 ('type', 'in', ['initial_financial_source',
                                 'modif_financial_source'])]
         account_analytic_line_ids = analytic_line_obj.search(cr, uid, cond,
-                                                             context)
+                                                             context=context)
         for data in self.browse(cr, uid, ids, context=context):
             res[data.id] = 0
             for account_analytic_line in analytic_line_obj.browse(
@@ -51,7 +51,7 @@ class AccountAnalyticAccount(orm.Model):
                 ('type', 'in', ['initial_financial_source',
                                 'modif_financial_source', 'imputation'])]
         account_analytic_line_ids = analytic_line_obj.search(cr, uid, cond,
-                                                             context)
+                                                             context=context)
         for data in self.browse(cr, uid, ids, context=context):
             res[data.id] = 0
             for account_analytic_line in analytic_line_obj.browse(
@@ -68,7 +68,7 @@ class AccountAnalyticAccount(orm.Model):
                 ('type', 'in', ['initial_financial_source',
                                 'modif_financial_source', 'imputation'])]
         account_analytic_line_ids = analytic_line_obj.search(cr, uid, cond,
-                                                             context)
+                                                             context=context)
         for data in self.browse(cr, uid, ids, context=context):
             res[data.id] = 0
             for account_analytic_line in analytic_line_obj.browse(
