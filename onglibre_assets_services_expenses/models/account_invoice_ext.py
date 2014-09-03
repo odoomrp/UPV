@@ -25,6 +25,51 @@ import time
 
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
+    
+    @api.multi
+    def action_move_create(self):
+        print '*** ESTOY EN ACTION_MOVE_CREATE'
+        analytic_line_obj = self.env['account.analytic.line']
+        res = super(AccountInvoice, self).action_move_create()
+        for invoice in self:
+            print '*** invoice_type: ' + str(invoice.type)
+            if invoice.type in ('in_refund', 'in_invoice'):
+                for line in invoice.invoice_line:
+                    print '*** linea factura, fuentes financiación: ' + str(line.line_financing_source_ids)
+                    if line.line_financing_source_ids:
+                        for line2 in line.line_financing_source_ids:
+                            w_importe2 = ((line.price_subtotal *
+                                           line2.line_financing_percentage) /
+                                          100)
+                            journal_id = invoice.journal_id.analytic_journal_id
+                            fsl = line2.financial_source_line_id
+                            budget_id = fsl.account_analytic_line_budgetary_id
+                            vals = {'name' : str(invoice.number),
+                                    'account_id': line.account_analytic_id.id,
+                                    'general_account_id': line.account_id.id,
+                                    'journal_id': journal_id.id,
+                                    'unit_amount': line.quantity,
+                                    'product_id': line.product_id.id,
+                                    'product_uom_id': line.uos_id.id,
+                                    'sale_amount':  0,
+                                    'type': 'imputation',
+                                    'real_expense': w_importe2,
+                                    'imputed': w_importe2,
+                                    'expense_compromised': (w_importe2 * -1),
+                                    'expense_area_id': fsl.expense_area_id.id,
+                                    'account_analytic_line_financing_source'
+                                    '_id': fsl.id,
+                                    'account_analytic_line_budgetary_readonly'
+                                    '_id': budget_id.id,
+                                    'account_analytic_line_budgetary_id':
+                                    budget_id.id,
+                                    'account_invoice_line_id': line.id,
+                                    'line_financing_source_id': line2.id,
+                                    'expense_type': 'invoice_aproved'
+                                  }
+                            print '*** creo linea de analitica con vals: ' + str(vals)
+                            analytic_line_obj.create(vals)
+        return res
 
     @api.multi
     def action_cancel(self):
@@ -99,261 +144,6 @@ class AccountInvoice(models.Model):
             x.get('account_analytic_line_budgetary_readonly_id', False), })
         return res
 
-    def action_number(self, cr, uid, ids, context=None):
-        analytic_line_obj = self.pool['account.analytic.line']
-        project_obj = self.pool['project.project']
-        account_move_obj = self.pool['account.move']
-        account_move_line_obj = self.pool['account.move.line']
-        financing_source_obj = self.pool['financing.source']
-        # Llamo al metodo super
-        super(AccountInvoice, self).action_number(cr, uid, ids, context)
-        # Doy de alta líneas de analítica
-        for invoice in self.browse(cr, uid, ids, context=context):
-            if invoice.type == 'in_refund' or invoice.type == 'in_invoice':
-                datas = {}
-                for line in invoice.invoice_line:
-                    if line.line_financing_source_ids:
-                        for line_fs in line.line_financing_source_ids:
-                            cond = [('analytic_account_id', '=',
-                                     line.account_analytic_id.id)]
-                            project_ids = project_obj.search(cr, uid, cond,
-                                                             context)
-                            project = project_obj.browse(
-                                cr, uid, project_ids[0], context)
-                            if not project.deductible_iva:
-                                # busco el iva
-                                w_taxes = 0
-                                for taxes in line.invoice_line_tax_id:
-                                    if taxes.name.find("iva") >= 0:
-                                        w_taxes = taxes.amount
-                                    else:
-                                        if taxes.name.find("IVA") >= 0:
-                                            w_taxes = taxes.amount
-                                if w_taxes == 0:
-                                    w_imp = line.price_subtotal
-                                else:
-                                    w_iva = line.price_subtotal * w_taxes
-                                    w_imp = line.price_subtotal + w_iva
-                            else:
-                                w_imp = line.price_subtotal
-                            w_imp = ((w_imp *
-                                      line_fs.line_financing_percentage) / 100)
-                            w_found = 0
-                            for data in datas:
-                                datos_array = datas[data]
-                                fs_id = datos_array['financing_source_id']
-                                amount = datos_array['amount']
-                                fs_line = line_fs.financial_source_line_id
-                                fs_id2 = fs_line.financing_source_id.id
-                                if fs_id == fs_id2:
-                                    w_found = 1
-                                    amount = amount + w_imp
-                                    datas[data].update({'amount': amount})
-                            if w_found == 0:
-                                fs_line = line_fs.financial_source_line_id
-                                fs_id2 = fs_line.financing_source_id.id
-                                vals = {'financing_source_id': fs_id2,
-                                        'amount': w_imp}
-                                datas[(fs_id2)] = vals
-                if datas:
-                    for data in datas:
-                        datos_array = datas[data]
-                        fsource_id = datos_array['financing_source_id']
-                        amount = datos_array['amount']
-                        financing_source = financing_source_obj.browse(
-                            cr, uid, fsource_id, context)
-                        if financing_source.availability_fund == 'granted':
-                            if amount > financing_source.grant:
-                                raise except_orm(_('Financing Source '
-                                                   'ERROR'),
-                                                 _("The Financing Source "
-                                                   "'%s', only have an "
-                                                   "amount available for "
-                                                   "%s euros and can not "
-                                                   "finance %s euros") %
-                                                 (financing_source.name,
-                                                  financing_source.grant,
-                                                  amount))
-                        if financing_source.availability_fund == 'accepted':
-                            if (amount > (financing_source.total_recognized +
-                                          financing_source.transfered)):
-                                t = (financing_source.total_recognized +
-                                     financing_source.transfered)
-                                raise except_orm(_('Financing Source '
-                                                   'ERROR'),
-                                                 _("The Financing Source "
-                                                   "'%s', only have an "
-                                                   "amount available for "
-                                                   "%s euros and can not "
-                                                   "finance %s euros") %
-                                                 (financing_source.name, t,
-                                                  amount,))
-                        if financing_source.availability_fund == 'charged':
-                            if (amount >
-                                    (financing_source.total_invoices_billed +
-                                     financing_source.transfered)):
-                                t = (financing_source.total_invoices_billed +
-                                     financing_source.transfered)
-                                raise except_orm(_('Financing Source '
-                                                   'ERROR'),
-                                                 _("The Financing Source "
-                                                   "'%s', only have an "
-                                                   "amount available for "
-                                                   "%s euros and can not "
-                                                   "finance %s euros") %
-                                                 (financing_source.name, t,
-                                                  amount))
-                for invoice_line in invoice.invoice_line:
-                    cond = [('account_invoice_line_id', '=', invoice_line.id)]
-                    analytic_line_to_modifi_id = analytic_line_obj.search(
-                        cr, uid, cond, context)
-                    if analytic_line_to_modifi_id:
-                        # Calculo importe con iva O sin iva
-                        cond = [('analytic_account_id', '=',
-                                 invoice_line.account_analytic_id.id)]
-                        project_ids = project_obj.search(cr, uid, cond,
-                                                         context)
-                        project = project_obj.browse(cr, uid, project_ids[0],
-                                                     context)
-                        if not project.deductible_iva:
-                            # busco el iva
-                            w_taxes = 0
-                            for taxes in invoice_line.invoice_line_tax_id:
-                                if taxes.name.find("iva") >= 0:
-                                    w_taxes = taxes.amount
-                                else:
-                                    if taxes.name.find("IVA") >= 0:
-                                        w_taxes = taxes.amount
-                            if w_taxes == 0:
-                                w_importe = invoice_line.price_subtotal
-                            else:
-                                w_iva = invoice_line.price_subtotal * w_taxes
-                                w_importe = (invoice_line.price_subtotal +
-                                             w_iva)
-                        else:
-                            w_importe = invoice_line.price_subtotal
-                        w_contador = 0
-                        if invoice_line.line_financing_source_ids:
-                            fs_ids = invoice_line.line_financing_source_ids
-                            for line_financing_source in fs_ids:
-                                w_contador = w_contador + 1
-                        w_contador2 = 0
-                        w_importe2 = 0
-                        w_importe3 = 0
-                        if invoice_line.line_financing_source_ids:
-                            fs_ids = invoice_line.line_financing_source_ids
-                            for line_financing_source in fs_ids:
-                                w_contador2 = w_contador2 + 1
-                                if w_contador == w_contador2:
-                                    w_importe2 = w_importe - w_importe3
-                                else:
-                                    lfs = line_financing_source
-                                    perc = lfs.line_financing_percentage
-                                    w_importe2 = (w_importe * perc) / 100
-                                    w_importe3 = w_importe3 + w_importe2
-                                amount = (w_importe2 * -1)
-                                journal = invoice.journal_id
-                                ajournal_id = journal.analytic_journal_id.id
-                                lfs = line_financing_source
-                                fsl = lfs.financial_source_line_id
-                                budg = fsl.account_analytic_line_budgetary_id
-                                budget_id = budg.id
-                                earea_id = fsl.expense_area_id.id
-                                cond = [('amount', '=', amount),
-                                        ('unit_amount', '=',
-                                         invoice_line.quantity),
-                                        ('account_id', '=',
-                                         invoice_line.account_analytic_id.id),
-                                        ('general_account_id', '=',
-                                         invoice_line.account_id.id),
-                                        ('product_id', '=',
-                                         invoice_line.product_id.id),
-                                        ('product_uom_id', '=',
-                                         invoice_line.uos_id.id),
-                                        ('journal_id', '=', ajournal_id),
-                                        ('type', '=', False),
-                                        ('account_analytic_line_budgetary_id',
-                                         '=', budget_id),
-                                        ('account_analytic_line_financing_'
-                                         'source_id', '=', fsl.id),
-                                        ('account_analytic_line_budgetary_'
-                                         'readonly_id', '=', budget_id),
-                                        ('is_project', '=', False),
-                                        ('expense_area_id', '=', earea_id),
-                                        ('account_invoice_line_id', '=',
-                                         invoice_line.id),
-                                        ('expense_type', '=', 'move_line')]
-                                print '*** cond: ' + str(cond)
-                                analytic_line_ids = analytic_line_obj.search(
-                                    cr, uid, cond, context)
-                                if not analytic_line_ids:
-                                    raise except_orm(_('Analytic Line NOT '
-                                                       'FOUND!'),
-                                                     _('Analytic Line with'
-                                                       ' expense_type '
-                                                       'MOVE_LINE '
-                                                       'not found'))
-                                lfs = line_financing_source
-                                fsl = lfs.financial_source_line_id
-                                fs_id = fsl.financing_source_id.id
-                                vals = {'expense_compromised':
-                                        (w_importe2 * -1),
-                                        'type': 'imputation',
-                                        'real_expense': w_importe2,
-                                        'imputed': w_importe2,
-                                        'expense_type': 'invoice_aproved',
-                                        'financing_source_id': fs_id}
-                                analytic_line_obj.write(
-                                    cr, uid, analytic_line_ids, vals, context)
-                                # journal = invoice.journal_id
-                                # ajournal = journal.analytic_journal_id
-                                # lfs = line_financing_source
-                                # fsl = lfs.financial_source_line_id
-                                # earea_id = fsl.expense_area_id.id
-                                # budg = fsl.account_analytic_line_budgetary_id
-                                # line = {'name' : str(invoice.number),
-                                # 'account_id':
-                                # invoice_line.account_analytic_id.id,
-                                # 'general_account_id':
-                                # invoice_line.account_id.id,
-                                # 'journal_id': ajournal.id,
-                                # 'unit_amount': invoice_line.quantity,
-                                # 'product_id':
-                                # invoice_line.product_id.id,
-                                # 'product_uom_id':
-                                # invoice_line.uos_id.id,
-                                # 'sale_amount':  0,
-                                # 'type': 'imputation',
-                                # 'real_expense': w_importe2,
-                                # 'imputed': w_importe2,
-                                # 'expense_compromised':
-                                # (w_importe2 * -1),
-                                # 'expense_area_id': earea_id,
-                                # 'account_analytic_line_financing_'
-                                # 'source_id': fsl.id,
-                                # 'account_analytic_line_budgetary_'
-                                # 'readonly_id': budg.id,
-                                # 'account_analytic_line_budgetary_id':
-                                # budg.id,
-                                # 'account_invoice_line_id':
-                                # invoice_line.id,
-                                # 'line_financing_source_id':
-                                # line_financing_source.id,
-                                # 'expense_type': 'invoice_aproved'
-                                # }
-                                # analytic_line_obj.create(cr, uid, line,
-                                # context)
-            else:
-                if invoice.type == 'out_invoice':
-                    if invoice.move_id.id:
-                        account_move = account_move_obj.browse(
-                            cr, uid, invoice.move_id.id, context)
-                        ref = account_move.ref + ' - ' + invoice.number
-                        for move_line in account_move.line_id:
-                            account_move_line_obj.write(
-                                cr, uid, [move_line.id], {'ref': ref}, context)
-                        account_move_obj.write(
-                            cr, uid, [account_move.id], {'ref': ref}, context)
         return True
 
     def _refund_cleanup_lines(self, cr, uid, lines):

@@ -146,7 +146,6 @@ class PurchaseOrderLine(orm.Model):
     # OnChange del campo Línea Presupuestaria #
     def onchange_budgetary_line(self, cr, uid, ids, account_analytic_id,
                                 budgetary_line_id):
-        print '*** ESTOY EN ONCHANGE_BUDGETARY_LINE'
         financing_obj = self.pool['line.financing.source']
         analytic_line_obj = self.pool['account.analytic.line']
         category_obj = self.pool['product.category']
@@ -246,7 +245,6 @@ class PurchaseOrderLine(orm.Model):
                     'taxes_id': None
                     }
             result.update({'value': data})
-        print '*** SALGO DE ONCHANGE_BUDGETARY_LINE, result: ' + str(result)
         return result
 
     def onchange_product_id_ong(self, cr, uid, ids, pricelist_id, product_id,
