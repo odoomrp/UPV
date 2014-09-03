@@ -24,6 +24,8 @@
                             icon="terp-folder-violet" />
                     <filter string="Analytic Account" name="account" context="{'group_by':'account_id'}"
                             groups="base.group_extended" icon="terp-folder-green" />
+                    <filter string="Project" name="project" context="{'group_by':'project_id'}"
+                            icon="terp-folder-green" />
                     <filter string="Type" context="{'group_by':'type'}" icon="terp-stock_symbol-selection" />
                     <filter string="Financing source"
                             context="{'group_by':'account_analytic_line_financing_source_id'}"
