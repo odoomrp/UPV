@@ -246,7 +246,7 @@ class AccountAnalyticLine(orm.Model):
                             w_imp = (w_imp +
                                      initial_budgetary.updated_expense_budget)
                         cond = [('project_id', '=', obj.project_id.id),
-                                ('type', '=', 'initial_budgetary'),
+                                ('type', '=', 'modif_budgetary'),
                                 ('account_analytic_line_financing_source_id',
                                  '=', obj.id)]
                         initial_budgetary_ids = self.search(
@@ -294,7 +294,7 @@ class AccountAnalyticLine(orm.Model):
                                     w_imp = (w_imp +
                                              ib.updated_expense_budget)
                                 cond = [('project_id', '=', obj.project_id.id),
-                                        ('type', '=', 'initial_budgetary'),
+                                        ('type', '=', 'modif_budgetary'),
                                         ('account_analytic_line_financing_'
                                          'source_id', '=', fs.id)]
                                 initial_budgetary_ids = self.search(
