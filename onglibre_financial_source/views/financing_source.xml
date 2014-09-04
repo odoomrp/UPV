@@ -14,13 +14,13 @@
 					<field name="legal_support_id" />
 					<field name="financing_type_id" />
 					<field name="availability_fund" />
-					<field name="financier_fund_income_id" />
-					<field name="financier_fund_expense_id" />
+					<field name="financier_fund_income_id" invisible="1"/>
+					<field name="financier_fund_expense_id" invisible="1"/>
 					<field name="code_call_id" />
-					<field name="funder_record_code" />
+					<field name="funder_record_code" invisible="1"/>
 					<field name="grant_date" />
-					<field name="eligibility_date_from" />
-					<field name="eligibility_date_to" />
+					<field name="eligibility_date_from" invisible="1"/>
+					<field name="eligibility_date_to" invisible="1" />
                     <field name="grant" />
                     <field name="grant_without_overheads" />
                     <field name="overheads" />
