@@ -27,7 +27,7 @@
     "description": """
         Avanzosc Custom Modules
     """,
-    "depends": ['account', 'sale', 'onglibre_budgetary'],
+    "depends": ['account', 'sale', 'onglibre_budgetary', 'onglibre_financial_source'],
     'data': ['views/sale_order_view_ext.xml',
              'views/sale_order_line_view_ext.xml',
              'views/project_financing_view_ext.xml',

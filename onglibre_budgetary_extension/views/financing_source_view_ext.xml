@@ -124,24 +124,36 @@
             <field name="inherit_id" ref="onglibre_financial_source.financing_source_form_view"/>
             <field name="arch" type="xml">
                 <data>
-                	<xpath expr="//form/group[@string='Allocation']" position="after">
-					    <group colspan="1" col="1" string="Sale Order">
-                            <field name="total_recognized" />
-                            <field name="total_invoices_emitted" />
-                            <field name="total_invoices_billed" />
-                            <field name="rd_preliminary" />
-                        </group>
-					    <group colspan="1" col="4" string="Execution">
-                            <field name="limit_expense" />
-                            <field name="sum_expense_compromised" colspan="3" />
-                            <field name="sum_expense_compromised_percent" colspan="1" />
-                            <field name="sum_real_expense" colspan="3" />
-                            <field name="sum_real_expense_percent" colspan="1" />
-                            <field name="sum_paid_expense" colspan="3" />
-                            <field name="sum_paid_expense_percent" colspan="1" />
-                            <field name="sum_justified_expense" />
-                            <field name="sum_available_expense" colspan="3" />
-                            <field name="sum_available_expense_percent" colspan="1" />
+                	<xpath expr="//form/group[@string='Allocation']" position="replace">
+                	    <group colspan="4" >
+		                    <group colspan="1" col="2" string="Allocation">
+		                        <field name="grant" colspan="2"/>
+		                        <field name="grant_without_overheads" colspan="2"/>
+		                        <field name="overheads" colspan="2"/>
+		                        <field name="transfered" colspan="2"/>
+	                            <field name="total_allocated" colspan="1" />
+	                            <field name="total_allocated_percent" colspan="1" />
+	                            <field name="pending_allocation" colspan="1" />
+	                            <field name="pending_allocation_percent" colspan="1" />
+		                    </group>
+						    <group colspan="1" col="2" string="Sale Order">
+	                            <field name="total_recognized" />
+	                            <field name="total_invoices_emitted" />
+	                            <field name="total_invoices_billed" />
+	                            <field name="rd_preliminary" />
+	                        </group>
+						    <group colspan="1" col="4" string="Execution">
+	                            <field name="limit_expense" />
+	                            <field name="sum_expense_compromised" colspan="2" />
+	                            <field name="sum_expense_compromised_percent" colspan="1" />
+	                            <field name="sum_real_expense" colspan="2" />
+	                            <field name="sum_real_expense_percent" colspan="1" />
+	                            <field name="sum_paid_expense" colspan="2" />
+	                            <field name="sum_paid_expense_percent" colspan="1" />
+	                            <field name="sum_justified_expense" />
+	                            <field name="sum_available_expense" colspan="2" />
+	                            <field name="sum_available_expense_percent" colspan="1" />
+	                        </group>
                         </group>
                 	</xpath>
                 	<xpath expr="//tree/field[@name='grant']" position="after">
