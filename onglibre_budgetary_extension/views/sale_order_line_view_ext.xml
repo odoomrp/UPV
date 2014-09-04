@@ -24,10 +24,12 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <data>
-	                <xpath expr="//div[@name='discount']/field[@name='discount']" position="after">
-	                	<field name="partner_id" invisible="1"/>
-	                	<field name="financing_source_id" colspan="4" domain="[('res_partner_id', '=', partner_id)]" />
-	                </xpath>
+                    <label for="name" position="after">
+                        <group colspan="4">
+                            <field name="partner_id" invisible="1" colspan="4"/>
+                            <field name="financing_source_id" colspan="4" domain="[('res_partner_id', '=', partner_id)]" />
+                        </group>
+                    </label>
 	                <xpath expr="//tree[@string='Sales Order Lines']/field[@name='price_subtotal']" position="after">
 	                	<field name="financing_source_id"/>
 					</xpath>
