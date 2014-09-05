@@ -1,40 +1,300 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #	* onglibre_financial_source
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1\n"
+"Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-07 13:27+0000\n"
-"PO-Revision-Date: 2013-11-07 13:27+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2014-09-05 07:04+0000\n"
+"PO-Revision-Date: 2014-09-05 09:12+0100\n"
+"Last-Translator: Alfredo <alfredodelafuente@avanzosc.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
 #. module: onglibre_financial_source
-#: view:code.call:0
+#: selection:financing.source,availability_fund:0
+msgid "Accepted"
+msgstr "Reconocido"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+msgid "Allocation"
+msgstr "Reparto"
+
+#. module: onglibre_financial_source
+#: field:right.recognition,amount:0
+#: field:transfer.fund,amount:0
+#: field:transfer.fund.wizard,amount:0
+msgid "Amount"
+msgstr "Importe"
+
+#. module: onglibre_financial_source
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:75
+#, python-format
+msgid "Amount must be a positive number"
+msgstr "El Importe debe ser un valor positivo"
+
+#. module: onglibre_financial_source
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:95
+#, python-format
+msgid "Amount value must not be greater than minium value of Available and Pending Allocation"
+msgstr "El Importe no debe ser mayor que el mínimo entre los campos Disponible y Pendiente de Asignación"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+#: model:ir.model,name:onglibre_financial_source.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: onglibre_financial_source
+#: model:ir.model,name:onglibre_financial_source.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: onglibre_financial_source
+#: field:justification.date,account_analytic_line_ids:0
+#: view:project.project:onglibre_financial_source.edit_project_inh_finacsource
+msgid "Analytic Lines"
+msgstr "Líneas Analítica"
+
+#. module: onglibre_financial_source
+#: view:project.project:onglibre_financial_source.edit_project_inh_finacsource
+msgid "Analytic Tree"
+msgstr "Árbol Analítica"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_chart_tree
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_chart_tree2
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_tree_newfinanc
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_tree_newpresusp
+msgid "Analytic line"
+msgstr "Línea analítica"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.account,assigned:0
+#: field:account.analytic.line,assigned:0
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: onglibre_financial_source
+#: field:financing.source,availability_fund:0
+msgid "Availability Fund"
+msgstr "Sistema de Disposición de Fondos"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.account,available:0
+msgid "Available"
+msgstr "Displonible"
+
+#. module: onglibre_financial_source
+#: field:transfer.fund.wizard,available_origin:0
+msgid "Available Origin"
+msgstr "Disponible Origen"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Budgetary"
+msgstr "Presupuestario"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_form_inh_finacsource
+msgid "Budgetary Fields"
+msgstr "Campos presupuestarios"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,account_analytic_line_budgetary_id:0
+#: field:account.analytic.line,account_analytic_line_budgetary_readonly_id:0
+msgid "Budgetary Parent"
+msgstr "Budgetary Parent"
+
+#. module: onglibre_financial_source
+#: view:transfer.fund.wizard:onglibre_financial_source.transfer_fund_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: onglibre_financial_source
+#: view:expense.area:onglibre_financial_source.expense_area_form_view
+#: field:expense.area,category_ids:0
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: onglibre_financial_source
+#: selection:financing.source,availability_fund:0
+msgid "Charged"
+msgstr "Cobrado"
+
+#. module: onglibre_financial_source
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_account_analytic_line_chart
+#: model:ir.ui.menu,name:onglibre_financial_source.menu_analytic_line_chart
+msgid "Chart of Analytic Lines"
+msgstr "Arbol de línea analíticas"
+
+#. module: onglibre_financial_source
+#: help:res.partner,funder:0
+msgid "Check this box if the partner is a funder."
+msgstr "Clicar esta casilla si el cliente es un financiador."
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,child_ids:0
+msgid "Child Lines"
+msgstr "Líneas hijas"
+
+#. module: onglibre_financial_source
+#: field:code.call,code:0
+#: field:financier.fund,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: onglibre_financial_source
+#: view:code.call:onglibre_financial_source.code_call_form_view
+#: view:financing.source:onglibre_financial_source.financing_source_search_view
+#: field:financing.source,code_call_id:0
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_code_call_form
+#: model:ir.model,name:onglibre_financial_source.model_code_call
+#: model:ir.ui.menu,name:onglibre_financial_source.code_call_menu_view
+#: field:project.financing,code_call_id:0
+msgid "Code Call"
+msgstr "Código convocatoria"
+
+#. module: onglibre_financial_source
+#: view:code.call:onglibre_financial_source.code_call_tree_view
 msgid "Code Calls"
 msgstr "Código convocatoria"
 
 #. module: onglibre_financial_source
-#: view:financier.fund:0
-#: view:financing.source:0
-msgid "Group By..."
-msgstr "Agrupado por..."
+#: selection:historical.extension,state:0
+msgid "Completed"
+msgstr "Completado"
 
 #. module: onglibre_financial_source
-#: field:financing.source,account_analytic_line_ids:0
-msgid "Account Analytic Lines"
-msgstr "Account Analytic Lines"
+#: view:justification.date:onglibre_financial_source.justification_date_form_view
+msgid "Confirm"
+msgstr "Confirmar"
 
 #. module: onglibre_financial_source
-#: view:justification.date:0
-msgid "Search Justification Date"
-msgstr "Search fecha justificación"
+#: selection:justification.date,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: onglibre_financial_source
+#: field:code.call,create_uid:0
+#: field:expense.area,create_uid:0
+#: field:financier.fund,create_uid:0
+#: field:financing.source,create_uid:0
+#: field:financing.type,create_uid:0
+#: field:historical.extension,create_uid:0
+#: field:justification.date,create_uid:0
+#: field:legal.support,create_uid:0
+#: field:project.financing,create_uid:0
+#: field:right.recognition,create_uid:0
+#: field:transfer.fund,create_uid:0
+#: field:transfer.fund.wizard,create_uid:0
+msgid "Created by"
+msgstr "Creado Por"
+
+#. module: onglibre_financial_source
+#: field:code.call,create_date:0
+#: field:expense.area,create_date:0
+#: field:financier.fund,create_date:0
+#: field:financing.source,create_date:0
+#: field:financing.type,create_date:0
+#: field:historical.extension,create_date:0
+#: field:justification.date,create_date:0
+#: field:legal.support,create_date:0
+#: field:project.financing,create_date:0
+#: field:right.recognition,create_date:0
+#: field:transfer.fund,create_date:0
+#: field:transfer.fund.wizard,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: onglibre_financial_source
+#: field:right.recognition,date:0
+#: field:transfer.fund,date:0
+#: field:transfer.fund.wizard,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: onglibre_financial_source
+#: view:historical.extension:onglibre_financial_source.historical_extension_form_view
+msgid "Dates Extension"
+msgstr "Dates Extension"
+
+#. module: onglibre_financial_source
+#: selection:historical.extension,state:0
+#: view:justification.date:onglibre_financial_source.justification_date_form_view
+#: selection:justification.date,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: onglibre_financial_source
+#: field:financing.source,eligibility_date_from:0
+msgid "Eligibility Date From"
+msgstr "Elegibilidad Fecha Desde"
+
+#. module: onglibre_financial_source
+#: field:financing.source,eligibility_date_to:0
+msgid "Eligibility Date To"
+msgstr "Eligibility Fecha Hasta"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,eligibility_date_from:0
+msgid "Eligibility date from"
+msgstr "Eligibility date from"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,eligibility_date_to:0
+msgid "Eligibility date to"
+msgstr "Eligibility date to"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,eligibility_date_to_extension:0
+msgid "Eligibility date to extension"
+msgstr "Eligibility date to extension"
+
+#. module: onglibre_financial_source
+#: view:historical.extension:onglibre_financial_source.historical_extension_form_view
+msgid "Eligibility dates"
+msgstr "Eligibility dates"
+
+#. module: onglibre_financial_source
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:59
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:74
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:94
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+#: field:account.analytic.line,expense_area_id:0
+#: view:expense.area:onglibre_financial_source.expense_area_form_view
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_expense_area_form
+#: model:ir.model,name:onglibre_financial_source.model_expense_area
+#: model:ir.ui.menu,name:onglibre_financial_source.expense_area_menu_view
+#: field:project.financing,expense_area_id:0
+msgid "Expense Area"
+msgstr "Area de gasto"
+
+#. module: onglibre_financial_source
+#: view:expense.area:onglibre_financial_source.expense_area_tree_view
+#: field:product.category,expense_area_ids:0
+msgid "Expense Areas"
+msgstr "Areas de gasto"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,historical_extension_id:0
+msgid "Extension"
+msgstr "Prórroga"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,extension_reason:0
+msgid "Extension Reason"
+msgstr "Extension Reason"
 
 #. module: onglibre_financial_source
 #: constraint:financing.source:0
@@ -42,31 +302,19 @@ msgid "Field Pending Allocation must be positive"
 msgstr "Field Pending Allocation must be positive"
 
 #. module: onglibre_financial_source
-#: constraint:project.project:0
-msgid "Error! project start-date must be lower then project end-date."
-msgstr "¡Error! La fecha de inicio del proyecto debe ser anterior a la fecha final del proyecto."
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Fin. Account"
+msgstr "Cuenta financiera"
 
 #. module: onglibre_financial_source
-#: view:financier.fund:0
-#: field:financier.fund,parent_id:0
-msgid "Parent"
-msgstr "Padre"
+#: field:project.financing,financial_source_percent:0
+msgid "Financial Source %"
+msgstr "Fuente financiación %"
 
 #. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Allocation"
-msgstr "Reparto"
-
-#. module: onglibre_financial_source
-#: field:transfer.fund,reason:0
-#: field:transfer.fund.wizard,reason:0
-msgid "Reason"
-msgstr "Motivo"
-
-#. module: onglibre_financial_source
-#: view:project.financing:0
-msgid "Project Financing Information"
-msgstr "Información financiador proyecto"
+#: view:project.financing:onglibre_financial_source.project_financing_form_view
+msgid "Financial Source Information"
+msgstr "Información fuente financiación"
 
 #. module: onglibre_financial_source
 #: model:ir.actions.act_window,name:onglibre_financial_source.action_financier_fund_form
@@ -81,220 +329,45 @@ msgid "Financier Fund Expense"
 msgstr "Fondo Financiador de Gastos"
 
 #. module: onglibre_financial_source
-#: view:account.analytic.account:0
-#: view:financing.source:0
+#: field:financing.source,financier_fund_income_id:0
+msgid "Financier Fund Income"
+msgstr "Fondo Financiador de Ingresos"
+
+#. module: onglibre_financial_source
+#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:60
+#, python-format
+msgid "Financier Fund Income is own fund"
+msgstr "El Fondo Financiador de Ingresos es un Recurso Propio"
+
+#. module: onglibre_financial_source
+#: view:financier.fund:onglibre_financial_source.financier_fund_form_view
+#: view:financier.fund:onglibre_financial_source.financier_fund_tree_view
+msgid "Financier Funds"
+msgstr "Fondos Financiadores"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_search_view
+#: field:financing.source,res_partner_id:0
+#: field:project.financing,res_partner_id:0
+msgid "Financing Organism"
+msgstr "Organismo financiador"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.account:onglibre_financial_source.view_account_analytic_account_form_inh_finacsource
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: field:historical.extension,financing_source:0
 #: model:ir.actions.act_window,name:onglibre_financial_source.action_financing_source_form
 #: model:ir.model,name:onglibre_financial_source.model_financing_source
 #: model:ir.ui.menu,name:onglibre_financial_source.financing_source_menu_view
 #: model:ir.ui.menu,name:onglibre_financial_source.financing_source_menu_view2
 #: model:ir.ui.menu,name:onglibre_financial_source.menu_financing_source_management
 #: model:ir.ui.menu,name:onglibre_financial_source.menu_project_config_financing_source
-#: view:project.project:0
+#: field:justification.date,financing_source_id:0
+#: field:project.financing,financing_source_id:0
+#: view:project.project:onglibre_financial_source.edit_project_inh_finacsource
+#: field:right.recognition,financing_source_id:0
 msgid "Financing Source"
 msgstr "Fuente de financación"
-
-#. module: onglibre_financial_source
-#: view:transfer.fund.wizard:0
-msgid "Ok"
-msgstr "Ok"
-
-#. module: onglibre_financial_source
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_legal_support_form
-#: model:ir.model,name:onglibre_financial_source.model_legal_support
-#: model:ir.ui.menu,name:onglibre_financial_source.legal_support_menu_view
-#: view:legal.support:0
-msgid "Legal Support"
-msgstr "Soporte legal"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_project_project
-msgid "Project"
-msgstr "Proyecto"
-
-#. module: onglibre_financial_source
-#: field:transfer.fund,amount:0
-#: field:transfer.fund.wizard,amount:0
-msgid "Amount"
-msgstr "Importe"
-
-#. module: onglibre_financial_source
-#: view:right.recognition:0
-msgid "Search Right Recognition"
-msgstr "Busqueda reconocimiento derecho"
-
-#. module: onglibre_financial_source
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_right_recognition_form
-#: model:ir.model,name:onglibre_financial_source.model_right_recognition
-#: model:ir.ui.menu,name:onglibre_financial_source.right_recognition_menu_view
-#: view:right.recognition:0
-msgid "Right Recognition"
-msgstr "Derecho reconocido"
-
-#. module: onglibre_financial_source
-#: view:res.partner:0
-msgid "Funders"
-msgstr "Financiadores"
-
-#. module: onglibre_financial_source
-#: model:ir.actions.act_window,name:onglibre_financial_source.transfer_fund_act_window
-#: model:ir.model,name:onglibre_financial_source.model_transfer_fund
-#: model:ir.model,name:onglibre_financial_source.model_transfer_fund_wizard
-#: view:transfer.fund.wizard:0
-msgid "Transfer Fund"
-msgstr "Traspasos"
-
-#. module: onglibre_financial_source
-#: view:project.financing:0
-msgid "Financial Source Information"
-msgstr "Información fuente financiación"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_account_analytic_account
-msgid "Analytic Account"
-msgstr "Cuenta analítica"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Projects"
-msgstr "Proyectos"
-
-#. module: onglibre_financial_source
-#: field:financing.source,availability_fund:0
-#: model:ir.model,name:onglibre_financial_source.model_availability_fund
-msgid "Availability Fund"
-msgstr "Sistema de Disposición de Fondos"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_res_partner
-msgid "Partner"
-msgstr "Empresa"
-
-#. module: onglibre_financial_source
-#: view:res.partner:0
-msgid "Funder Partners"
-msgstr "Organismo financiador"
-
-#. module: onglibre_financial_source
-#: view:code.call:0
-msgid "Search Code Call"
-msgstr "Search codigo convocatoria"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Justified Expense"
-msgstr "Gasto justificado"
-
-#. module: onglibre_financial_source
-#: view:expense.area:0
-#: field:product.category,expense_area_ids:0
-msgid "Expense Areas"
-msgstr "Areas de gasto"
-
-#. module: onglibre_financial_source
-#: field:financing.source,total_allocated_percent:0
-msgid "Total Allocated %"
-msgstr "% C"
-
-#. module: onglibre_financial_source
-#: view:financier.fund:0
-msgid "Financier Funds"
-msgstr "Fondos Financiadores"
-
-#. module: onglibre_financial_source
-#: view:financier.fund:0
-msgid "Search Financier Funds"
-msgstr "Búsqueda fondo financiador"
-
-#. module: onglibre_financial_source
-#: view:transfer.fund:0
-msgid "Transfer FUnd"
-msgstr "Transfer FUnd"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-#: view:financier.fund:0
-#: field:financier.fund,type:0
-msgid "Type"
-msgstr "Tipo"
-
-#. module: onglibre_financial_source
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_account_analytic_line_chart
-#: model:ir.ui.menu,name:onglibre_financial_source.menu_analytic_line_chart
-msgid "Chart of Analytic Lines"
-msgstr "Arbol de línea analíticas"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_product_category
-msgid "Product Category"
-msgstr "Categoría de producto"
-
-#. module: onglibre_financial_source
-#: field:financing.source,transfered:0
-msgid "Transfered"
-msgstr "Traspasado"
-
-#. module: onglibre_financial_source
-#: field:financing.source,pending_allocation:0
-msgid "Pending Allocation"
-msgstr "Pendiente de Asignación"
-
-#. module: onglibre_financial_source
-#: field:financing.source,total_allocated:0
-msgid "Total Allocated"
-msgstr "Total Asignado"
-
-#. module: onglibre_financial_source
-#: selection:financing.source,availability_fund:0
-msgid "Accepted"
-msgstr "Reconocido"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-#: field:financing.source,transfer_fund_origin_id:0
-msgid "Transfer Funds Origin"
-msgstr "Traspaso de Fuentes Origen"
-
-#. module: onglibre_financial_source
-#: view:expense.area:0
-#: field:expense.area,category_ids:0
-msgid "Categories"
-msgstr "Categorías"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Historical Extension"
-msgstr "Historico prórrogas"
-
-#. module: onglibre_financial_source
-#: field:account.analytic.line,child_complete_ids:0
-msgid "Line Hierarchy"
-msgstr "Jerarquía línea"
-
-#. module: onglibre_financial_source
-#: view:right.recognition:0
-msgid "Right Recognitions"
-msgstr "Derechos reconocidos"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-#: field:financing.source,transfer_fund_target_id:0
-msgid "Transfer Funds Target"
-msgstr "Traspaso de Fuentes Destino"
-
-#. module: onglibre_financial_source
-#: constraint:account.analytic.account:0
-msgid "Error! You can not create recursive analytic accounts."
-msgstr "¡Error! No puede crear cuentas analíticas recursivas."
-
-#. module: onglibre_financial_source
-#: field:transfer.fund.wizard,pending_allocation_origin:0
-msgid "Pending Allocation Origin"
-msgstr "Pendiente de Asignación Origen"
-
-#. module: onglibre_financial_source
-#: field:financing.source,grant_without_overheads:0
-msgid "Grant Without Overheads"
-msgstr "Concedido sin Overheads"
 
 #. module: onglibre_financial_source
 #: field:transfer.fund,financing_source_origin_id:0
@@ -303,222 +376,9 @@ msgid "Financing Source Origin"
 msgstr "Fuente de Financiación Origen"
 
 #. module: onglibre_financial_source
-#: field:account.analytic.line,sum_assigned:0
-msgid "Sum Assigned"
-msgstr "Total Asignado"
-
-#. module: onglibre_financial_source
-#: field:financing.source,pending_allocation_percent:0
-msgid "Pending Allocation %"
-msgstr "% C"
-
-#. module: onglibre_financial_source
-#: field:transfer.fund.wizard,available_origin:0
-msgid "Available Origin"
-msgstr "Disponible Origen"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Parent Account"
-msgstr "Cuenta padre"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-#: view:res.partner:0
-#: field:res.partner,financing_source_ids:0
-msgid "Financing Sources"
-msgstr "Fuentes de financiación"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Search Financing Source"
-msgstr "Search fuente financiación"
-
-#. module: onglibre_financial_source
-#: view:code.call:0
-#: view:financing.source:0
-#: field:financing.source,code_call_id:0
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_code_call_form
-#: model:ir.model,name:onglibre_financial_source.model_code_call
-#: model:ir.ui.menu,name:onglibre_financial_source.code_call_menu_view
-#: field:project.financing,code_call_id:0
-msgid "Code Call"
-msgstr "Código convocatoria"
-
-#. module: onglibre_financial_source
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:63
-#, python-format
-msgid "Amount must be a positive number"
-msgstr "El Importe debe ser un valor positivo"
-
-#. module: onglibre_financial_source
-#: view:expense.area:0
-msgid "Search Expense Area"
-msgstr "Search Area gasto"
-
-#. module: onglibre_financial_source
-#: view:legal.support:0
-msgid "Legal Supports"
-msgstr "Soportes legales"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_account_analytic_line
-msgid "Analytic Line"
-msgstr "Línea analítica"
-
-#. module: onglibre_financial_source
-#: selection:financier.fund,type:0
-msgid "Normal"
-msgstr "Normal"
-
-#. module: onglibre_financial_source
-#: field:account.analytic.line,child_ids:0
-msgid "Child Lines"
-msgstr "Líneas hijas"
-
-#. module: onglibre_financial_source
-#: selection:financing.source,availability_fund:0
-msgid "Charged"
-msgstr "Cobrado"
-
-#. module: onglibre_financial_source
-#: field:financing.source,financier_fund_income_id:0
-msgid "Financier Fund Income"
-msgstr "Fondo Financiador de Ingresos"
-
-#. module: onglibre_financial_source
-#: field:financing.source,observations:0
-msgid "observations"
-msgstr "Observaciones"
-
-#. module: onglibre_financial_source
-#: field:transfer.fund,date:0
-#: field:transfer.fund.wizard,date:0
-msgid "Date"
-msgstr "Fecha"
-
-#. module: onglibre_financial_source
-#: selection:financier.fund,type:0
-msgid "View"
-msgstr "Vista"
-
-#. module: onglibre_financial_source
-#: field:financier.fund,own_fund:0
-msgid "Own Fund"
-msgstr "Recursos Propios"
-
-#. module: onglibre_financial_source
-#: view:financing.type:0
-msgid "Search Financing Type"
-msgstr "Search Financing Type"
-
-#. module: onglibre_financial_source
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:80
-#, python-format
-msgid "Amount value must not be greater than minium value of Available and Pending Allocation"
-msgstr "El Importe no debe ser mayor que el mínimo entre los campos Disponible y Pendiente de Asignación"
-
-#. module: onglibre_financial_source
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:50
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:63
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:80
-#, python-format
-msgid "Error"
-msgstr "Error"
-
-#. module: onglibre_financial_source
-#: selection:financing.source,availability_fund:0
-msgid "Granted"
-msgstr "Concedido"
-
-#. module: onglibre_financial_source
-#: field:code.call,code:0
-#: field:financier.fund,code:0
-msgid "Code"
-msgstr "Código"
-
-#. module: onglibre_financial_source
-#: model:ir.model,name:onglibre_financial_source.model_project_financing
-#: view:project.financing:0
-msgid "Project Financing"
-msgstr "Financiador proyecto"
-
-#. module: onglibre_financial_source
-#: view:project.financing:0
-msgid "General Information"
-msgstr "Información general"
-
-#. module: onglibre_financial_source
-#: view:project.financing:0
-msgid "Project Information"
-msgstr "Información proyecto"
-
-#. module: onglibre_financial_source
-#: constraint:account.analytic.line:0
-msgid "You can not create analytic line on view account."
-msgstr "No puede crear una linea analítica en una cuenta de tipo vista."
-
-#. module: onglibre_financial_source
-#: view:transfer.fund.wizard:0
-msgid "Cancel"
-msgstr "Cancelar"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-#: view:justification.date:0
-msgid "Justification Dates"
-msgstr "Fechas justificación"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Observations"
-msgstr "Observaciones"
-
-#. module: onglibre_financial_source
-#: view:financing.type:0
-msgid "Financing Types"
-msgstr "Tipos financiador"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Account"
-msgstr "Cuenta"
-
-#. module: onglibre_financial_source
-#: code:addons/onglibre_financial_source/wizard/transfer_fund.py:50
-#, python-format
-msgid "Financier Fund Income is own fund"
-msgstr "El Fondo Financiador de Ingresos es un Recurso Propio"
-
-#. module: onglibre_financial_source
-#: field:account.analytic.line,parent_line_id:0
-msgid "Parent line"
-msgstr "Línea padre"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Product"
-msgstr "Producto"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Journal"
-msgstr "Diario"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-#: view:expense.area:0
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_expense_area_form
-#: model:ir.model,name:onglibre_financial_source.model_expense_area
-#: model:ir.ui.menu,name:onglibre_financial_source.expense_area_menu_view
-#: field:project.financing,expense_area_id:0
-msgid "Expense Area"
-msgstr "Area de gasto"
-
-#. module: onglibre_financial_source
-#: field:account.analytic.line,is_project:0
-msgid "Is project"
-msgstr "Es proyecto"
+#: field:account.analytic.line,account_analytic_line_financing_source_id:0
+msgid "Financing Source Parent"
+msgstr "Financing Source Parent"
 
 #. module: onglibre_financial_source
 #: field:transfer.fund,financing_source_target_id:0
@@ -527,57 +387,16 @@ msgid "Financing Source Target"
 msgstr "Fuente de Financiación Destino"
 
 #. module: onglibre_financial_source
-#: model:ir.actions.act_window,name:onglibre_financial_source.action_justification_date_form
-#: model:ir.model,name:onglibre_financial_source.model_justification_date
-#: model:ir.ui.menu,name:onglibre_financial_source.justification_date_menu_view
-#: view:justification.date:0
-msgid "Justification Date"
-msgstr "Fecha justificación"
+#: view:financing.source:onglibre_financial_source.financing_source_tree_view
+#: field:project.project,financing_source_ids:0
+#: view:res.partner:onglibre_financial_source.view_partner_form_inh_finacsource
+#: field:res.partner,financing_source_ids:0
+msgid "Financing Sources"
+msgstr "Fuentes de financiación"
 
 #. module: onglibre_financial_source
-#: view:legal.support:0
-msgid "Search Legal Support"
-msgstr "Búsqueda soporte legal"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Analytic line"
-msgstr "Línea analítica"
-
-#. module: onglibre_financial_source
-#: field:code.call,name:0
-#: field:financier.fund,name:0
-#: field:project.financing,name:0
-msgid "Name"
-msgstr "Nombre"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Fin.Account"
-msgstr "Cuenta fin."
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Budgetary Fields"
-msgstr "Campos presupuestarios"
-
-#. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Transfer Funds"
-msgstr "Traspasos"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Financing source"
-msgstr "Fuente financiación"
-
-#. module: onglibre_financial_source
-#: view:account.analytic.line:0
-msgid "Budgetary"
-msgstr "Presupuestario"
-
-#. module: onglibre_financial_source
-#: view:financing.type:0
+#: field:financing.source,financing_type_id:0
+#: view:financing.type:onglibre_financial_source.financing_type_form_view
 #: model:ir.actions.act_window,name:onglibre_financial_source.action_financing_type_form
 #: model:ir.model,name:onglibre_financial_source.model_financing_type
 #: model:ir.ui.menu,name:onglibre_financial_source.financing_type_menu_view
@@ -585,16 +404,490 @@ msgid "Financing Type"
 msgstr "Tipo financiación"
 
 #. module: onglibre_financial_source
-#: view:project.financing:0
+#: view:financing.type:onglibre_financial_source.financing_type_tree_view
+msgid "Financing Types"
+msgstr "Tipos financiador"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Financing source"
+msgstr "Fuente financiación"
+
+#. module: onglibre_financial_source
+#: field:res.partner,funder:0
+msgid "Funder"
+msgstr "Financiador"
+
+#. module: onglibre_financial_source
+#: view:res.partner:onglibre_financial_source.view_res_partner_filter_inh_finacsource
+msgid "Funder Partners"
+msgstr "Organismo financiador"
+
+#. module: onglibre_financial_source
+#: field:financing.source,funder_record_code:0
+#: field:project.financing,funder_record_code:0
+msgid "Funder Record Code"
+msgstr "Funder Record Code"
+
+#. module: onglibre_financial_source
+#: view:res.partner:onglibre_financial_source.view_res_partner_filter_inh_finacsource
+msgid "Funders"
+msgstr "Financiadores"
+
+#. module: onglibre_financial_source
+#: view:project.financing:onglibre_financial_source.project_financing_form_view
+msgid "General Information"
+msgstr "Información general"
+
+#. module: onglibre_financial_source
+#: field:financing.source,grant:0
+#: field:project.financing,grant:0
+msgid "Grant"
+msgstr "Reconocido"
+
+#. module: onglibre_financial_source
+#: field:financing.source,grant_date:0
+#: field:historical.extension,grant_date:0
+msgid "Grant Date"
+msgstr "Grant Date"
+
+#. module: onglibre_financial_source
+#: field:financing.source,grant_without_overheads:0
+msgid "Grant Without Overheads"
+msgstr "Concedido sin Overheads"
+
+#. module: onglibre_financial_source
+#: selection:financing.source,availability_fund:0
+#: selection:historical.extension,state:0
+msgid "Granted"
+msgstr "Concedido"
+
+#. module: onglibre_financial_source
+#: view:financier.fund:onglibre_financial_source.financier_fund_search_view
+#: view:financing.source:onglibre_financial_source.financing_source_search_view
+msgid "Group By..."
+msgstr "Agrupado por..."
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: view:historical.extension:onglibre_financial_source.historical_extension_tree_view
+msgid "Historical Extension"
+msgstr "Historico prórrogas"
+
+#. module: onglibre_financial_source
+#: field:financing.source,historical_extension_ids:0
+msgid "Historical_Extension"
+msgstr "Historical_Extension"
+
+#. module: onglibre_financial_source
+#: field:code.call,id:0
+#: field:expense.area,id:0
+#: field:financier.fund,id:0
+#: field:financing.source,id:0
+#: field:financing.type,id:0
+#: field:historical.extension,id:0
+#: field:justification.date,id:0
+#: field:legal.support,id:0
+#: field:project.financing,id:0
+#: field:right.recognition,id:0
+#: field:transfer.fund,id:0
+#: field:transfer.fund.wizard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.account,imputed:0
+msgid "Imputed"
+msgstr "Imputed"
+
+#. module: onglibre_financial_source
+#: selection:historical.extension,state:0
+msgid "In Progress"
+msgstr "In Progress"
+
+#. module: onglibre_financial_source
+#: view:res.partner:onglibre_financial_source.view_partner_form_inh_finacsource
+msgid "Internal Notes"
+msgstr "Notas internas"
+
+#. module: onglibre_financial_source
+#: field:right.recognition,invoice:0
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,is_project:0
+msgid "Is project"
+msgstr "Es proyecto"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Journal"
+msgstr "Diario"
+
+#. module: onglibre_financial_source
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_justification_date_form
+#: model:ir.model,name:onglibre_financial_source.model_justification_date
+#: model:ir.ui.menu,name:onglibre_financial_source.justification_date_menu_view
+#: view:justification.date:onglibre_financial_source.justification_date_form_view
+#: field:justification.date,date:0
+msgid "Justification Date"
+msgstr "Fecha justificación"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,justification_date_ids:0
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: field:financing.source,justification_date_ids:0
+#: view:justification.date:onglibre_financial_source.justification_date_tree_view
+msgid "Justification Dates"
+msgstr "Fechas justificación"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.account,justified:0
+msgid "Justified"
+msgstr "Justified"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_form_inh_finacsource
+msgid "Justified Expense"
+msgstr "Gasto justificado"
+
+#. module: onglibre_financial_source
+#: field:code.call,write_uid:0
+#: field:expense.area,write_uid:0
+#: field:financier.fund,write_uid:0
+#: field:financing.source,write_uid:0
+#: field:financing.type,write_uid:0
+#: field:historical.extension,write_uid:0
+#: field:justification.date,write_uid:0
+#: field:legal.support,write_uid:0
+#: field:project.financing,write_uid:0
+#: field:right.recognition,write_uid:0
+#: field:transfer.fund,write_uid:0
+#: field:transfer.fund.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: onglibre_financial_source
+#: field:code.call,write_date:0
+#: field:expense.area,write_date:0
+#: field:financier.fund,write_date:0
+#: field:financing.source,write_date:0
+#: field:financing.type,write_date:0
+#: field:historical.extension,write_date:0
+#: field:justification.date,write_date:0
+#: field:legal.support,write_date:0
+#: field:project.financing,write_date:0
+#: field:right.recognition,write_date:0
+#: field:transfer.fund,write_date:0
+#: field:transfer.fund.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: onglibre_financial_source
+#: field:financing.source,legal_support_id:0
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_legal_support_form
+#: model:ir.model,name:onglibre_financial_source.model_legal_support
+#: model:ir.ui.menu,name:onglibre_financial_source.legal_support_menu_view
+#: view:legal.support:onglibre_financial_source.legal_support_form_view
+msgid "Legal Support"
+msgstr "Soporte legal"
+
+#. module: onglibre_financial_source
+#: view:legal.support:onglibre_financial_source.legal_support_tree_view
+msgid "Legal Supports"
+msgstr "Soportes legales"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,child_complete_ids:0
+msgid "Line Hierarchy"
+msgstr "Jerarquía línea"
+
+#. module: onglibre_financial_source
+#: field:code.call,name:0
+#: field:expense.area,name:0
+#: field:financier.fund,name:0
+#: field:financing.source,name:0
+#: field:financing.type,name:0
+#: field:justification.date,name:0
+#: field:legal.support,name:0
+#: field:project.financing,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: onglibre_financial_source
+#: selection:financier.fund,type:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: onglibre_financial_source
+#: field:financing.source,overheads:0
+#: field:project.financing,overheads:0
+msgid "Overheads"
+msgstr "Overheads"
+
+#. module: onglibre_financial_source
+#: field:financier.fund,own_fund:0
+msgid "Own Fund"
+msgstr "Recursos Propios"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.account,paid:0
+#: field:account.analytic.line,paid:0
+msgid "Paid"
+msgstr "Paid"
+
+#. module: onglibre_financial_source
+#: view:financier.fund:onglibre_financial_source.financier_fund_search_view
+#: field:financier.fund,parent_id:0
+msgid "Parent"
+msgstr "Padre"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Parent Account"
+msgstr "Cuenta padre"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,account_parent_id:0
+msgid "Parent account"
+msgstr "Parent account"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,parent_line_id:0
+msgid "Parent line"
+msgstr "Línea padre"
+
+#. module: onglibre_financial_source
+#: model:ir.model,name:onglibre_financial_source.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: onglibre_financial_source
+#: field:financing.source,pending_allocation:0
+msgid "Pending Allocation"
+msgstr "Pendiente de Asignación"
+
+#. module: onglibre_financial_source
+#: field:transfer.fund.wizard,pending_allocation_origin:0
+msgid "Pending Allocation Origin"
+msgstr "Pendiente de Asignación Origen"
+
+#. module: onglibre_financial_source
+#: field:project.financing,priority:0
+msgid "Priority"
+msgstr "Priority"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+msgid "Product"
+msgstr "Producto"
+
+#. module: onglibre_financial_source
+#: model:ir.model,name:onglibre_financial_source.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+#: model:ir.model,name:onglibre_financial_source.model_project_project
+#: field:project.financing,project_id:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: onglibre_financial_source
+#: field:project.financing,project_percent:0
+msgid "Project %"
+msgstr "Proyecto %"
+
+#. module: onglibre_financial_source
+#: model:ir.model,name:onglibre_financial_source.model_project_financing
+#: view:project.financing:onglibre_financial_source.project_financing_form_view
+#: view:project.financing:onglibre_financial_source.project_financing_tree_view
+msgid "Project Financing"
+msgstr "Financiador proyecto"
+
+#. module: onglibre_financial_source
+#: view:project.financing:onglibre_financial_source.project_financing_form_view
+msgid "Project Financing Information"
+msgstr "Información financiador proyecto"
+
+#. module: onglibre_financial_source
+#: view:project.financing:onglibre_financial_source.project_financing_form_view
+msgid "Project Information"
+msgstr "Información proyecto"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: field:financing.source,project_ids:0
+msgid "Projects"
+msgstr "Proyectos"
+
+#. module: onglibre_financial_source
+#: field:transfer.fund,reason:0
+#: field:transfer.fund.wizard,reason:0
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: onglibre_financial_source
+#: selection:historical.extension,state:0
+msgid "Rejected"
+msgstr "Rejected"
+
+#. module: onglibre_financial_source
+#: field:historical.extension,request_date:0
+msgid "Request Date"
+msgstr "Request Date"
+
+#. module: onglibre_financial_source
+#: view:historical.extension:onglibre_financial_source.historical_extension_form_view
+msgid "Request Extension"
+msgstr "Request Extension"
+
+#. module: onglibre_financial_source
+#: model:ir.actions.act_window,name:onglibre_financial_source.action_right_recognition_form
+#: model:ir.model,name:onglibre_financial_source.model_right_recognition
+#: model:ir.ui.menu,name:onglibre_financial_source.right_recognition_menu_view
+#: view:right.recognition:onglibre_financial_source.right_recognition_form_view
+msgid "Right Recognition"
+msgstr "Derecho reconocido"
+
+#. module: onglibre_financial_source
+#: field:financing.source,right_recognition_ids:0
+#: view:right.recognition:onglibre_financial_source.right_recognition_tree_view
+msgid "Right Recognitions"
+msgstr "Derechos reconocidos"
+
+#. module: onglibre_financial_source
+#: view:code.call:onglibre_financial_source.code_call_search_view
+msgid "Search Code Call"
+msgstr "Search codigo convocatoria"
+
+#. module: onglibre_financial_source
+#: view:expense.area:onglibre_financial_source.expense_area_search_view
+msgid "Search Expense Area"
+msgstr "Search Area gasto"
+
+#. module: onglibre_financial_source
+#: view:financier.fund:onglibre_financial_source.financier_fund_search_view
+msgid "Search Financier Funds"
+msgstr "Búsqueda fondo financiador"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_search_view
+msgid "Search Financing Source"
+msgstr "Search fuente financiación"
+
+#. module: onglibre_financial_source
+#: view:financing.type:onglibre_financial_source.financing_type_search_view
+msgid "Search Financing Type"
+msgstr "Search Financing Type"
+
+#. module: onglibre_financial_source
+#: view:justification.date:onglibre_financial_source.justification_date_search_view
+msgid "Search Justification Date"
+msgstr "Search fecha justificación"
+
+#. module: onglibre_financial_source
+#: view:legal.support:onglibre_financial_source.legal_support_search_view
+msgid "Search Legal Support"
+msgstr "Búsqueda soporte legal"
+
+#. module: onglibre_financial_source
+#: view:project.financing:onglibre_financial_source.project_financing_search_view
 msgid "Search Project Financing"
 msgstr "Buscar financiador proyecto"
 
 #. module: onglibre_financial_source
-#: view:financing.source:0
-msgid "Financing Organism"
-msgstr "Organismo financiador"
+#: view:right.recognition:onglibre_financial_source.right_recognition_search_view
+msgid "Search Right Recognition"
+msgstr "Busqueda reconocimiento derecho"
 
 #. module: onglibre_financial_source
-#: constraint:product.category:0
-msgid "Error ! You cannot create recursive categories."
-msgstr "¡Error! No puede crear categorías recursivas"
+#: field:historical.extension,state:0
+#: field:justification.date,state:0
+msgid "State"
+msgstr "State"
+
+#. module: onglibre_financial_source
+#: field:account.analytic.line,sum_assigned:0
+msgid "Sum Assigned"
+msgstr "Total Asignado"
+
+#. module: onglibre_financial_source
+#: field:financing.source,total_allocated:0
+msgid "Total Allocated"
+msgstr "Total Asignado"
+
+#. module: onglibre_financial_source
+#: view:transfer.fund:onglibre_financial_source.transfer_fund_form_view
+msgid "Transfer FUnd"
+msgstr "Transfer FUnd"
+
+#. module: onglibre_financial_source
+#: model:ir.actions.act_window,name:onglibre_financial_source.transfer_fund_act_window
+#: model:ir.model,name:onglibre_financial_source.model_transfer_fund
+#: model:ir.model,name:onglibre_financial_source.model_transfer_fund_wizard
+#: view:transfer.fund.wizard:onglibre_financial_source.transfer_fund_wizard
+msgid "Transfer Fund"
+msgstr "Traspasos"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+msgid "Transfer Funds"
+msgstr "Traspasos"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: field:financing.source,transfer_fund_origin_ids:0
+msgid "Transfer Funds Origin"
+msgstr "Traspaso de Fuentes Origen"
+
+#. module: onglibre_financial_source
+#: view:financing.source:onglibre_financial_source.financing_source_form_view
+#: field:financing.source,transfer_fund_target_ids:0
+msgid "Transfer Funds Target"
+msgstr "Traspaso de Fuentes Destino"
+
+#. module: onglibre_financial_source
+#: field:financing.source,transfered:0
+msgid "Transfered"
+msgstr "Traspasado"
+
+#. module: onglibre_financial_source
+#: view:account.analytic.line:onglibre_financial_source.view_account_analytic_line_search_inh_finacsource
+#: view:financier.fund:onglibre_financial_source.financier_fund_search_view
+#: field:financier.fund,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: onglibre_financial_source
+#: selection:financier.fund,type:0
+msgid "View"
+msgstr "Vista"
+
+#. module: onglibre_financial_source
+#: field:project.financing,amount_awarded:0
+msgid "amount_awarded"
+msgstr "amount_awarded"
+
+#. module: onglibre_financial_source
+#: field:expense.area,habitual_use:0
+msgid "habitual use"
+msgstr "Uso habitual"
+
+#. module: onglibre_financial_source
+#: view:historical.extension:onglibre_financial_source.historical_extension_form_view
+msgid "historical Extension"
+msgstr "historical Extension"
+
+#. module: onglibre_financial_source
+#: field:financing.source,observations:0
+msgid "observations"
+msgstr "Observaciones"
+

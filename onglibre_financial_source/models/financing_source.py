@@ -155,7 +155,7 @@ class FinancingSource(orm.Model):
         # Total Asignado % = total_allocated / grant * 100
         'total_allocated_percent':
             fields.function(_calc_total_allocated_percent, method=True,
-                            string='Total Allocated %', type="float",
+                            string='%', type="float",
                             store=False),
         # Pendiente Asignación = grant - total_allocated
         'pending_allocation':
@@ -165,7 +165,7 @@ class FinancingSource(orm.Model):
         # Pendiente Asignación % = pending_allocation / grant * 100
         'pending_allocation_percent':
             fields.function(_calc_pending_allocation_percent, method=True,
-                            string='Pending Allocation %', type="float",
+                            string='%', type="float",
                             store=False),
         # Reconocimientos de derecho
         'right_recognition_ids':
