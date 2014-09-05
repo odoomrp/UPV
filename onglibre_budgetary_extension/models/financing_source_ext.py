@@ -203,7 +203,9 @@ class financing_source(orm.Model):
             digits_compute=dp.get_precision('Sale Price'), readonly=True),
         # RD Preliminar = Check que indica si la línea de pedido de venta
         # modifica automáticamente el valor del Concedido sin overheads.
-        'rd_preliminary': fields.boolean('RD Preliminary'),
+        'rd_preliminary': fields.boolean('RD Preliminary',
+                                         help='RD Preliminar modifica campo'
+                                         ' concedido sin Overheads'),
         # Límite de Gastos = campo calculado de acuerdo al “Sistema de
         # disposición de fondos”.
         # Si concedido: Concedido.

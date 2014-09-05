@@ -1,377 +1,55 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #	* onglibre_budgetary_extension
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1\n"
+"Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-06 12:09+0000\n"
-"PO-Revision-Date: 2013-11-06 12:09+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2014-09-05 07:14+0000\n"
+"PO-Revision-Date: 2014-09-05 09:21+0100\n"
+"Last-Translator: Alfredo <alfredodelafuente@avanzosc.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-
-#. module: onglibre_budgetary_extension
-#: view:project.financing:0
-#: view:sale.order:0
-msgid "Group By..."
-msgstr "Agrupar por..."
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Recreate Invoice"
-msgstr "Volver a Crear factura"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Make Invoices"
-msgstr "Realizar facturas"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "To Invoice"
-msgstr "Para facturar"
-
-#. module: onglibre_budgetary_extension
-#: constraint:project.project:0
-msgid "Error! project start-date must be lower then project end-date."
-msgstr "¡Error! La fecha de inicio del proyecto debe ser anterior a la fecha final del proyecto."
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "UoS"
-msgstr "UdV"
-
-#. module: onglibre_budgetary_extension
-#: field:project.financing,sum_expense_budget:0
-msgid "Expense Budget"
-msgstr "Presupuesto gasto"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Set to Draft"
-msgstr "Cambiar a borrador"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Cancel Order"
-msgstr "Cancelar pedido"
-
-#. module: onglibre_budgetary_extension
-#: field:account.invoice,financing_source_id:0
-#: field:account.invoice.line,financing_source_id:0
-#: model:ir.model,name:onglibre_budgetary_extension.model_financing_source
-#: view:project.financing:0
-#: field:sale.order.line,financing_source_id:0
-msgid "Financing Source"
-msgstr "Fuente Financiación"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Notes"
-msgstr "Notas"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: model:ir.actions.act_window,name:onglibre_budgetary_extension.act_financingsource_saleorder_opened
-msgid "Sale Order"
-msgstr "Pedido Venta"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Taxes"
-msgstr "Impuestos"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.model,name:onglibre_budgetary_extension.model_project_project
-msgid "Project"
-msgstr "Proyecto"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Sales Order ready to be invoiced"
-msgstr "Pedidos preparados para ser facturados"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.actions.act_window,name:onglibre_budgetary_extension.action_order_form5
-#: model:ir.ui.menu,name:onglibre_budgetary_extension.menu_sale_order
-msgid "Sales Orders With Simulation Cost"
-msgstr "Pedidos con simulación coste"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,total_invoices_emitted:0
-msgid "Total Invoices Emitted"
-msgstr "Total RD"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,total_invoices_billed:0
-msgid "Total Invoices Billed"
-msgstr "Total Cobrado"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Extra Info"
-msgstr "Información extra"
-
-#. module: onglibre_budgetary_extension
-#: field:sale.order.line,partner_id:0
-msgid "Partner"
-msgstr "Cliente"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.model,name:onglibre_budgetary_extension.model_sale_order
-#: view:sale.order:0
-msgid "Sales Order"
-msgstr "Pedido de venta"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Order Line"
-msgstr "Línea del pedido"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_paid_expense_percent:0
-msgid "Paid Expense %"
-msgstr "% GR"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.actions.act_window,help:onglibre_budgetary_extension.action_order_form5
-msgid "Sales Orders help you manage quotations and orders from your customers. OpenERP suggests that you start by creating a quotation. Once it is confirmed, the quotation will be converted into a Sales Order. OpenERP can handle several types of products so that a sales order may trigger tasks, delivery orders, manufacturing orders, purchases and so on. Based on the configuration of the sales order, a draft invoice will be generated so that you just have to confirm it when you want to bill your customer."
-msgstr "Los pedidos de ventas le ayudan a gestionar presupuestos y pedidos de sus clientes. OpenERP sugiere que comience por crear un presupuesto. Una vez esté confirmado, el presupuesto se convertirá en un pedido de venta. OpenERP puede gestionar varios tipos de productos de forma que un pedido de venta puede generar tareas, órdenes de entrega, órdenes de fabricación, compras, etc. Según la configuración del pedido de venta, se generará una factura en borrador de manera que sólo hay que confirmarla cuando se quiera facturar a su cliente."
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_justified_expense:0
-#: field:project.financing,sum_justified_expense:0
-msgid "Justified Expense"
-msgstr "Justificado"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "State"
-msgstr "State"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: field:financing.source,account_invoice_line_ids:0
-#: view:sale.order:0
-msgid "Invoice Lines"
-msgstr "Líneas de Factura"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Untaxed amount"
-msgstr "Base imponible"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "My Sale Orders"
-msgstr "Mis pedidos de venta"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Sales Order Lines"
-msgstr "Líneas pedido de ventas"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Qty(UoM)"
-msgstr "Cantidad (UdM)"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: field:financing.source,account_invoice_ids:0
-#: view:sale.order:0
-msgid "Invoices"
-msgstr "Facturas"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Confirm Order"
-msgstr "Confirmar pedido"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Print Quotation"
-msgstr "Imprimir presupuesto"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Other Information"
-msgstr "Otra información"
-
-#. module: onglibre_budgetary_extension
-#: field:project.financing,sum_remainder:0
-msgid "Remainder"
-msgstr "Remanente"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,historical_extension_ids:0
-msgid "Historical_Extension"
-msgstr "Historical_Extension"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Dates"
-msgstr "Fechas"
-
-#. module: onglibre_budgetary_extension
-#: field:historical.extension,historical_extension_id:0
-msgid "Extension"
-msgstr "Prórroga"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_paid_expense:0
-#: field:project.financing,sum_paid_expense:0
-msgid "Paid Expense"
-msgstr "Pagado"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Order Date"
-msgstr "Fecha pedido"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Print Order"
-msgstr "Imprimir pedido"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Recreate Packing"
-msgstr "Recrear albarán"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Simulation Costs"
-msgstr "Simulación de Costes"
 
 #. module: onglibre_budgetary_extension
 #: field:project.financing,percentage_total_invoices_billed:0
 msgid "% Total Invoices Billed"
-msgstr "% Total Invoices Billed"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,limit_expense:0
-msgid "Limit Expense"
-msgstr "(LG) Límite de Gastos"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_expense_compromised_percent:0
-msgid "Expense Compromised %"
-msgstr "% LG"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.model,name:onglibre_budgetary_extension.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Línea factura"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.model,name:onglibre_budgetary_extension.model_sale_order_line
-msgid "Sales Order Line"
-msgstr "Línea pedido de venta"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.model,name:onglibre_budgetary_extension.model_historical_extension
-msgid "historical.extension"
-msgstr "historical.extension"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_expense_compromised:0
-#: field:project.financing,sum_expense_compromised:0
-msgid "Expense Compromised"
-msgstr "Comprometido"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Salesman"
-msgstr "Comercial"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Stock Moves"
-msgstr "Movimientos de stock"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Advance Invoice"
-msgstr "Avanzar factura"
-
-#. module: onglibre_budgetary_extension
-#: field:project.financing,sum_updated_expense_budget:0
-msgid "Updated Expense Budget"
-msgstr "Actualizado"
+msgstr "% Total Fact. Facturadas"
 
 #. module: onglibre_budgetary_extension
 #: field:project.financing,percentage_total_invoices_emitted:0
 msgid "% Total Invoices Emitted"
-msgstr "% Total Invoices Emitted"
+msgstr "% Total Fact. Emitidas"
+
+#. module: onglibre_budgetary_extension
+#: field:project.financing,percentage_total_recognized:0
+msgid "% Total Recognized"
+msgstr "% Total Reconocido"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "(update)"
+msgstr "(actualizar)"
 
 #. module: onglibre_budgetary_extension
 #: model:ir.model,name:onglibre_budgetary_extension.model_account_move_reconcile
 msgid "Account Reconciliation"
-msgstr "Conciliación contable"
+msgstr "Contabilidad. Conciliación"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Conditions"
-msgstr "Condiciones"
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Allocation"
+msgstr "Reparto"
 
 #. module: onglibre_budgetary_extension
-#: view:account.invoice:0
-#: view:financing.source:0
-msgid "Untaxed Amount"
-msgstr "Base imponible"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Packings"
-msgstr "Albaranes"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,total_recognized:0
-msgid "Total Recognized"
-msgstr "Total RD Preliminar"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Create Final Invoice"
-msgstr "Crear factura final"
-
-#. module: onglibre_budgetary_extension
-#: view:account.invoice:0
-#: view:financing.source:0
-msgid "Total Amount"
-msgstr "Importe total"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: view:sale.order:0
-msgid "Sales Orders"
-msgstr "Pedidos venta"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-msgid "Execution"
-msgstr "Ejecución"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Properties"
-msgstr "Propiedades"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Compute"
-msgstr "Calcular"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,sum_available_expense_percent:0
-msgid "Available Expense %"
-msgstr "% LG"
+#: view:account.invoice:onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Approve"
+msgstr "Aprobar"
 
 #. module: onglibre_budgetary_extension
 #: field:financing.source,sum_available_expense:0
@@ -380,124 +58,60 @@ msgid "Available Expense"
 msgstr "Disponible"
 
 #. module: onglibre_budgetary_extension
+#: field:financing.source,sum_available_expense_percent:0
+msgid "Available Expense %"
+msgstr "% LG"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Cancel Order"
+msgstr "Cancelar pedido"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Cancel Quotation"
+msgstr "Cancel Quotation"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Confirm Sale"
+msgstr "Confirmar venta"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Create Invoice"
+msgstr "Crear factura"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Execution"
+msgstr "Ejecución"
+
+#. module: onglibre_budgetary_extension
 #: field:account.invoice,expedient_serpa:0
 msgid "Expedient SERPA"
 msgstr "Expedient SERPA"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Quotations"
-msgstr "Presupuestos"
+#: field:project.financing,sum_expense_budget:0
+msgid "Expense Budget"
+msgstr "Presupuesto gasto"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "History"
-msgstr "Historial"
+#: field:financing.source,sum_expense_compromised:0
+#: field:project.financing,sum_expense_compromised:0
+msgid "Expense Compromised"
+msgstr "Comprometido"
 
 #. module: onglibre_budgetary_extension
-#: sql_constraint:account.invoice:0
-msgid "Invoice Number must be unique per Company!"
-msgstr "¡El número de factura debe ser único por compañía!"
-
-#. module: onglibre_budgetary_extension
-#: view:account.invoice:0
-#: view:financing.source:0
-msgid "Residual Amount"
-msgstr "Residual"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Sales"
-msgstr "Ventas"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Sales Order that haven't yet been confirmed"
-msgstr "Pedidos de venta sin confirmar"
-
-#. module: onglibre_budgetary_extension
-#: model:ir.actions.act_window,name:onglibre_budgetary_extension.action_project_financing_form_view_budgetary3
-#: model:ir.model,name:onglibre_budgetary_extension.model_project_financing
-#: model:ir.ui.menu,name:onglibre_budgetary_extension.project_financing_menu_view
-#: view:project.financing:0
-msgid "Project Financing"
-msgstr "Financiación de proyectos"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Project Financer"
-msgstr "Financiador proyecto"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "References"
-msgstr "Referencias"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "UoM"
-msgstr "UdM"
-
-#. module: onglibre_budgetary_extension
-#: view:account.invoice:0
-#: view:financing.source:0
-#: model:ir.actions.act_window,name:onglibre_budgetary_extension.act_financingsource_accountinvoice_opened
-#: model:ir.model,name:onglibre_budgetary_extension.model_account_invoice
-msgid "Invoice"
-msgstr "Factura"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: field:financing.source,sale_order_ids:0
-msgid "Sale Orders"
-msgstr "Pedidos de Venta"
-
-#. module: onglibre_budgetary_extension
-#: field:project.financing,percentage_total_recognized:0
-msgid "% Total Recognized"
-msgstr "% Total Reconocido"
-
-#. module: onglibre_budgetary_extension
-#: sql_constraint:sale.order:0
-msgid "Order Reference must be unique per Company!"
-msgstr "¡La referencia del pedido debe ser única por compañía!"
-
-#. module: onglibre_budgetary_extension
-#: field:financing.source,rd_preliminary:0
-msgid "RD Preliminary"
-msgstr "RD preliminar modifica campo concedido sin Overheads"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: view:sale.order:0
-msgid "Total Tax Excluded"
-msgstr "Total sin impuestos"
-
-#. module: onglibre_budgetary_extension
-#: field:account.invoice,serpa_date:0
-msgid "SERPA Date"
-msgstr "Fecha SERPA"
-
-#. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: field:financing.source,sale_order_line_ids:0
-msgid "Sale Orders Lines"
-msgstr "Líneas Pedidos Venta"
-
-#. module: onglibre_budgetary_extension
-#: field:account.invoice,rd_serpa:0
-msgid "RD SERPA"
-msgstr "RD SERPA"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Customer"
-msgstr "Cliente"
-
-#. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Logistic"
-msgstr "Logística"
+#: field:financing.source,sum_expense_compromised_percent:0
+msgid "Expense Compromised %"
+msgstr "% LG"
 
 #. module: onglibre_budgetary_extension
 #: field:project.financing,sum_expense_request:0
@@ -505,41 +119,157 @@ msgid "Expense Request"
 msgstr "Solicitado"
 
 #. module: onglibre_budgetary_extension
-#: view:account.invoice:0
-#: view:financing.source:0
-msgid "Approve"
-msgstr "Aprobar"
+#: field:account.invoice,financing_source_id:0
+#: field:account.invoice.line,financing_source_id:0
+#: model:ir.model,name:onglibre_budgetary_extension.model_financing_source
+#: view:project.financing:onglibre_budgetary_extension.project_financing_search_view
+#: field:sale.order.line,financing_source_id:0
+msgid "Financing Source"
+msgstr "Fuente Financiación"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Search Sales Order"
-msgstr "Buscar pedido de venta"
+#: view:project.financing:onglibre_budgetary_extension.project_financing_search_view
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Group By..."
+msgstr "Agrupar por..."
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
 msgid "Ignore Exception"
 msgstr "Ignorar excepción"
 
 #. module: onglibre_budgetary_extension
-#: view:project.financing:0
-msgid "Search Project Financing"
-msgstr "Buscar financiador proyecto"
+#: view:account.invoice:onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: model:ir.actions.act_window,name:onglibre_budgetary_extension.act_financingsource_accountinvoice_opened
+#: model:ir.model,name:onglibre_budgetary_extension.model_account_invoice
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Invoice"
+msgstr "Factura"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "States"
-msgstr "Estados"
+#: model:ir.model,name:onglibre_budgetary_extension.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
 
 #. module: onglibre_budgetary_extension
-#: view:sale.order:0
-msgid "Qty(UoS)"
-msgstr "Cantidad (UdV)"
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: field:financing.source,account_invoice_line_ids:0
+msgid "Invoice Lines"
+msgstr "Líneas de Factura"
 
 #. module: onglibre_budgetary_extension
-#: view:financing.source:0
-#: view:sale.order:0
-msgid "Total Tax Included"
-msgstr "Total con impuestos"
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: field:financing.source,account_invoice_ids:0
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,sum_justified_expense:0
+#: field:project.financing,sum_justified_expense:0
+msgid "Justified Expense"
+msgstr "Justificado"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,limit_expense:0
+msgid "Limit Expense"
+msgstr "(LG) Límite de Gastos"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "My Sale Orders"
+msgstr "Mis pedidos de venta"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "New Copy of Quotation"
+msgstr "Nueva copia de presupuesto"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Order Date"
+msgstr "Fecha pedido"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Order Lines"
+msgstr "Líneas del pedido"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_tree_budgetaryext1
+msgid "Order Number"
+msgstr "Número de pedido"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Other Information"
+msgstr "Otra información"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,sum_paid_expense:0
+#: field:project.financing,sum_paid_expense:0
+msgid "Paid Expense"
+msgstr "Pagado"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,sum_paid_expense_percent:0
+msgid "Paid Expense %"
+msgstr "% GR"
+
+#. module: onglibre_budgetary_extension
+#: field:sale.order.line,partner_id:0
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.model,name:onglibre_budgetary_extension.model_project_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter_inh_budgetary_ext
+msgid "Project Financer"
+msgstr "Financiador proyecto"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.actions.act_window,name:onglibre_budgetary_extension.action_project_financing_form_view_budgetary3
+#: model:ir.model,name:onglibre_budgetary_extension.model_project_financing
+#: model:ir.ui.menu,name:onglibre_budgetary_extension.project_financing_menu_view
+#: view:project.financing:onglibre_budgetary_extension.project_financing_tree_view_budgetary2
+msgid "Project Financing"
+msgstr "Financiación de proyectos"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Quotations"
+msgstr "Presupuestos"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,rd_preliminary:0
+msgid "RD Preliminary"
+msgstr "RD Preliminar"
+
+#. module: onglibre_budgetary_extension
+#: field:account.invoice,rd_serpa:0
+msgid "RD SERPA"
+msgstr "RD SERPA"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,sum_real_expense:0
+#: field:project.financing,sum_real_expense:0
+msgid "Real Expense"
+msgstr "(GR) Gasto Real"
 
 #. module: onglibre_budgetary_extension
 #: field:financing.source,sum_real_expense_percent:0
@@ -547,7 +277,184 @@ msgid "Real Expense %"
 msgstr "% LG"
 
 #. module: onglibre_budgetary_extension
-#: field:financing.source,sum_real_expense:0
-#: field:project.financing,sum_real_expense:0
-msgid "Real Expense"
-msgstr "(GR) Gasto Real"
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Recreate Invoice"
+msgstr "Volver a Crear factura"
+
+#. module: onglibre_budgetary_extension
+#: field:project.financing,sum_remainder:0
+msgid "Remainder"
+msgstr "Remanente"
+
+#. module: onglibre_budgetary_extension
+#: view:account.invoice:onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Residual Amount"
+msgstr "Importe residual"
+
+#. module: onglibre_budgetary_extension
+#: field:account.invoice,serpa_date:0
+msgid "SERPA Date"
+msgstr "Fecha SERPA"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: model:ir.actions.act_window,name:onglibre_budgetary_extension.act_financingsource_saleorder_opened
+msgid "Sale Order"
+msgstr "Pedido Venta"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: field:financing.source,sale_order_ids:0
+msgid "Sale Orders"
+msgstr "Pedidos de Venta"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: field:financing.source,sale_order_line_ids:0
+msgid "Sale Orders Lines"
+msgstr "Líneas Pedidos Venta"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.model,name:onglibre_budgetary_extension.model_sale_order
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.model,name:onglibre_budgetary_extension.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Sales Order Lines"
+msgstr "Líneas pedido de ventas"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Sales Order ready to be invoiced"
+msgstr "Pedidos preparados para ser facturados"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Sales Order that haven't yet been confirmed"
+msgstr "Pedidos de venta sin confirmar"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: view:sale.order:onglibre_budgetary_extension.sale_order_tree_budgetary_ext
+#: view:sale.order:onglibre_budgetary_extension.view_order_tree_budgetaryext1
+msgid "Sales Orders"
+msgstr "Pedidos venta"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.actions.act_window,name:onglibre_budgetary_extension.action_order_form5
+#: model:ir.ui.menu,name:onglibre_budgetary_extension.menu_sale_order
+msgid "Sales Orders With Simulation Cost"
+msgstr "Pedidos con simulación coste"
+
+#. module: onglibre_budgetary_extension
+#: model:ir.actions.act_window,help:onglibre_budgetary_extension.action_order_form5
+msgid "Sales Orders help you manage quotations and orders from your customers. OpenERP suggests that you start by creating a quotation. Once it is confirmed, the quotation will be converted into a Sales Order. OpenERP can handle several types of products so that a sales order may trigger tasks, delivery orders, manufacturing orders, purchases and so on. Based on the configuration of the sales order, a draft invoice will be generated so that you just have to confirm it when you want to bill your customer."
+msgstr "Los pedidos de ventas le ayudan a gestionar presupuestos y pedidos de sus clientes. OpenERP sugiere que comience por crear un presupuesto. Una vez esté confirmado, el presupuesto se convertirá en un pedido de venta. OpenERP puede gestionar varios tipos de productos de forma que un pedido de venta puede generar tareas, órdenes de entrega, órdenes de fabricación, compras, etc. Según la configuración del pedido de venta, se generará una factura en borrador de manera que sólo hay que confirmarla cuando se quiera facturar a su cliente."
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Salesman"
+msgstr "Comercial"
+
+#. module: onglibre_budgetary_extension
+#: view:project.financing:onglibre_budgetary_extension.project_financing_search_view
+msgid "Search Project Financing"
+msgstr "Buscar financiador proyecto"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "Search Sales Order"
+msgstr "Buscar pedido de venta"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Send by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Simulation Costs"
+msgstr "Simulación de Costes"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "State"
+msgstr "State"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "Terms and conditions..."
+msgstr "Terms and conditions..."
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_sales_order_filter2
+msgid "To Invoice"
+msgstr "Para facturar"
+
+#. module: onglibre_budgetary_extension
+#: view:account.invoice:onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,total_invoices_billed:0
+msgid "Total Invoices Billed"
+msgstr "Total Cobrado"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,total_invoices_emitted:0
+msgid "Total Invoices Emitted"
+msgstr "Total RD"
+
+#. module: onglibre_budgetary_extension
+#: field:financing.source,total_recognized:0
+msgid "Total Recognized"
+msgstr "Total RD Preliminar"
+
+#. module: onglibre_budgetary_extension
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+#: view:sale.order:onglibre_budgetary_extension.sale_order_tree_budgetary_ext
+#: view:sale.order:onglibre_budgetary_extension.view_order_tree_budgetaryext1
+msgid "Total Tax Included"
+msgstr "Total con impuestos"
+
+#. module: onglibre_budgetary_extension
+#: view:account.invoice:onglibre_budgetary_extension.account_invoice_supplier_tree_budgetary_ext
+#: view:financing.source:onglibre_budgetary_extension.financing_source_form_view_inh_budgetary_ext
+msgid "Untaxed Amount"
+msgstr "Base imponible"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "UoS"
+msgstr "UdV"
+
+#. module: onglibre_budgetary_extension
+#: field:project.financing,sum_updated_expense_budget:0
+msgid "Updated Expense Budget"
+msgstr "Actualizado"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_budgetaryext1
+msgid "View Invoice"
+msgstr "Ver factura"
+
+#. module: onglibre_budgetary_extension
+#: view:sale.order:onglibre_budgetary_extension.view_order_form_inh_budgetary_ext3
+msgid "{'partner_id':partner_id}"
+msgstr "{'partner_id':partner_id}"
+
