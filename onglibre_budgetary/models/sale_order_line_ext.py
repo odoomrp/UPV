@@ -33,7 +33,9 @@ class SaleOrderLine(orm.Model):
                 res['product_id']['domain'] = [('sale_ok', '=', True),
                                                ('categ_id.type', '=',
                                                 'normal')]
-                context['simulation'] = True
+                my_context = context.copy()
+                my_context['simulation'] = True
+                res['context'] = my_context
         return res
 
     _columns = {
