@@ -55,6 +55,12 @@
 			<field name="model">simulation.cost</field>
 			<field name="arch" type="xml">
 				<form string="Costs Simulation">
+                    <header>
+                        <button name="button_draft" states="accepted,canceled" string="Draft" groups="base.group_user"/>
+                        <button name="button_accepted" states="draft" string="Accepted" groups="base.group_user"/>
+                        <button name="button_canceled" states="draft" string="Canceled" groups="base.group_user"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
 						<group name="head" colspan="4" col="16">
 							<field name="simulation_number" colspan="4" readonly="1"/>
 							<field name="name" colspan="8" attrs="{'readonly':[('historical_ok','=',True)]}"/>
@@ -138,15 +144,6 @@
 								</group>
 							</page>
 						</notebook>
-						<group colspan="2" >
-							<field name="state" />
-						</group>
-						<group name="buttons" colspan="2" col="6">
-							<button name="button_draft" states="accepted,canceled" string="Draft" icon="gtk-ok"/>
-							<button name="button_accepted" states="draft" string="Accepted" icon="gtk-ok"/>
-							<button name="button_canceled" states="draft" string="Canceled" icon="gtk-ok"/>
-						</group>
-				
 				</form>
 			</field>
 		</record>
