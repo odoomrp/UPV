@@ -85,7 +85,7 @@
                 <field name="parent_id"  position="attributes">
                     <attribute name="invisible">1</attribute>
                 </field>
-				<xpath expr="//div[@name='options_active']" position="before">	
+                <field name="user_id" position="before">
                     <group colspan="4" col="6">
                         <field name="project_code" colspan="2"/>
 						<field name="application_code" colspan="2"/>
@@ -102,18 +102,8 @@
                         <field name="investigation"/>
                         <field name="biotechnology"/>
                     </group>  
-				</xpath>
-				<!-- 
-				<xpath expr="//form//notebook//page//field[@name='members']" position="replace">
-	                <field colspan="4" name="members" nolabel="1">
-	                    <tree string="Members">
-	                        <field name="user_id"/>
-	                        <field name="role_id"/>
-	                        <field name="project_staff"/>
-	                    </tree>
-	                </field>
-	            </xpath>
-	            -->
+				</field>
+
 				<xpath expr="//page[@string='Other Info']" position="after">
 					<page string="Project Types and Centers" >
 	                    <group colspan="4">
