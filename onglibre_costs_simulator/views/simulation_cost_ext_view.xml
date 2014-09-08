@@ -42,19 +42,23 @@
 				<field name="historical_date" position="attributes">
 					<attribute name="colspan">3</attribute>
 				</field>
-				<field name="historical_date" position="before">
-					<field name="start_date" colspan="3"/>	
-					<field name="duration"  on_change="onchange_duration(start_date, duration)" colspan="3" />
-					<field name="end_date" colspan="3"/>
-					<field name="real_date_of_signature" colspan="3"/>	
-				</field>	
+				<group name="head3" position="after">
+				    <group colspan="4" col="8">
+	                    <field name="start_date" colspan="2"/>  
+	                    <field name="duration"  on_change="onchange_duration(start_date, duration)" colspan="2" />
+	                    <field name="end_date" colspan="2"/>
+	                    <field name="real_date_of_signature" colspan="2"/>
+				    </group>
+				</group>
 				<group name="button" position="attributes">
 					<attribute name="col">10</attribute>
 				</group>
+				<!-- 
 				<xpath expr="//form//button[@name='button_recalculation']" position="after">
 					<button name="button_load" string="Load Previsions" type="object" colspan="2" />
 					<button name="button_charge_dates" string="Charge Date" type="object" colspan="2" />
 				</xpath>
+				-->
 
 				<xpath expr="//page[@string='Expense Areas Permitted']" position="after">
 					<page string="Previsions" invisible="1">
