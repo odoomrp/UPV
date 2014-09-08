@@ -50,7 +50,6 @@
                 		<attribute name="invisible">1</attribute>
                 	</field>
                 	
-                	
                 	<group name="head" position="replace">
                			<field name="partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1}" invisible="1"/>
                			<field name="department_id" invisible="1"/>
@@ -290,25 +289,7 @@
 						<field name="benefit6t" colspan="2"/>
 						<newline/>
 					</field>
-                	<xpath expr="//group[@name='buttons']" position="attributes">
-                		<attribute name="col">8</attribute>
-                	</xpath>
 					
-					<xpath expr="//form//group//button[@name='button_canceled']" position="replace" />  
-					<xpath expr="//form//group//field[@name='state']" position="after" >  
-						<button name="button_canceled" states="draft,financing,open,open2,inmodif_budgetary" string="Canceled" icon="gtk-ok"/>
-					</xpath> 
-					<xpath expr="//form//group//button[@name='button_accepted']" position="replace" /> 
-					
-					<xpath expr="//form//group//button[@name='button_draft']" position="before">  
-						<button name="button_financing" states="draft,open" string="Financing" icon="gtk-ok"/>
-						<button name="button_open" states="financing,inmodif_budgetary" string="Open" icon="gtk-ok"/>
-						<button name="button_inmodif_budgetary" states="open" string="In Modif.Budgetary" icon="gtk-ok"/>
-						<button name="button_closed" states="open" string="Closed" icon="gtk-ok"/>
-					</xpath>     
-					<xpath expr="//form//group//button[@name='button_draft']" position="replace">  
-						<button name="button_draft" states="canceled,financing" string="Draft" icon="gtk-ok"/>
-					</xpath>        
 					<xpath expr="//page[@string='Sales Order']" position="attributes">
                 		<attribute name="string">Budget By Source</attribute>
                 	</xpath>
@@ -319,7 +300,22 @@
 							</group>
 						</page>
                 	</xpath>
-                </field>      
+                	
+                    <button name="button_canceled" position="replace" >
+                        <button name="button_canceled" states="draft,financing,open,open2,inmodif_budgetary" string="Canceled" groups="base.group_user"/>
+                    </button>
+                    <button name="button_accepted" position="replace" />
+                    <button name="button_draft" position="before">
+                        <button name="button_financing" states="draft,open" string="Financing" groups="base.group_user"/>
+                        <button name="button_open" states="financing,inmodif_budgetary" string="Open" groups="base.group_user"/>
+                        <button name="button_inmodif_budgetary" states="open" string="In Modif.Budgetary" groups="base.group_user"/>
+                        <button name="button_closed" states="open" string="Closed" groups="base.group_user"/>
+                    </button>
+                    <button name="button_draft" position="replace">
+                        <button name="button_draft" states="canceled,financing" string="Draft" groups="base.group_user"/>
+                    </button>
+                	
+                </field>
             </record>
 
     </data>
