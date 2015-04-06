@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_account_analytic_line_search_inh_finacsource">
+            <field name="name">view.account.analytic.line.search.inh.finacsource</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="account.view_account_analytic_line_filter" />
+            <field name="arch" type="xml">
+                <field name='account_id' position="replace" />
+                <field name="user_id" position="after">
+                    <newline />
+                    <field name='account_parent_id' />
+                    <field name='account_id' />
+                    <field name='type' />
+                    <field name='account_analytic_line_financing_source_id' />
+                    <field name='account_analytic_line_budgetary_id' />
+                    <field name="expense_area_id" />
+                </field>
+                <filter string="Journal" position="replace" />
+                <filter string="Analytic Account" position="replace" />
+                <filter string="Fin. Account" position="replace" />
+                <filter string="Product" position="replace">
+                    <filter string="Parent Account" context="{'group_by':'account_parent_id'}"
+                            icon="terp-folder-violet" />
+                    <filter string="Analytic Account" name="account" context="{'group_by':'account_id'}"
+                            groups="base.group_extended" icon="terp-folder-green" />
+                    <filter string="Project" name="project" context="{'group_by':'project_id'}"
+                            icon="terp-folder-green" />
+                    <filter string="Type" context="{'group_by':'type'}" icon="terp-stock_symbol-selection" />
+                    <filter string="Financing source"
+                            context="{'group_by':'account_analytic_line_financing_source_id'}"
+                            icon="terp-stock_effects-object-colorize" />
+                    <filter string="Budgetary" name="budgetary"
+                            context="{'group_by':'account_analytic_line_budgetary_id'}" icon="terp-stock_effects-object-colorize" />
+                    <filter string="Expense Area" context="{'group_by':'expense_area_id'}"
+                            icon="terp-product" />
+                </filter>
+                <xpath expr="//group[@string='Group By']//separator[1]" position="replace" />
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_analytic_line_tree_inh_finacsource">
+            <field name="name">view.account.analytic.line.tree.inh.finacsource</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id"
+                   ref="onglibre_project_financer.view_account_analytic_line_tree_inh_projectfinan" />
+            <field name="arch" type="xml">
+                <field name="justified_expense" position="after">
+                    <field name="account_parent_id" invisible="1" />
+                </field>
+                <field name="expense_budget" position="after">
+                    <field name="assigned" />
+                </field>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_account_analytic_line_tree_sum_inh_finacsource">
+            <field name="name">view.account.analytic.line.tree_sum.inh.finacsource</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id"
+                   ref="onglibre_project_financer.view_account_analytic_line_tree_sum" />
+            <field name="arch" type="xml">
+                <field name="account_id" position="after">
+                    <field name="expense_area_id" />
+                </field>
+                <field name="sum_expense_budget" position="after">
+                    <field name="sum_assigned" />
+                </field>
+                <field name="date" position="after">
+                    <field name="account_parent_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_chart_tree" model="ir.ui.view">
+            <field name="name">account.analytic.line.chart.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="field_parent">child_complete_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic line" toolbar="1">
+                    <field name="date"/>
+                    <field domain="[('type','=','normal')]" name="account_id"/>
+                    <field name="account_id"/>
+                    <field name="expense_area_id"/>
+                    <field name="type"/>
+                    <field name="account_analytic_line_budgetary_id"/>
+                    <field name="account_analytic_line_financing_source_id"/>
+                    <field name="sum_expense_budget" />
+                    <field name="sum_assigned" />
+                    <field name="sum_updated_expense_budget" />
+                    <field name="sum_remainder" />
+                    <field name="sum_available_expense" />
+                    <field name="sum_expense_request" />
+                    <field name="sum_expense_compromised" />
+                    <field name="sum_real_expense" />
+                    <field name="sum_paid_expense" />
+                    <field name="sum_justified_expense" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_chart_tree2" model="ir.ui.view">
+            <field name="name">account.analytic.line.chart.tree2</field>
+            <field name="model">account.analytic.line</field>
+            <field name="field_parent">child_complete_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic line" toolbar="1">
+                    <field name="date"/>
+                    <field name="account_parent_id" />
+                    <field domain="[('type','=','normal')]" name="account_id"/>
+                    <field name="expense_area_id"/>
+                    <field name="type"/>
+                    <field name="account_analytic_line_budgetary_id"/>
+                    <field name="account_analytic_line_financing_source_id"/>
+                    <field name="name"/>
+                    <field name="sum_expense_budget" />
+                    <field name="sum_assigned" />
+                    <field name="sum_updated_expense_budget" />
+                    <field name="sum_remainder" />
+                    <field name="sum_available_expense" />
+                    <field name="sum_expense_request" />
+                    <field name="sum_expense_compromised" />
+                    <field name="sum_real_expense" />
+                    <field name="sum_paid_expense" />
+                    <field name="sum_justified_expense" />
+                    <field name="project_id" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_tree_newpresusp" model="ir.ui.view">
+            <field name="name">view.account.analytic.line.tree.newpresusp</field>
+            <field name="model">account.analytic.line</field>
+            <field name="field_parent">child_complete_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic line" toolbar="1">
+                    <field name="date"/>
+                    <field name="account_parent_id" />
+                    <field domain="[('type','=','normal')]" name="account_id"/>
+                    <field name="expense_area_id"/>
+                    <field name="type"/>
+                    <field name="account_analytic_line_budgetary_id"/>
+                    <field name="account_analytic_line_financing_source_id"/>
+                    <field name="name"/>
+                    <field name="sum_expense_budget" />
+                    <field name="sum_assigned" />
+                    <field name="sum_updated_expense_budget" />
+                    <field name="sum_remainder" />
+                    <field name="sum_available_expense" />
+                    <field name="sum_expense_request" />
+                    <field name="sum_expense_compromised" />
+                    <field name="sum_real_expense" />
+                    <field name="sum_paid_expense" />
+                    <field name="sum_justified_expense" />
+                    <field name="project_id" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_tree_newfinanc" model="ir.ui.view">
+            <field name="name">view.account.analytic.line.tree.newfinanc</field>
+            <field name="model">account.analytic.line</field>
+            <field name="field_parent">child_complete_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic line" toolbar="1">
+                    <field name="date"/>
+                    <field name="account_parent_id" />
+                    <field domain="[('type','=','normal')]" name="account_id"/>
+                    <field name="expense_area_id"/>
+                    <field name="type"/>
+                    <field name="account_analytic_line_budgetary_id"/>
+                    <field name="account_analytic_line_financing_source_id"/>
+                    <field name="name"/>
+                    <field name="sum_expense_budget" />
+                    <field name="sum_assigned" />
+                    <field name="sum_updated_expense_budget" />
+                    <field name="sum_remainder" />
+                    <field name="sum_available_expense" />
+                    <field name="sum_expense_request" />
+                    <field name="sum_expense_compromised" />
+                    <field name="sum_real_expense" />
+                    <field name="sum_paid_expense" />
+                    <field name="sum_justified_expense" />
+                    <field name="project_id" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_analytic_line_chart" model="ir.actions.act_window">
+            <field name="name">Chart of Analytic Lines</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="view_account_analytic_line_chart_tree2" />
+            <field name="domain">[('parent_line_id','=',False)]</field>
+            <!-- <field name="help">The normal chart of accounts has a structure defined
+                by the legal requirement of the country. The analytic chart of accounts structure
+                should reflect your own business needs in term of costs/revenues reporting.
+                They are usually structured by contracts, projects, products or departements.
+                Most of the OpenERP operations (invoices, timesheets, expenses, etc) generate
+                analytic entries on the related account.</field> -->
+        </record>
+
+        <menuitem string="Analytic Line Chart" id="menu_analytic_line_chart"
+                  action="action_account_analytic_line_chart" parent="account.menu_finance_charts" />
+
+        <record id="account.action_account_analytic_journal_open_form"
+                model="ir.actions.act_window">
+            <field name="name">Analytic Journal Items</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_project', '=', False)]</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_analytic_line_tree_inh_finacsource">
+            <field name="name">view.account.analytic.line.tree.inh.finacsource</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="account.view_account_analytic_line_tree" />
+            <field name="arch" type="xml">
+                <field name="ref" position="replace">
+                    <field name="parent_line_id" invisible="1" />
+                    <field name="type" />
+                    <field name="account_analytic_line_budgetary_id" />
+                    <field name="account_analytic_line_financing_source_id" />
+                </field>
+                <field name="account_id" position="replace" />
+                <field name="date" position="after">
+                    <field name="account_parent_id" />
+                    <field name="account_id" />
+                </field>
+                <field name="type" position="before">
+                    <field name="expense_area_id" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_analytic_line_form_inh_finacsource">
+            <field name="name">view.account.analytic.line.form.inh.finacsource</field>
+            <field name="model">account.analytic.line</field>
+            <field eval="7" name="priority" />
+            <field name="inherit_id"
+                   ref="onglibre_project_financer.view_account_analytic_line_form_inh_projectfinan" />
+            <field name="arch" type="xml">
+                <xpath expr="//form//notebook//page//group[@name='budgetaryfields']"
+                       position="replace">
+                    <group colspan="4" col="8">
+                        <field name="expense_area_id" />
+                        <field name="type" />
+                        <field name="account_analytic_line_budgetary_id"
+                               domain="[('type','=','budgetary'),('account_id','=',account_id)]"
+                               context="{'type':'budgetary'}"
+                               attrs="{'invisible':[('type','in',('budgetary','justification','imputation','initial_financial_source','modif_financial_source'))]}" />
+
+                        <field name="account_analytic_line_financing_source_id"
+                               domain="[('type','=','financing_source'),('account_id','=',account_id)]"
+                               context="{'type':'financing_source'}"
+                               attrs="{'invisible': [('type','in',('budgetary','financing_source','initial_budgetary','modif_budgetary'))]}"
+                               on_change="onchange_account_analytic_line_financing_source(account_analytic_line_financing_source_id)" />
+
+                        <field name="account_analytic_line_budgetary_readonly_id"
+                               domain="[('type','=','budgetary')]"
+                               attrs="{'invisible':[('type','in',('budgetary','financing_source','initial_budgetary','modif_budgetary','initial_financial_source','modif_financial_source'))]}" />
+                    </group>
+                    <group colspan="4" col="8" name="sumbudgetaryfields"
+                           attrs="{'invisible':[('type','in',('imputation','initial_budgetary','initial_budgetary','initial_financial_source','modif_financial_source','modif_budgetary'))]}">
+                        <separator string="Budgetary Fields" colspan="8" />
+                        <field name="sum_expense_budget" />
+                        <field name="sum_updated_expense_budget" />
+                        <field name="sum_remainder" />
+                        <field name="sum_available_expense" />
+                        <field name="sum_expense_request" />
+                        <field name="sum_expense_compromised" />
+                        <field name="sum_real_expense" />
+                        <field name="sum_paid_expense" />
+                        <field name="sum_justified_expense" />
+                    </group>
+                    <group colspan="4" col="8" name="budgetaryfields"
+                           attrs="{'invisible':[('type','in',('budgetary','financing_source','initial_financial_source','modif_financial_source'))]}">
+                        <separator string="Budgetary Fields" colspan="8" />
+	                    <field name="expense_budget" />
+	                    <field name="updated_expense_budget" />
+	                    <field name="remainder" />
+	                    <field name="available_expense" />
+	                    <field name="expense_request" />
+	                    <field name="expense_compromised" />
+	                    <field name="real_expense" />
+	                    <field name="paid_expense" />
+	                    <field name="justified_expense" />
+                    </group>
+                    <field name="project_id" invisible="1" />
+                </xpath>
+                <xpath expr="//form//notebook//page//group[@name='foot']"
+                       position="after">
+                    <group colspan="4" col="10" name="sumfinancingfields"
+                           attrs="{'invisible':[('type','in',('imputation','initial_budgetary','modif_budgetary','initial_financial_source','modif_financial_source'))]}">
+                        <separator string="Justified Expense" colspan="10" />
+                        <field name="sum_assigned" />
+                    </group>
+                    <group colspan="4" col="10" name="financingfields"
+                           attrs="{'invisible':[('type','in',('imputation','initial_budgetary','modif_budgetary','financing_source'))]}">
+                        <separator string="Justified Expense" colspan="10" />
+                        <field name="assigned" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

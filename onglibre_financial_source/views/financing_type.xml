@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="financing_type_tree_view">
+			<field name="name">financing.type.tree.view</field>
+			<field name="model">financing.type</field>
+			<field name="arch" type="xml">
+				<tree string="Financing Types" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="financing_type_search_view">
+			<field name="name">financing.type.search.view</field>
+			<field name="model">financing.type</field>
+			<field name="arch" type="xml">
+                <search string="Search Financing Type">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="financing_type_form_view">
+			<field name="name">financing.type.form.view</field>
+			<field name="model">financing.type</field>
+			<field name="arch" type="xml">
+				<form string="Financing Type" >
+					<field name="name" />
+				</form>
+			</field>
+		</record>
+		
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_financing_type_form">
+			<field name="name">Financing Type</field>
+			<field name="res_model">financing.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="financing_type_menu_view" name="Financing Type"
+			parent="menu_project_config_financing_source" action="action_financing_type_form" />		
+
+
+	</data>
+</openerp>

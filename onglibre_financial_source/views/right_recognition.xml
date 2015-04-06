@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="right_recognition_tree_view">
+			<field name="name">right.recognition.tree.view</field>
+			<field name="model">right.recognition</field>
+			<field name="arch" type="xml">
+				<tree string="Right Recognitions" >
+					<field name="date" />
+					<field name="amount" />
+					<field name="invoice" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="right_recognition_search_view">
+			<field name="name">right.recognition.search.view</field>
+			<field name="model">right.recognition</field>
+			<field name="arch" type="xml">
+                <search string="Search Right Recognition">
+                    <group>
+						<field name="date" />
+						<field name="invoice" />
+                    </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="right_recognition_form_view">
+			<field name="name">right.recognition.form.view</field>
+			<field name="model">right.recognition</field>
+			<field name="arch" type="xml">
+				<form string="Right Recognition" >
+					<group colspan="8" col="6">
+						<field name="date" />
+						<field name="amount" />
+						<field name="invoice" />						
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_right_recognition_form">
+			<field name="name">Right Recognition</field>
+			<field name="res_model">right.recognition</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="right_recognition_menu_view" name="Right Recognition"
+			parent="menu_project_config_financing_source" action="action_right_recognition_form" />		
+
+
+	</data>
+</openerp>

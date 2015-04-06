@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="expense_area_tree_view">
+			<field name="name">expense.area.tree.view</field>
+			<field name="model">expense.area</field>
+			<field name="arch" type="xml">
+				<tree string="Expense Areas" >
+					<field name="name" />
+					<field name="habitual_use" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="expense_area_search_view">
+			<field name="name">expense.area.search.view</field>
+			<field name="model">expense.area</field>
+			<field name="arch" type="xml">
+                <search string="Search Expense Area">
+                    <group>
+						<field name="name" />
+						<field name="habitual_use" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="expense_area_form_view">
+			<field name="name">expense.area.form.view</field>
+			<field name="model">expense.area</field>
+			<field name="arch" type="xml">
+				<form string="Expense Area" >
+					<group colspan="4">
+						<field name="name" colspan="2"/>
+						<field name="habitual_use" colspan="2"/>
+						<group colspan="2" />
+						<separator string="Categories" colspan="4" />
+						<field name="category_ids" nolabel="1" colspan="4" height="250"/>
+					</group>
+				</form>
+			</field>
+		</record>
+    
+    	<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_expense_area_form">
+			<field name="name">Expense Area</field>
+			<field name="res_model">expense.area</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		
+		<menuitem id="expense_area_menu_view" name="Expense Area"
+			parent="account.menu_analytic_accounting" action="action_expense_area_form" />	
+
+	</data>
+</openerp>

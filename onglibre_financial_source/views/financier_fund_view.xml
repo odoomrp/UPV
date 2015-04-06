@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="financier_fund_tree_view">
+			<field name="name">financier.fund.tree.view</field>
+			<field name="model">financier.fund</field>
+			<field name="arch" type="xml">
+				<tree string="Financier Funds" >
+					<field name="code" />			
+					<field name="name" />	
+					<field name="type" />	
+					<field name="parent_id" />
+					<field name="own_fund" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="financier_fund_search_view">
+			<field name="name">financier.fund.search.view</field>
+			<field name="model">financier.fund</field>
+			<field name="arch" type="xml">
+                <search string="Search Financier Funds">
+	                <group>
+						<field name="code" />
+						<field name="name" />
+						<field name="type"  />
+						<field name="parent_id" />
+					    <field name="own_fund" />
+                    </group>
+                    <newline />
+                    <group expand="0" string="Group By...">
+                    	<filter string="Parent" context="{'group_by':'parent_id'}" icon="terp-folder-violet"/>
+                    	<filter string="Type" context="{'group_by':'type'}" icon="terp-folder-green"/>
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="financier_fund_form_view">
+			<field name="name">financier.fund.form.view</field>
+			<field name="model">financier.fund</field>
+			<field name="arch" type="xml">
+				<form string="Financier Funds" >
+					<field name="code" />			
+					<field name="name" />	
+					<field name="type" />	
+					<field name="parent_id" />
+					<field name="own_fund" />
+				</form>
+			</field>
+		</record>
+		
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_financier_fund_form">
+			<field name="name">Financier Fund</field>
+			<field name="res_model">financier.fund</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>				
+		
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="financier_fund_menu_view" name="Financier Fund"
+			parent="menu_project_config_financing_source" action="action_financier_fund_form" />	
+
+	</data>
+</openerp>

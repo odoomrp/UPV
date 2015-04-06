@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_financing_tree_view">
+			<field name="name">project.financing.tree.view</field>
+			<field name="model">project.financing</field>
+			<field name="arch" type="xml">
+				<tree string="Project Financing">
+					<field name="priority" />
+					<field name="project_percent" />
+					<field name="financing_source_id" />
+					<field name="financial_source_percent" />
+					<field name="expense_area_id" />
+	                <field name="grant" />
+	                <field name="amount_awarded" />
+	                <field name="overheads"  />
+	                <field name="project_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="project_financing_search_view">
+			<field name="name">project.financing.search.view</field>
+			<field name="model">project.financing</field>
+			<field name="arch" type="xml">
+				<search string="Search Project Financing">
+					<group>
+						<field name="project_id" />
+						<field name="financing_source_id" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_financing_form_view">
+			<field name="name">project.financing.form.view</field>
+			<field name="model">project.financing</field>
+			<field name="arch" type="xml">
+				<form string="Project Financing">
+					<group colspan="4" col="4">
+						<separator string="General Information" colspan="4" />
+					    <field name="priority" />
+					    <field name="expense_area_id" />
+					    <separator string="Project Information" colspan="4" />
+						<field name="project_id" />
+						<field name="project_percent" />
+						<separator string="Financial Source Information" colspan="4" />
+						<field name="financing_source_id" />
+						<field name="financial_source_percent" />
+					</group>
+					<group colspan="4" col="6">
+						<separator string="Project Financing Information" colspan="6" />
+		                <field name="grant" />
+		                <field name="amount_awarded" />
+		                <field name="overheads" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="historical_extension_tree_view">
+			<field name="name">historical.extension.tree.view</field>
+			<field name="model">historical.extension</field>
+			<field name="arch" type="xml">
+				<tree string="Historical Extension">
+					<field name="financing_source" />
+					<field name="state" />
+					<field name="request_date" />
+					<field name="grant_date" />
+					<field name="eligibility_date_from" />
+					<field name="eligibility_date_to" />
+					<field name="eligibility_date_to_extension" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="historical_extension_form_view">
+			<field name="name">historical.extension.form.view</field>
+			<field name="model">historical.extension</field>
+			<field name="arch" type="xml">
+				<form string="historical Extension">
+					<group colspan="4" col="4">
+						<separator string="Eligibility dates" colspan="6" />
+						<field name="financing_source"
+							 />
+						<field name="eligibility_date_from"></field>
+						<field name="eligibility_date_to"></field>
+					</group>
+					<group colspan="4" col="4">
+						<separator string="Dates Extension" colspan="8" />
+						<field name="eligibility_date_to_extension"></field>
+
+					</group>
+					<group colspan="4" col="4">
+						<separator string="Request Extension" colspan="4" />
+						<field name="extension_reason" nolabel="1" />
+
+					</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

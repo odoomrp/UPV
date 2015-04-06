@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="code_call_tree_view">
+			<field name="name">code.call.tree.view</field>
+			<field name="model">code.call</field>
+			<field name="arch" type="xml">
+				<tree string="Code Calls" >
+					<field name="code" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="code_call_search_view">
+			<field name="name">code.call.search.view</field>
+			<field name="model">code.call</field>
+			<field name="arch" type="xml">
+                <search string="Search Code Call">
+                    <group>
+						<field name="code" />
+						<field name="name" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="code_call_form_view">
+			<field name="name">code.call.form.view</field>
+			<field name="model">code.call</field>
+			<field name="arch" type="xml">
+				<form string="Code Call" >
+					<field name="code" />
+					<field name="name" />
+				</form>
+			</field>
+		</record>
+    
+    	<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_code_call_form">
+			<field name="name">Code Call</field>
+			<field name="res_model">code.call</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		
+		<menuitem id="code_call_menu_view" name="Code Call"
+			parent="menu_project_config_financing_source" action="action_code_call_form" />	
+
+	</data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- ******************* VISTA FORM ******************** -->
+	
+		<record id="transfer_fund_wizard" model="ir.ui.view">
+			<field name="name">transfer.fund.wizard</field>
+			<field name="model">transfer.fund.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Transfer Fund">
+                    <field name="financing_source_origin_id" on_change="onchange_financing_source_origin(financing_source_origin_id)" />
+                    <field name="financing_source_target_id" />
+                    <field name="available_origin" />
+                    <field name="pending_allocation_origin" />
+                    <field name="date" />
+                    <field name="amount" />
+                    <field name="reason" colspan="4" />
+					<group colspan="4">
+						<button string="Cancel" special="cancel" icon="gtk-cancel" />
+						<button string="Ok" name="transfer_fund" type="object"
+							icon="gtk-ok" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+        <act_window name="Transfer Fund"
+            res_model="transfer.fund.wizard"
+            src_model="financing.source"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="transfer_fund_act_window"/>
+
+	</data>
+</openerp>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="transfer_fund_form_view">
+			<field name="name">transfer.fund.form.view</field>
+			<field name="model">transfer.fund</field>
+			<field name="arch" type="xml">
+				<form string="Transfer FUnd">
+                    <field name="date" />
+                    <field name="amount" />
+                    <field name="financing_source_origin_id" />
+                    <field name="financing_source_target_id" />
+                    <field name="reason" colspan="4" />
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>
