@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="hr_employee_calendar_tree_view">
+			<field name="name">hr.employee.calendar.tree.view</field>
+			<field name="model">hr.employee.calendar</field>
+			<field name="arch" type="xml">
+				<tree string="Calendars" >
+					<field name="employee_id" invisible="1"/>
+					<field name="year" />
+					<field name="name" />
+					<field name="estimated_calendar_resources_ids" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="hr_employee_calendar_search_view">
+			<field name="name">hr.employee.calendar.search.view</field>
+			<field name="model">hr.employee.calendar</field>
+			<field name="arch" type="xml">
+                <search string="Search Calendars">
+                    <group>
+						<field name="employee_id" />
+						<field name="year" />
+						<field name="name" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Employee" domain="[]" context="{'group_by':'employee_id'}" />
+						<filter string="Year" domain="[]" context="{'group_by':'Year'}" />
+						<filter string="Reason" domain="[]" context="{'group_by':'name'}" />
+                   </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="hr_employee_calendar_form_view">
+			<field name="name">hr.employee.calendar.form.view</field>
+			<field name="model">hr.employee.calendar</field>
+			<field name="arch" type="xml">
+				<form string="Calendar">
+					<field name="employee_id" invisible="1"/>
+					<group col="12" colspan="4">
+            			<field name="year" colspan="2"/>
+            			<field name="name" colspan="8"/>
+            			<button name="button_print_calendar" string="Generate PDF Calendar" type="object" />
+            		</group>
+					<group colspan="4">
+            			<field name="estimated_calendar_resources_ids" height="500" nolabel="1"/>
+            		</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

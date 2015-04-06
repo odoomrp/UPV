@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    	
+        <record model="ir.ui.view" id="wizard_import_templates">
+            <field name="name">wizard.import.templates</field>
+            <field name="model">import.template</field>
+            <field name="arch" type="xml">
+                <form string="Import Templates">
+                	<group colspan="4">
+                		<field name="start_date" colspan="2" />
+                		<field name="end_date" colspan="2" />
+                	</group>
+                	<group colspan="4" >
+                		<field name="festive_template_id" />
+                	</group>                              
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+					<button string="Ok" name="action_import_template" type="object" icon="gtk-ok"  />
+                </form>
+            </field>
+        </record>
+   
+        <!-- DEFINICIÓN DEL WIZARD SELECCIONAR PLANTILLA -->   
+ 
+        <act_window name="Import Templates" 
+			res_model="import.template"		
+			view_mode="form"
+			view_type="form"	
+			target="new"
+			id="act_import_templates_id"/>
+	 
+    </data>
+</openerp>

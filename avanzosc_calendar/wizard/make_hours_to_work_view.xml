@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    	
+        <record model="ir.ui.view" id="wizard_make_hours_to_work">
+            <field name="name">wizard.make.hours.to.work</field>
+            <field name="model">make.hours.to.work</field>
+            <field name="arch" type="xml">
+                <form string="Generate Hours To Work">
+                	<group colspan="4" col="14" width="1300">
+                		<field name="start_date" colspan="2" />
+                		<field name="end_date" colspan="2" />
+                		<field name="name" colspan="6" />
+                		<field name="background_color" colspan="2" />
+                		<field name="hours" widget="float_time" colspan="2" />
+                	</group>
+                	<group colspan="4" col="14">
+                		<field name="monday" colspan="2" />
+                		<field name="tuesday" colspan="2" />
+                		<field name="wednesday" colspan="2" />
+                		<field name="thursday" colspan="2" />
+                		<field name="friday" colspan="2" />
+                		<field name="saturday" colspan="2" />
+                		<field name="sunday" colspan="2" />
+                	</group>                              
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+					<button string="Ok" name="generate_hours_to_work" type="object" icon="gtk-ok"  />
+                </form>
+            </field>
+        </record>
+   
+        <!-- DEFINICIÓN DEL WIZARD SELECCIONAR PLANTILLA -->   
+ 
+        <act_window name="Generate Hours To Work" 
+			res_model="make.hours.to.work"		
+			view_mode="form"
+			view_type="form"	
+			target="new"
+			id="act_make_hours_to_work_id"/>
+	 
+    </data>
+</openerp>

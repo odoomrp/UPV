@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="estimated_calendar_resources_tree_view">
+			<field name="name">estimated.calendar.resources.tree.view</field>
+			<field name="model">estimated.calendar.resources</field>
+			<field name="arch" type="xml">
+				<tree string="Estimated Calendar Resources" >
+					<field name="hr_employee_calendar_id" />
+					<field name="employee_id" />
+					<field name="date" />
+					<field name="name" />
+					<field name="hours" />
+					<field name="background_color" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="estimated_calendar_resources_search_view">
+			<field name="name">estimated.calendar.resources.search.view</field>
+			<field name="model">estimated.calendar.resources</field>
+			<field name="arch" type="xml">
+                <search string="Search Estimated Calendar Resources">
+                    <group>
+						<field name="hr_employee_calendar_id" />
+						<field name="date" />
+						<field name="name" />
+						<field name="hours" />
+						<field name="background_color" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Calendar" domain="[]" context="{'group_by':'hr_employee_calendar_id'}" />
+						<filter string="Date" domain="[]" context="{'group_by':'date'}" />
+						<filter string="Reason" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Hours" domain="[]" context="{'group_by':'hours'}" />
+						<filter string="Background Color" domain="[]" context="{'group_by':'background_color'}" />
+                   </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="estimated_calendar_resources_form_view">
+			<field name="name">estimated.calendar.resources.form.view</field>
+			<field name="model">estimated.calendar.resources</field>
+			<field name="arch" type="xml">
+				<form string="Estimated Calendar Resource">
+					<field name="employee_id" />
+					<group colspan="4">
+            			<field name="hr_employee_calendar_id" colspan="2"/>
+            			<field name="date" colspan="2"/>
+            		</group>
+					<group col="12" colspan="4">
+            			<field name="name" colspan="8"/>
+            			<field name="hours" colspan="2"/>
+            			<field name="background_color" colspan="2"/>
+            		</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- VISTA CALENDAR -->
+		
+        <record model="ir.ui.view" id="estimated_calendar_resources_calendar">
+            <field name="name">estimated.calendar.resources.calendar</field>
+            <field name="model">estimated.calendar.resources</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+            	<calendar string="Hours" color="background_color" date_start="date">
+                    <field name="name"/>
+                    <field name="hours"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="estimated_calendar_resources_gantt" model="ir.ui.view">
+            <field name="name">estimated.calendar.resources.gantt</field>
+            <field name="model">estimated.calendar.resources</field>
+            <field name="arch" type="xml">
+                <gantt date_stop="date" date_start="date" string="Day" default_group_by="background_color">
+                </gantt>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="estimated_calendar_resources_graph">
+            <field name="name">estimated.calendar.resources.graph</field>
+            <field name="model">estimated.calendar.resources</field>
+            <field name="arch" type="xml">
+                <graph string="Calendar" type="bar">
+                    <field name="date"/>
+                </graph>
+            </field>
+        </record>
+		
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_estimated_calendar_resources_form">
+			<field name="name">Estimated Calendar Resources</field>
+			<field name="res_model">estimated.calendar.resources</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">calendar,tree,form,graph</field>
+		</record>	
+		
+
+	</data>
+</openerp>

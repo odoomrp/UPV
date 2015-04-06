@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    	
+        <record model="ir.ui.view" id="wizard_generate_holiday">
+            <field name="name">wizard.generate.holiday</field>
+            <field name="model">generate.holiday</field>
+            <field name="arch" type="xml">
+                <form string="Generate Holidays">
+                	<group colspan="4" col="12" width="1000" >
+                		<field name="name" colspan="6" />
+                		<field name="background_color" colspan="2" />
+                		<field name="start_date" colspan="2" />
+                		<field name="end_date" colspan="2" />
+                	</group>
+                	<group colspan="4" col="14">
+                		<field name="monday" colspan="2" />
+                		<field name="tuesday" colspan="2" />
+                		<field name="wednesday" colspan="2" />
+                		<field name="thursday" colspan="2" />
+                		<field name="friday" colspan="2" />
+                		<field name="saturday" colspan="2" />
+                		<field name="sunday" colspan="2" />
+                	</group>                              
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+					<button string="Ok" name="generate_holidays_action" type="object" icon="gtk-ok"  />
+                </form>
+            </field>
+        </record>
+   
+        <!-- DEFINICIÓN DEL WIZARD SELECCIONAR PLANTILLA -->   
+ 
+        <act_window name="Generate Holidays" 
+			res_model="generate.holiday"		
+			view_mode="form"
+			view_type="form"	
+			target="new"
+			id="act_generate_holidays_id"/>
+	 
+    </data>
+</openerp>

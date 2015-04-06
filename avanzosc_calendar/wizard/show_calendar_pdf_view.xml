@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    	
+        <record model="ir.ui.view" id="wizard_show_caledar_pdf">
+            <field name="name">wizard.show.caledar.pdf</field>
+            <field name="model">show.calendar.pdf</field>
+            <field name="arch" type="xml">
+                <form string="Generated PDF Calendar">
+                	<group colspan="4" >
+                		<field name="pdfcalendar" />
+                	</group>                             
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+                </form>
+            </field>
+        </record>
+   
+        <!-- DEFINICIÓN DEL WIZARD SELECCIONAR PLANTILLA -->   
+ 
+        <act_window name="Generated PDF Calendar" 
+			res_model="show.calendar.pdf"		
+			view_mode="form"
+			view_type="form"	
+			target="new"
+			id="act_show_calendar_pdf_id"/>
+	 
+    </data>
+</openerp>
