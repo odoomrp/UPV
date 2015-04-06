@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="invoice_supplier_form_inh_assetsservices">
+            <field name="name">invoice.supplier.form.inh.assetsservices</field>
+            <field name="model">account.invoice</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                <tree string="Invoice lines"/>
+	                <xpath expr="//tree[@string='Invoice lines']/field[@name='account_analytic_id']" position="after">
+				        <field name="budgetary_line_id" />
+				        <field name="line_financing_source_ids" />
+	                </xpath>
+                </data>
+            </field>
+        </record>
+        
+    	<record model="ir.ui.view" id="view_invoice_line_tree_inh_assetsservices">
+    	    <field name="name">view.invoice.line.tree.inh.assetsservices</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority" eval="17"/>
+			<field name="inherit_id" ref="account.view_invoice_line_tree" />
+			<field name="arch" type="xml">
+			    <xpath expr="//tree/field[@name='price_subtotal']" position="after">
+			        <field name="account_analytic_id"/>
+				    <field name="budgetary_line_id" />
+				    <field name="line_financing_source_ids" />
+			    </xpath>
+			</field>
+		</record>
+
+    	<record model="ir.ui.view" id="view_invoice_line_form_inh_assetsservices">
+    	    <field name="name">view.invoice.line.form.inh.assetsservices</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority" eval="17"/>
+			<field name="inherit_id" ref="account.view_invoice_line_form" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='account_analytic_id']" position="replace" />
+			    <xpath expr="//field[@name='product_id']" position="before">
+			    	<field name="parent_account_analytic_id" colspan="4" invisible="1"/>
+			    	<field name="price_subtotal" colspan="4" invisible="1"/>
+			    	<field name="account_analytic_id" on_change="onchange_account(account_analytic_id)" domain="[('type','&lt;&gt;','view'), ('company_id', '=', parent.company_id)]" groups="analytic.group_analytic_accounting"/>
+			       	<field name="budgetary_line_id" on_change="onchange_budgetary_line(account_analytic_id,budgetary_line_id)" context="{'tree_view_ref':'onglibre_assets_services_expenses.view_account_analytic_line_tree_assetsservices'}"/>
+                    <field name="line_financing_source_ids" nolabel="1" height="120" context="{'account_analytic_id':account_analytic_id,'budgetary_line_id':budgetary_line_id}" colspan="4"/>
+			    </xpath>
+			</field>
+		</record> 
+		
+    </data>
+</openerp>

@@ -1,0 +1,408 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* onglibre_assets_services_expenses
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120523-233315\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-11 08:40+0000\n"
+"PO-Revision-Date: 2013-09-11 11:28+0100\n"
+"Last-Translator: aaaa <aaaa@aaa.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.7\n"
+
+#. module: onglibre_assets_services_expenses
+#: sql_constraint:purchase.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "¡La referencia de la compra debe ser única por compañía!"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_purchase_order_line
+#: field:line.financing.source,purchase_order_line_id:0
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move:0
+msgid "You can not create more than one move per period on centralized journal"
+msgstr ""
+"No puede crear más de un movimiento por periodo en un diario centralizado"
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,line_financing_percentage:0
+msgid "Line Financing %"
+msgstr "% Linea Financiador"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move.line:0
+msgid "Company must be the same for its related account and period."
+msgstr "La compañía debe ser la misma para su cuenta y periodos relacionados"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.bank.statement.line,budgetary_line_id:0
+#: field:account.invoice.line,budgetary_line_id:0
+#: field:account.move.line,budgetary_line_id:0
+#: field:line.financing.source,budgetary_line_id:0
+#: field:purchase.order.line,budgetary_line_id:0
+msgid "Budgetary Line"
+msgstr "Linea Presupuestaria"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_invoice_ext.py:53
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_invoice_ext.py:53
+#, python-format
+msgid ""
+"Please define analytic account for product: ' + str(invoice_line.product_id."
+"name)))\n"
+"#                else:\n"
+"#                    if not invoice_line.line_financing_source_ids:\n"
+"#                        raise osv.except_osv(_('No Financers Found !"
+msgstr ""
+"Por favor, defina cuenta analítica por producto: ' + str(invoice_line."
+"product_id.name)))\n"
+"#                else:\n"
+"#                    if not invoice_line.line_financing_source_ids:\n"
+"#                        raise osv.except_osv(_('No Financers Found !"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_bank_statement_ext.py:37
+#: code:addons/onglibre_assets_services_expenses/account_invoice_ext.py:53
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_bank_statement_ext.py:37
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_invoice_ext.py:53
+#, python-format
+msgid "No Analytic Account Found !"
+msgstr "No se encuentra cuenta analítica !"
+
+#. module: onglibre_assets_services_expenses
+#: view:line.financing.source:0
+msgid "Search Lines Financing Source"
+msgstr "Buscar Lineas Fuente Financiador"
+
+#. module: onglibre_assets_services_expenses
+#: view:account.move:0 view:account.move.line:0
+msgid "Analytic"
+msgstr "Analítico"
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,account_bank_statement_line_id:0
+#: field:line.financing.source,account_move_line_id:0
+msgid "Account Move Line"
+msgstr "Líneas movimiento"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.bank.statement.line,line_financing_source_ids:0
+#: field:account.invoice.line,line_financing_source_ids:0
+#: field:account.move.line,line_financing_source_ids:0
+#: field:purchase.order.line,line_financing_source_ids:0
+msgid "Financing Sources"
+msgstr "Fuente Financiador"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move.line:0
+msgid ""
+"The selected account of your Journal Entry forces to provide a secondary "
+"currency. You should remove the secondary currency on the account or select "
+"a multi-currency view on the journal."
+msgstr ""
+"La cuenta selecionada de su diario obliga a tener una moneda secundaria. "
+"Usted debería eliminar la moneda secundaria de la cuenta o asignar una vista "
+"de multi-moneda al diario."
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.bank.statement.line:0
+msgid ""
+"The amount of the voucher must be the same amount as the one on the "
+"statement line"
+msgstr ""
+"El importe del comprobante debe ser el mismo importe que el de la línea del "
+"extracto"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move.line:0
+msgid ""
+"The date of your Journal Entry is not in the defined period! You should "
+"change the date or remove this constraint from the journal."
+msgstr ""
+"¡La fecha de su asiento no está en el periodo definido! Usted debería "
+"cambiar la fecha o borar este esta restricción del diario."
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,account_invoice_line_id:0
+msgid "Account Invoice Line"
+msgstr "Línea factura"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:73
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:138
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:235
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:317
+#: code:addons/onglibre_assets_services_expenses/stock_picking_ext.py:100
+#: code:addons/onglibre_assets_services_expenses/stock_picking_ext.py:178
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:73
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:138
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:235
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:317
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/stock_picking_ext.py:100
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/stock_picking_ext.py:178
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/line_financing_source.py:97
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/line_financing_source.py:97
+#, python-format
+msgid "Line Financing Percentage Error"
+msgstr "Porcentaje error linea financiador"
+
+#. module: onglibre_assets_services_expenses
+#: view:line.financing.source:0
+msgid "Line Financing Sources"
+msgstr "Linea fuentes financiacion"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_move_line
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move.line:0
+msgid "You can not create journal items on an account of type view."
+msgstr "No puede crear asientos en una cuenta de tipo vista"
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,financial_source_line_id:0
+msgid "Financing Source Line"
+msgstr "Linea fuente fuente financiador"
+
+#. module: onglibre_assets_services_expenses
+#: view:account.bank.statement:0 view:purchase.order:0
+#: view:purchase.order.line:0
+msgid "Financers"
+msgstr "Financiadores"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_invoice_ext.py:56
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_invoice_ext.py:56
+#, python-format
+msgid ""
+"Please define financers for product: ' + str(invoice_line.product_id."
+"name)))\n"
+"        # Llamo al metodo padre\n"
+"        res = super(account_invoice, self).action_move_create(cr, uid, ids, "
+"context)     \n"
+"        return True\n"
+"    \n"
+"    def _get_analytic_lines(self, cr, uid, id, context=None):\n"
+"        if context is None:\n"
+"            context = {}\n"
+"        inv = self.browse(cr, uid, id)\n"
+"        cur_obj = self.pool.get('res.currency"
+msgstr ""
+"Por favor defina financiador por producto: ' + str(invoice_line.product_id."
+"name)))\n"
+"        # Llamo al metodo padre\n"
+"        res = super(account_invoice, self).action_move_create(cr, uid, ids, "
+"context)     \n"
+"        return True\n"
+"    \n"
+"    def _get_analytic_lines(self, cr, uid, id, context=None):\n"
+"        if context is None:\n"
+"            context = {}\n"
+"        inv = self.browse(cr, uid, id)\n"
+"        cur_obj = self.pool.get('res.currency"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/line_financing_source.py:97
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/line_financing_source.py:97
+#, python-format
+msgid "Line financing percentage > 100"
+msgstr "Porcentaje línea financiador > 100"
+
+#. module: onglibre_assets_services_expenses
+#: view:purchase.order:0
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: onglibre_assets_services_expenses
+#: sql_constraint:account.invoice:0
+msgid "Invoice Number must be unique per Company!"
+msgstr "¡El número de factura debe ser único por compañía!"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.analytic.line,expense_type:0
+msgid "Expense Type"
+msgstr "Tipo Gasto"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.analytic.line,line_financing_source_id:0
+#: model:ir.model,name:onglibre_assets_services_expenses.model_line_financing_source
+#: view:line.financing.source:0
+msgid "Line Financing Source"
+msgstr "Línea fuente financiación"
+
+#. module: onglibre_assets_services_expenses
+#: sql_constraint:account.move.line:0
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr "¡Valor haber o debe erróneo en el asiento contable!"
+
+#. module: onglibre_assets_services_expenses
+#: view:account.analytic.line:0
+msgid "Budgets"
+msgstr "Presupuestos"
+
+#. module: onglibre_assets_services_expenses
+#: sql_constraint:stock.picking:0
+msgid "Reference must be unique per Company!"
+msgstr "¡La referencia debe ser única por compañía!"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,financing_percentage:0
+msgid "Project Financing %"
+msgstr "Financiador proyecto %"
+
+#. module: onglibre_assets_services_expenses
+#: view:purchase.order:0
+msgid "Convert to Purchase Order"
+msgstr "Convertir a pedido de compra"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.move.line,account_analytic_line_budgetary_id:0
+#: field:account.move.line,account_analytic_line_budgetary_readonly_id:0
+msgid "Budgetary Parent"
+msgstr "Padre presupuestaria"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:74
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:139
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:236
+#: code:addons/onglibre_assets_services_expenses/purchase_order_ext.py:318
+#: code:addons/onglibre_assets_services_expenses/stock_picking_ext.py:101
+#: code:addons/onglibre_assets_services_expenses/stock_picking_ext.py:179
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:74
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:139
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:236
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/purchase_order_ext.py:318
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/stock_picking_ext.py:101
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/stock_picking_ext.py:179
+#, python-format
+msgid "There is no income account defined for this product: \"%s\" (id:%d)"
+msgstr "No existe cuenta de gasto definida para este producto: \"%s\" (id:%d)"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_move
+msgid "Account Entry"
+msgstr "Asiento contable"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_invoice_ext.py:81
+#: code:addons/onglibre_assets_services_expenses/account_move_line_ext.py:48
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_invoice_ext.py:81
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_move_line_ext.py:48
+#, python-format
+msgid "No Analytic Journal !"
+msgstr "No hay diario analítico !"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.analytic.line,account_invoice_line_id:0
+#: field:account.move.line,account_invoice_line_id:0
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea Factura"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.bank.statement:0
+msgid "The journal and period chosen have to belong to the same company."
+msgstr ""
+"El diario y periodo seleccionados tienen que pertenecer a la misma compañía"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Extracto bancario"
+
+#. module: onglibre_assets_services_expenses
+#: field:line.financing.source,account_analytic_id:0
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.move.line:0
+msgid "You can not create journal items on closed account."
+msgstr "No puede crear asientos en cuentas cerradas"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_bank_statement_ext.py:37
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_bank_statement_ext.py:37
+#, python-format
+msgid ""
+"Please define analytic account for Entry Date: ' + str(line.date) + ', "
+"Communication: ' + str(line.name) + ', Amount: ' + str(line.amount)))\n"
+"                else:\n"
+"                    if not line.line_financing_source_ids:\n"
+"                        raise osv.except_osv(_('No Financers Found !"
+msgstr ""
+"Por favor defina cuenta analítica para fecha asiento: ' + str(line.date) + "
+"', Communication: ' + str(line.name) + ', Amount: ' + str(line.amount)))\n"
+"                else:\n"
+"                    if not line.line_financing_source_ids:\n"
+"                        raise osv.except_osv(_('No Financers Found !"
+
+#. module: onglibre_assets_services_expenses
+#: code:addons/onglibre_assets_services_expenses/account_invoice_ext.py:81
+#: code:addons/onglibre_assets_services_expenses/account_move_line_ext.py:48
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_invoice_ext.py:81
+#: code:addons/openerp/addons/onglibre_assets_services_expenses/account_move_line_ext.py:48
+#, python-format
+msgid "You have to define an analytic journal on the '%s' journal!"
+msgstr "Tiene que definir un diario analítico en el diario financiero '%s' !"
+
+#. module: onglibre_assets_services_expenses
+#: field:account.analytic.line,purchase_order_line_id:0
+msgid "Purchase Line"
+msgstr "Línea compra"
+
+#. module: onglibre_assets_services_expenses
+#: constraint:account.analytic.line:0
+msgid "You can not create analytic line on view account."
+msgstr "No puede crear una linea analítica en una cuenta de tipo vista."
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: onglibre_assets_services_expenses
+#: view:purchase.order:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: onglibre_assets_services_expenses
+#: model:ir.model,name:onglibre_assets_services_expenses.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"

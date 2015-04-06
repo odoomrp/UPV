@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="purchase_order_form_inh_assetsservices">
+            <field name="name">purchase.order.form.inh.assetsservices</field>
+            <field name="model">purchase.order</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+               <tree string="Purchase Order Lines" position="attributes">
+                    <attribute name="readonly">"1"</attribute>
+               </tree>
+               <field name="price_subtotal" position="after">
+                   <field name="account_analytic_id" />
+                   <field name="budgetary_line_id" />
+                   <field name="line_financing_source_ids" string="Financers" />
+               </field>
+               <xpath expr="//button[@name='purchase_cancel']" position="replace">
+                   <button name="purchase_cancel" states="draft,confirmed,sent,bid,request,wait_auth" string="Cancel" icon="gtk-cancel"/>
+               </xpath>
+               <xpath expr="//button[@name='purchase_confirm']" position="after">
+                   <button name="purchase_request" states="draft" string="Request" icon="gtk-go-forward"/>
+               </xpath>
+               <xpath expr="//button[@name='purchase_confirm']" position="replace">
+                   <button name="purchase_confirm" states="request" string="Confirm Order" id="draft_confirm"/>
+               </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

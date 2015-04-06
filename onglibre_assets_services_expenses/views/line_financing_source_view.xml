@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="line_financing_source_tree_view">
+			<field name="name">line.financing.source.tree.view</field>
+			<field name="model">line.financing.source</field>
+			<field name="arch" type="xml">
+				<tree string="Line Financing Sources" >
+					<field name="financial_source_line_id" />
+					<field name="financing_percentage" />
+					<field name="line_financing_percentage" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="line_financing_source_search_view">
+			<field name="name">line.financing.source.search.view</field>
+			<field name="model">line.financing.source</field>
+			<field name="arch" type="xml">
+                <search string="Search Lines Financing Source">
+                    <group>
+						<field name="account_analytic_id" />
+						<field name="budgetary_line_id" />	
+						<field name="financial_source_line_id" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="line_financing_source_form_view">
+			<field name="name">line.financing.source.form.view</field>
+			<field name="model">line.financing.source</field>
+			<field name="arch" type="xml">
+				<form string="Line Financing Source" >
+					<field name="account_analytic_id" invisible="1"/>
+					<field name="budgetary_line_id" invisible="1"/>
+					<group colspan="4" col="8">
+						<field name="financial_source_line_id" colspan="4" context="{'tree_view_ref':'onglibre_assets_services_expenses.view_account_analytic_line_tree_assetsservices2'}" on_change="onchange_financial_source_line(financial_source_line_id)" />
+						<field name="financing_percentage" colspan="2" />	
+						<field name="line_financing_percentage" colspan="2" on_change="onchange_line_financing_percentage(line_financing_percentage)"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>
