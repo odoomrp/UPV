@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="simulation_category_tree_view">
+			<field name="name">simulation.category.tree.view</field>
+			<field name="model">simulation.category</field>
+			<field name="arch" type="xml">
+				<tree string="Simulation Categories" >
+					<field name="simulation_cost_id" invisible="1"/>
+					<field name="name" invisible="1"/>
+					<field name="expense_area_id"/>
+					<field name="category_id" />
+					<field name="restricted_category" />
+					<field name="amount" />
+					<field name="notes" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="simulation_category_form_view">
+			<field name="name">simulation.category.form.view</field>
+			<field name="model">simulation.category</field>
+			<field name="arch" type="xml">
+				<form string="Simulation Categories">
+					<group colspan="4">
+						<field name="simulation_cost_id" invisible="1"/>
+						<field name="name" invisible="1"/>
+					</group>
+					<group colspan="4">
+						<field name="expense_area_id" />
+						<field name="category_id" />
+						<field name="restricted_category" on_change="onchange_restricted_category(category_id, restricted_category, parent.others_cost_lines_ids)"/>
+						<field name="amount" />
+						<field name="notes" colspan="4"/>
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

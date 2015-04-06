@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="proyect_location_tree_view">
+			<field name="name">project.location.tree.view</field>
+			<field name="model">project.location</field>
+			<field name="arch" type="xml">
+				<tree string="Location" >
+					<field name="name" />
+					<field name="description" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_location_form_view">
+			<field name="name">project.location.form.view</field>
+			<field name="model">project.location</field>
+			<field name="arch" type="xml">
+				<form string="Location">
+					<group col="4" colspan="6">
+						<field name="name" colspan="3"/>
+					</group>
+					<newline/>
+					<separator string="Description" />
+					<group col="4" colspan="6">
+						<field name="description" colspan="6" nolabel="1"/>
+					</group>
+					<newline/>
+				</form>
+			</field>
+		</record>
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+		<record model="ir.actions.act_window" id="action_custom_project_location_form">
+			<field name="name">Location</field>
+			<field name="res_model">project.location</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+		<menuitem id="custom_project_location_menu_view" name="Locations" sequence="70"
+			parent="project_master_tables_group_view" action="action_custom_project_location_form" />
+
+	</data>
+</openerp>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- Activity -->
+        
+    	<record id="act_financing" model="workflow.activity">
+            <field name="wkf_id" ref="costs_simulator.wkf_simulation"/>
+            <field name="name">financing</field>
+            <field name="kind">function</field>
+            <field name="action">action_financing()</field>
+        </record>     
+        
+    	<record id="act_open" model="workflow.activity">
+            <field name="wkf_id" ref="costs_simulator.wkf_simulation"/>
+            <field name="name">open</field>
+            <field name="kind">function</field>
+            <field name="action">action_open()</field>
+        </record>   
+        
+    	<record id="act_inmodif_budgetary" model="workflow.activity">
+            <field name="wkf_id" ref="costs_simulator.wkf_simulation"/>
+            <field name="name">inmodif_budgetary</field>
+            <field name="kind">function</field>
+            <field name="action">action_inmodif_budgetary()</field>
+        </record>  
+        
+    	<record id="act_closed" model="workflow.activity">
+            <field name="wkf_id" ref="costs_simulator.wkf_simulation"/>
+            <field name="name">closed</field>
+            <field name="kind">function</field>
+            <field name="action">action_closed()</field>
+        </record>  
+
+        <!-- Transistion -->   
+       
+        <record id="trans_draft_financing" model="workflow.transition">
+            <field name="act_from" ref="costs_simulator.act_draft"/>
+            <field name="act_to" ref="act_financing"/>
+            <field name="signal">button_financing</field>
+        </record>
+        
+        <record id="trans_financing_draft" model="workflow.transition">
+            <field name="act_from" ref="act_financing"/>
+            <field name="act_to" ref="costs_simulator.act_draft"/>
+            <field name="signal">button_draft</field>
+        </record>
+        
+        <record id="trans_financing_open" model="workflow.transition">
+            <field name="act_from" ref="act_financing"/>
+            <field name="act_to" ref="act_open"/>
+            <field name="signal">button_open</field>
+        </record>
+        
+        <record id="trans_open_financing" model="workflow.transition">
+            <field name="act_from" ref="act_open"/>
+            <field name="act_to" ref="act_financing"/>
+            <field name="signal">button_financing</field>
+        </record>
+        
+        <record id="trans_financing_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_financing"/>
+            <field name="act_to" ref="costs_simulator.act_canceled"/>
+            <field name="signal">button_canceled</field>
+        </record>
+        
+        <record id="trans_open_inmodif_budgetary" model="workflow.transition">
+            <field name="act_from" ref="act_open"/>
+            <field name="act_to" ref="act_inmodif_budgetary"/>
+            <field name="signal">button_inmodif_budgetary</field>
+        </record>
+        
+        <record id="trans_inmodif_budgetary_open" model="workflow.transition">
+            <field name="act_from" ref="act_inmodif_budgetary"/>
+            <field name="act_to" ref="act_open"/>
+            <field name="signal">button_open</field>
+        </record>   
+        
+        <record id="trans_open_close" model="workflow.transition">
+            <field name="act_from" ref="act_open"/>
+            <field name="act_to" ref="act_closed"/>
+            <field name="signal">button_closed</field>
+        </record>     
+        
+        <record id="trans_open_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_open"/>
+            <field name="act_to" ref="costs_simulator.act_canceled"/>
+            <field name="signal">button_canceled</field>
+        </record>
+        
+        <record id="trans_inmodif_budgetary_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_inmodif_budgetary"/>
+            <field name="act_to" ref="costs_simulator.act_canceled"/>
+            <field name="signal">button_canceled</field>
+        </record>
+
+    </data>
+</openerp>

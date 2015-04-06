@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+	
+        <record model="ir.ui.view" id="res_partner_tree_inh_budgetary">
+            <field name="name">res.partner.addres.inh.budgetary</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="email" position="after">
+                    <field name="street" colspan="2" />
+                </field>
+            </field>
+        </record>
+	
+	
+		<record model="ir.ui.view" id="view_partner_form_inh_budgetary">
+			<field name="name">view.partner.form.inh.budgetary</field>
+			<field name="model">res.partner</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+			    <notebook position="before">
+					<group colspan="2" >
+						<field name="state" attrs="{'invisible': [('customer', '=', False)]}"/>
+					</group>
+					<group colspan="2" >
+						<button name="button_potential" attrs="{'invisible': [('customer', '=', False)]}" states="active,oldest,discarded" string="Potential" icon="gtk-ok"/>
+						<button name="button_active" attrs="{'invisible': [('customer', '=', False)]}" states="potential,oldest,discarded" string="Active" icon="gtk-ok"/>
+						<button name="button_oldest" attrs="{'invisible': [('customer', '=', False)]}" states="potential,active,discarded" string="Oldest" icon="gtk-ok"/>
+						<button name="button_discarded" attrs="{'invisible': [('customer', '=', False)]}" states="potential,active,oldest" string="Discarded" icon="gtk-ok"/>
+					</group>
+				</notebook>
+				<notebook position="inside">
+					<page string="Homologation Data" attrs="{'invisible': [('supplier', '=', False)]}">
+                    	<group col="6" colspan="4">
+                        	<group colspan="1" col="2">
+                         		<field name="approved"/>
+                		 		<field name="approval_date"/>
+                		 		<field name="last_revision_date"/>
+                        	</group>
+                        	<group colspan="5" col="6">
+                        	</group>
+                    	</group>
+					</page>
+				</notebook>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+        <record model="ir.ui.view" id="crm_tracking_campaign_tree_inh_budgetary">
+            <field name="name">crm.tracking.campaign.tree.inh.budgetary</field>
+            <field name="model">crm.tracking.campaign</field>
+            <field name="inherit_id" ref="crm.crm_tracking_campaign_tree" />
+            <field name="arch" type="xml">
+            	<field name="section_id" position="before">
+            		<field name="strategy_id" />
+            		<field name="date_create"/>
+            	</field>
+				<field name="section_id" position="after"> 
+					<field name="crm_iniciatives_ids" domain="[('type','=','lead')]" 
+													  context="{'type':'lead'}" />
+					<field name="crm_opportunities_ids" domain="[('type','=','opportunity')]"
+														context="{'type':'opportunity'}" />
+				</field>
+            </field>
+        </record>
+        <!-- Resource Type of case Form View -->
+        <record model="ir.ui.view" id="crm_tracking_campaign_form_inh_budgetary">
+            <field name="name">crm.tracking.campaign.form.inh.budgetary</field>
+            <field name="model">crm.tracking.campaign</field>
+            <field name="inherit_id" ref="crm.crm_tracking_campaign_form" />
+            <field name="arch" type="xml">
+				<field name="section_id" position="before"> 
+					<group colspan="2" col="4">
+	                	<field name="strategy_id" />
+	                	<field name="active"/>
+                	</group>
+				</field> 
+				<field name="section_id" position="after"> 
+					<field name="date_create"/>
+					<notebook colspan="4">
+						<page string="Iniciatives">
+							<field name="crm_iniciatives_ids" nolabel="1"
+								   domain="[('type','=','lead')]" string="Leads" context="{'type':'lead','form_view_ref':'crm_lead_inh_view_ext', 'tree_view_ref':'crm.crm_case_tree_view_leads'}" />			
+						</page>
+						<page string="Opportunities">
+							<field name="crm_opportunities_ids" nolabel="1"
+								   domain="[('type','=','opportunity')]" string="Opportunities" context="{'type':'opportunity','form_view_ref':'crm_case_form_view_oppor_ext', 'tree_view_ref':'crm.crm_case_tree_view_oppor'}" />			
+						</page>
+						<page string="Communication &amp; History" groups="base.group_extended">
+							<field name="message_ids" colspan="4" nolabel="1" mode="tree" />
+							<button string="Add Internal Note" name="%(action_strategy_add_note)d"
+								context="{'model': 'crm.case.resource.type' }" icon="terp-document-new" type="action" />
+						</page>
+					</notebook>
+				</field>
+            </field>
+        </record>
+		
+		<!-- 
+		<record model="ir.ui.view" id="crm_case_resource_validation_form_inh_budgetary">
+            <field name="name">crm.case.resource.validation.form.inh.budgetary</field>
+            <field name="model">crm.tracking.campaign</field>
+            <field name="priority" eval="25"/>
+            <field name="arch" type="xml">
+				<label string="Linked leads will not be deleted. Do you want to continue?" colspan="4"/>
+				<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+				<button name="validate_unlink" string="Ok" type="object" icon="gtk-ok"/>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="crm_case_resource_validation_action">
+                <field name="name">crm.case.resource.type.validation</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">crm.case.resource.type</field>
+                <field name="sequence" eval="25"/>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="view_id" ref="crm_case_resource_validation_form_ext"/>
+        </record>
+        -->
+        	
+	</data>
+</openerp>

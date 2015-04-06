@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_aeronautical_program_tree_view">
+			<field name="name">project.aeronautical.program.tree.view</field>
+			<field name="model">project.aeronautical.program</field>
+			<field name="arch" type="xml">
+				<tree string="Aeronautical Programas">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_aeronautical_program_form_view">
+			<field name="name">project.aeronautical.program.form.view</field>
+			<field name="model">project.aeronautical.program</field>
+			<field name="arch" type="xml">
+				<form string="Aeronautical Program">
+					<group col="2" colspan="4">
+            			<field name="name"/>
+                    </group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_aeronautical_program_call">
+			<field name="name">Aeronautical Programs</field>
+			<field name="res_model">project.aeronautical.program</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_aeronautical_program_menu_view" name="Aeronatical Programs" sequence="35"
+			parent="project_master_tables_group_view" action="action_aeronautical_program_call" />
+
+	</data>
+</openerp>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="simulation_template_tree_inh_budgetary">
+			<field name="name">simulation.template.tree.inh.budgetary</field>
+			<field name="model">simulation.template</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_template_tree_view"/>
+			<field name="arch" type="xml">
+                <field name="template_product_id" position="replace" />
+				<field name="others_template_lines_ids" position="replace">
+					<field name="others_template_lines_ids" domain="[('type_cost','=','Others')]" context="{'type_cost':'Others'}" string="Budget"/>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="simulation_template_form_inh_budgetary">
+			<field name="name">simulation.template.form.inh.budgetary</field>
+			<field name="model">simulation.template</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_template_form_view"/>
+			<field name="arch" type="xml">
+                <field name="template_product_id" position="replace" />
+               	<page string="Template Lines" position="replace">
+                    <page string="Expense Areas Permitted" >
+                        <group colspan="4">
+                            <separator string="Expense Areas" colspan="4"/>
+                            <field name="expense_area_ids" nolabel="1" />
+                            <separator string="Categories" colspan="4"/>
+                            <field name="simulation_template_category_ids" nolabel="1" height="300" />
+                        </group>
+                    </page>
+					<page string="Budget">
+						<field name="others_template_lines_ids" nolabel="1" domain="[('type_cost','=','Others')]" context="{'type_cost':'Others', 'template_id':active_id}"/>
+					</page>
+				</page>
+			</field>
+		</record>
+	</data>
+</openerp>

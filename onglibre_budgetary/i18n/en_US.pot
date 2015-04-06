@@ -1,0 +1,2233 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* onglibre_budgetary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120523-233315\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-29 07:42+0000\n"
+"PO-Revision-Date: 2013-09-29 07:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,justified_import:0
+msgid "Justified amount"
+msgstr "Justified amount"
+
+#. module: onglibre_budgetary
+#: field:project.publication,title:0
+msgid "Title"
+msgstr "Title"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_project_subactivity
+#: model:ir.model,name:onglibre_budgetary.model_project_subactivity
+#: field:project.project,project_subactivity_id:0
+#: view:project.subactivity:0
+#: field:simulation.cost,project_subactivity_id:0
+msgid "Subactivity"
+msgstr "Subactivity"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:120
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:120
+#, python-format
+msgid "This Simulation Costs Have Associated Sales Orders"
+msgstr "This Simulation Costs Have Associated Sales Orders"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_crm_strategy
+msgid "CRM Strategy"
+msgstr "CRM Strategy"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: field:project.project,department_id:0
+#: field:simulation.cost,department_id:0
+msgid "Department"
+msgstr "Department"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid " "
+msgstr " "
+
+#. module: onglibre_budgetary
+#: field:project.type,sale_journal_id:0
+msgid "Sale Journal"
+msgstr "Sale Journal"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Expense Areas Permitted"
+msgstr "Expense Areas Permitted"
+
+#. module: onglibre_budgetary
+#: view:crm.strategy:0
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_crm_strategy
+#: model:ir.ui.menu,name:onglibre_budgetary.strategy_menu_view
+msgid "Strategys"
+msgstr "Strategys"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:672
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:689
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:672
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:689
+#, python-format
+msgid "Sale Product Error"
+msgstr "Sale Product Error"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Invoice Info."
+msgstr "Invoice Info."
+
+#. module: onglibre_budgetary
+#: view:project.financing:0
+#: view:simulation.cost:0
+msgid "Project Financing Information"
+msgstr "Project Financing Information"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_justified_invoice_import
+msgid "justified.invoice.import"
+msgstr "justified.invoice.import"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "UoM"
+msgstr "UoM"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:179
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:187
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:179
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:187
+#, python-format
+msgid "Line Delete Error"
+msgstr "Line Delete Error"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.simulation.line,amount:0
+#: view:account.invoice.line:0
+#: field:simulation.category,amount:0
+#: field:simulation.cost.line,sale_amount:0
+msgid "Amount"
+msgstr "Amount"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,purchase_line_ids:0
+msgid "Purchase Lines"
+msgstr "Purchase Lines"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,vat:0
+msgid "VAT"
+msgstr "VAT"
+
+#. module: onglibre_budgetary
+#: field:crm.lead,campaign_id:0
+#: model:ir.model,name:onglibre_budgetary.model_crm_case_resource_type
+#: view:project.project:0
+#: field:project.project,crm_case_resource_type_id:0
+#: field:simulation.cost,crm_case_resource_type_id:0
+msgid "Campaign"
+msgstr "Campaign"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:201
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:201
+#, python-format
+msgid "You can not modify the rates, this line belongs to a line of sale order"
+msgstr "You can not modify the rates, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,use_project_id:0
+msgid "Use Project"
+msgstr "Use Project"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:429
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:429
+#, python-format
+msgid "You can not modify the supplier, this line belongs to a line of sale order"
+msgstr "You can not modify the supplier, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: onglibre_budgetary
+#: field:project.publication,publication_type_id:0
+#: view:project.publication.type:0
+msgid "Publication Type"
+msgstr "Publication Type"
+
+#. module: onglibre_budgetary
+#: field:project.justification,state:0
+#: field:res.partner,state:0
+msgid "State"
+msgstr "State"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,parent_project_id:0
+msgid "Parent Project"
+msgstr "Parent Project"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Insert Lines From Template"
+msgstr "Insert Lines From Template"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.line,account_analytic_simulation_line_ids:0
+msgid "Account Analytic Simulation Lines"
+msgstr "Account Analytic Simulation Lines"
+
+#. module: onglibre_budgetary
+#: view:administration:0
+#: view:project.pyramid.test:0
+msgid "Calls"
+msgstr "Calls"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,subtotal6_purchase:0
+msgid "Total Purchase"
+msgstr "Total Purchase"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:428
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:440
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:428
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:440
+#, python-format
+msgid "Supplier Error"
+msgstr "Supplier Error"
+
+#. module: onglibre_budgetary
+#: field:crm.lead,simulation_cost_ids:0
+#: view:crm.strategy:0
+#: field:crm.strategy,campaign_ids:0
+msgid "Campaigns"
+msgstr "Campaigns"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: onglibre_budgetary
+#: field:project.project,final_partner_id:0
+#: field:simulation.cost,final_partner_id:0
+msgid "Final Customer"
+msgstr "Final Customer"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Other Information"
+msgstr "Other Information"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_project_research_line
+#: model:ir.model,name:onglibre_budgetary.model_project_research_line
+#: view:project.research.line:0
+#: field:simulation.cost,project_research_line_id:0
+msgid "Line"
+msgstr "Line"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+#: field:simulation.cost,simulation_category_ids:0
+#: field:simulation.cost.line,category_ids:0
+msgid "Categories"
+msgstr "Categories"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Resumen"
+msgstr "Resumen"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Budget"
+msgstr "Budget"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_project_type_form
+#: view:project.type:0
+#: field:simulation.cost,project_type_id:0
+msgid "Project Type"
+msgstr "Project Type"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_type_program_form
+#: model:ir.model,name:onglibre_budgetary.model_type_program
+#: view:type.program:0
+msgid "Convocatoria"
+msgstr "Convocatoria"
+
+#. module: onglibre_budgetary
+#: view:crm.lead:0
+#: model:ir.model,name:onglibre_budgetary.model_res_partner_contact
+#: field:project.publication,contact_id:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: field:crm.case.resource.type,crm_iniciatives_ids:0
+msgid "Iniciatives"
+msgstr "Iniciatives"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Others Lines"
+msgstr "Others Lines"
+
+#. module: onglibre_budgetary
+#: constraint:hr.contract:0
+msgid "Error! contract start-date must be lower then contract end-date."
+msgstr "Error! contract start-date must be lower then contract end-date."
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2169
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2176
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2169
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2176
+#, python-format
+msgid "You must enter the percentage of financing"
+msgstr "You must enter the percentage of financing"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,state:0
+#: selection:project.financing,simulation_cost_state:0
+#: view:simulation.cost:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: onglibre_budgetary
+#: field:res.partner,last_revision_date:0
+msgid "Last Revision Date"
+msgstr "Last Revision Date"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_hr_department
+msgid "hr.department"
+msgstr "hr.department"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:440
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:440
+#, python-format
+msgid "You must select a product"
+msgstr "You must select a product"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1461
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1465
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1605
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1609
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2168
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2175
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2181
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2207
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2212
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1461
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1465
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1605
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1609
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2168
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2175
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2181
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2207
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2212
+#, python-format
+msgid "Financing Error"
+msgstr "Financing Error"
+
+#. module: onglibre_budgetary
+#: field:simulation.category,category_id:0
+msgid "Category"
+msgstr "Category"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,invoice_type:0
+msgid "Customer Refund"
+msgstr "Customer Refund"
+
+#. module: onglibre_budgetary
+#: field:project.phase,account_analytic_account_id:0
+msgid "Account Analitic Account"
+msgstr "Account Analitic Account"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:245
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:62
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:245
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:62
+#, python-format
+msgid "Product must be product or consumable"
+msgstr "Product must be product or consumable"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:828
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:828
+#, python-format
+msgid "You can not modify the margin percent, this line belongs to a line of sale order"
+msgstr "You can not modify the margin percent, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:732
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:732
+#, python-format
+msgid "Sale Amount Error"
+msgstr "Sale Amount Error"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1051
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1227
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1418
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1051
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1227
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1418
+#, python-format
+msgid "Financing Source analytic line not found for %s expense area"
+msgstr "Financing Source analytic line not found for %s expense area"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Línea de investigación"
+msgstr "Línea de investigación"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Cost Type"
+msgstr "Cost Type"
+
+#. module: onglibre_budgetary
+#: constraint:hr.employee:0
+msgid "Error ! You cannot create recursive Hierarchy of Employees."
+msgstr "Error ! You cannot create recursive Hierarchy of Employees."
+
+#. module: onglibre_budgetary
+#: field:hr.contract,variable_percentage:0
+msgid "Variable %"
+msgstr "Variable %"
+
+#. module: onglibre_budgetary
+#: selection:project.financing,simulation_cost_state:0
+#: view:simulation.cost:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Financing"
+msgstr "Financing"
+
+#. module: onglibre_budgetary
+#: field:administration,program_type_ids:0
+msgid "Call List"
+msgstr "Call List"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Research Subline"
+msgstr "Research Subline"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Incoming invoices"
+msgstr "Incoming invoices"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Programa de ayudas/Administración"
+msgstr "Programa de ayudas/Administración"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "SubActivity"
+msgstr "SubActivity"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+msgid "Linked leads will not be deleted. Do you want to continue?"
+msgstr "Linked leads will not be deleted. Do you want to continue?"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/sale_order_ext.py:70
+#: code:addons/onglibre_budgetary/sale_order_ext.py:74
+#: code:addons/openerp/addons/onglibre_budgetary/sale_order_ext.py:70
+#: code:addons/openerp/addons/onglibre_budgetary/sale_order_ext.py:74
+#, python-format
+msgid "PROCUREMENT_ORDER: Purchase Order Creation Error"
+msgstr "PROCUREMENT_ORDER: Purchase Order Creation Error"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,paid_import:0
+msgid "Amount paid"
+msgstr "Amount paid"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,invoice_type:0
+msgid "Customer Invoice"
+msgstr "Customer Invoice"
+
+#. module: onglibre_budgetary
+#: field:project.publication,filing_date:0
+msgid "Filing Date"
+msgstr "Filing Date"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Research Line"
+msgstr "Research Line"
+
+#. module: onglibre_budgetary
+#: field:project.pyramid.test,code:0
+#: field:project.research.line,code:0
+#: field:project.research.subline,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,crm_opportunity_id:0
+msgid "Opportunity"
+msgstr "Opportunity"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:217
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:217
+#, python-format
+msgid "You can not modify the product, this line belongs to a line of sale order"
+msgstr "You can not modify the product, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: view:project.aeronautical.program:0
+msgid "Aeronautical Programas"
+msgstr "Aeronautical Programas"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Aeronave y tipo de componente"
+msgstr "Aeronave y tipo de componente"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Justification import"
+msgstr "Justification import"
+
+#. module: onglibre_budgetary
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Error: Invalid ean code"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,subtotal6t_purchase:0
+msgid "Amortizations R&D"
+msgstr "Amortizations R&D"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:792
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:794
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:801
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:805
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1023
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1051
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1175
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1227
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1358
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1418
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1420
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:952
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:956
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:792
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:794
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:801
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:805
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1023
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1051
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1175
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1227
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1358
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1418
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1420
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:952
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:956
+#, python-format
+msgid "Sale Order Creation Error"
+msgstr "Sale Order Creation Error"
+
+#. module: onglibre_budgetary
+#: view:project.publication:0
+msgid "Publication"
+msgstr "Publication"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: field:crm.case.resource.type,crm_opportunities_ids:0
+msgid "Opportunities"
+msgstr "Opportunities"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "In Modif.Budgetary"
+msgstr "In Modif.Budgetary"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_pyramid_test
+msgid "Project Pyramid Test"
+msgstr "Project Pyramid Test"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_strategy_add_note
+#: view:strategy.add.note:0
+msgid "Add Note"
+msgstr "Add Note"
+
+#. module: onglibre_budgetary
+#: field:project.type,generate_by_lines:0
+#: field:simulation.cost,generate_by_lines:0
+msgid "Generate By Lines"
+msgstr "Generate By Lines"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Supplier"
+msgstr "Supplier"
+
+#. module: onglibre_budgetary
+#: field:project.project,resume:0
+#: field:simulation.cost,resume:0
+msgid "Resume"
+msgstr "Resume"
+
+#. module: onglibre_budgetary
+#: constraint:project.task:0
+msgid "Error ! You cannot create recursive tasks."
+msgstr "Error ! You cannot create recursive tasks."
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1053
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1229
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1053
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1229
+#, python-format
+msgid "Financing Source analytic line not found for product: %s"
+msgstr "Financing Source analytic line not found for product: %s"
+
+#. module: onglibre_budgetary
+#: field:account.invoice,have_comment:0
+msgid "HaveComments"
+msgstr "HaveComments"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_subsector_form
+#: model:ir.model,name:onglibre_budgetary.model_subsector
+#: view:project.project:0
+#: field:project.project,subsector_id:0
+#: field:simulation.cost,subsector_id:0
+#: view:subsector:0
+msgid "Subsector"
+msgstr "Subsector"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Financing Source"
+msgstr "Financing Source"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_task
+msgid "Task"
+msgstr "Task"
+
+#. module: onglibre_budgetary
+#: view:administration:0
+#: view:project.project:0
+#: field:project.project,administration_id:0
+#: field:simulation.cost,administration_id:0
+#: field:type.program,administration_id:0
+msgid "Administration"
+msgstr "Administration"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:689
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:689
+#, python-format
+msgid "Product must be to sale OR the same product of purchase"
+msgstr "Product must be to sale OR the same product of purchase"
+
+#. module: onglibre_budgetary
+#: view:expense.area:0
+msgid "Simulation"
+msgstr "Simulation"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:249
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:66
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:249
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:66
+#, python-format
+msgid "Product must be a service"
+msgstr "Product must be a service"
+
+#. module: onglibre_budgetary
+#: field:res.partner,approval_date:0
+msgid "Approval Date"
+msgstr "Approval Date"
+
+#. module: onglibre_budgetary
+#: view:project.financing:0
+#: view:simulation.cost:0
+msgid "Financial Source Information"
+msgstr "Financial Source Information"
+
+#. module: onglibre_budgetary
+#: view:strategy.add.note:0
+msgid "_Cancel"
+msgstr "_Cancel"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Product of Cost"
+msgstr "Product of Cost"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,state:0
+#: selection:project.financing,simulation_cost_state:0
+#: view:project.justification:0
+#: selection:project.justification,state:0
+#: view:simulation.cost:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Sales Order Line"
+
+#. module: onglibre_budgetary
+#: view:project.aeronautical.program:0
+#: view:project.project:0
+#: field:project.project,project_aeronautical_program_id:0
+#: field:simulation.cost,project_aeronautical_program_id:0
+msgid "Aeronautical Program"
+msgstr "Aeronautical Program"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.act_project_project_account_analytic_line_opened
+msgid "Economic Information"
+msgstr "Economic Information"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:550
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:550
+#, python-format
+msgid "Price/Amount Error"
+msgstr "Price/Amount Error"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,last_pay_date:0
+msgid "Payment date"
+msgstr "Payment date"
+
+#. module: onglibre_budgetary
+#: field:purchase.order.line,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: onglibre_budgetary
+#: field:sale.order.line,analytic_budgetary_line_id:0
+msgid "Analytic Budgetary Line"
+msgstr "Analytic Budgetary Line"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/project_financing_ext.py:87
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:120
+#: code:addons/openerp/addons/onglibre_budgetary/project_financing_ext.py:87
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:120
+#, python-format
+msgid "Invalid action !"
+msgstr "Invalid action !"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost.line,stage:0
+#: field:simulation.select.template,stage:0
+msgid "Stage"
+msgstr "Stage"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: view:crm.strategy:0
+msgid "History Information"
+msgstr "History Information"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_subsector_menu_view
+#: view:sector:0
+msgid "Subsectors"
+msgstr "Subsectors"
+
+#. module: onglibre_budgetary
+#: field:expense.area,project_financing_ids:0
+#: field:expense.area,simulation_cost_ids:0
+#: field:expense.area,simulation_cost_line_ids:0
+#: model:ir.model,name:onglibre_budgetary.model_simulation_cost
+#: field:product.category,simulation_cost_line_ids:0
+msgid "Simulation Costs"
+msgstr "Simulation Costs"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+#: view:simulation.template:0
+msgid "Amortizations I+D"
+msgstr "Amortizations I+D"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_publication
+msgid "Project Publication"
+msgstr "Project Publication"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:780
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:780
+#, python-format
+msgid "Sale Price Error"
+msgstr "Sale Price Error"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Quantity :"
+msgstr "Quantity :"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost.line,margin_percent:0
+msgid "Margin %"
+msgstr "Margin %"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_master_tables_group_view
+msgid "Master Tables Group"
+msgstr "Master Tables Group"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:255
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:72
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:255
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:72
+#, python-format
+msgid "Product Supply Method must be PRODUCE"
+msgstr "Product Supply Method must be PRODUCE"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,state:0
+msgid "Invoice state"
+msgstr "Invoice state"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/sale_order_ext.py:70
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:801
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1461
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1605
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:952
+#: code:addons/openerp/addons/onglibre_budgetary/sale_order_ext.py:70
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:801
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1461
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1605
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:952
+#, python-format
+msgid "Journal with PRESUPUESTARIAS literal NOT FOUND"
+msgstr "Journal with PRESUPUESTARIAS literal NOT FOUND"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:792
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:792
+#, python-format
+msgid "You can not generate one Sale Order from one Historical"
+msgstr "You can not generate one Sale Order from one Historical"
+
+#. module: onglibre_budgetary
+#: field:hr.contract,total:0
+#: field:hr.contract,variable_amount:0
+msgid "Variable Amount"
+msgstr "Variable Amount"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_task_work
+msgid "Project Task Work"
+msgstr "Project Task Work"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Type Program"
+msgstr "Type Program"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.simulation.line,account_analytic_line_id:0
+#: model:ir.model,name:onglibre_budgetary.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Analytic Line"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_simulation_template_line
+msgid "Simulation Template Line"
+msgstr "Simulation Template Line"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_subactivity_menu_view
+#: view:project.activity:0
+#: field:project.activity,subactivity_ids:0
+msgid "Subactivitys"
+msgstr "Subactivitys"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: field:project.project,project_location_id:0
+msgid "Project Location"
+msgstr "Project Location"
+
+#. module: onglibre_budgetary
+#: view:res.partner:0
+msgid "Homologation Data"
+msgstr "Homologation Data"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.crm_case_resource_validation_action
+msgid "crm.case.resource.type.validation"
+msgstr "crm.case.resource.type.validation"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:216
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:237
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:241
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:245
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:249
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:252
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:255
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:58
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:62
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:66
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:69
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:72
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:216
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:237
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:241
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:245
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:249
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:252
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:255
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:58
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:62
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:66
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:69
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:72
+#, python-format
+msgid "Product Error"
+msgstr "Product Error"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:827
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:827
+#, python-format
+msgid "Margin Percent Error"
+msgstr "Margin Percent Error"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_research_subline
+msgid "Project Research Subline"
+msgstr "Project Research Subline"
+
+#. module: onglibre_budgetary
+#: view:project.justification:0
+msgid "Project Justifications"
+msgstr "Project Justifications"
+
+#. module: onglibre_budgetary
+#: view:account.analytic.line:0
+msgid "Budgets"
+msgstr "Budgets"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2239
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2239
+#, python-format
+msgid "Not Project found for analytic account: %s"
+msgstr "Not Project found for analytic account: %s"
+
+#. module: onglibre_budgetary
+#: selection:project.financing,simulation_cost_state:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "In Budgetary Modification"
+msgstr "In Budgetary Modification"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_sector_form
+#: model:ir.model,name:onglibre_budgetary.model_sector
+#: field:project.project,sector_id:0
+#: view:sector:0
+#: field:simulation.cost,sector_id:0
+#: field:subsector,sector_id:0
+msgid "Sector"
+msgstr "Sector"
+
+#. module: onglibre_budgetary
+#: field:project.project,project_research_line_id:0
+#: field:project.research.subline,project_research_line_id:0
+msgid "Project Line"
+msgstr "Project Line"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+msgid "Justified Amount"
+msgstr "Justified Amount"
+
+#. module: onglibre_budgetary
+#: view:project.financing:0
+msgid "Simulation Cost Information"
+msgstr "Simulation Cost Information"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,amortization_cost_lines_ids:0
+msgid "Amortization I+D Lines"
+msgstr "Amortization I+D Lines"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,project_financing_lines_ids:0
+msgid "Lines with Financing Source"
+msgstr "Lines with Financing Source"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Sector de actividad"
+msgstr "Sector de actividad"
+
+#. module: onglibre_budgetary
+#: sql_constraint:sale.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "Order Reference must be unique per Company!"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:935
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:935
+#, python-format
+msgid "You can not modify the expense area, this line belongs to a line of sale order"
+msgstr "You can not modify the expense area, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,subtotal6_sale:0
+msgid "Total Sale"
+msgstr "Total Sale"
+
+#. module: onglibre_budgetary
+#: field:simulation.template,amortization_template_lines_ids:0
+msgid "Amortization Lines"
+msgstr "Amortization Lines"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:849
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:849
+#, python-format
+msgid "You can not modify the estimated margin, this line belongs to a line of sale order"
+msgstr "You can not modify the estimated margin, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: field:project.project,product_ids:0
+msgid "Produts"
+msgstr "Produts"
+
+#. module: onglibre_budgetary
+#: field:project.justification,program_id:0
+#: field:project.project,type_program_id:0
+#: field:simulation.cost,type_program_id:0
+msgid "Call"
+msgstr "Call"
+
+#. module: onglibre_budgetary
+#: field:project.justification,sequence:0
+msgid "Justification num."
+msgstr "Justification num."
+
+#. module: onglibre_budgetary
+#: field:project.type,administrative:0
+msgid "Administrative"
+msgstr "Administrative"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_type
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_project_type_menu_view
+msgid "Project Types"
+msgstr "Project Types"
+
+#. module: onglibre_budgetary
+#: field:crm.case.resource.type,date_create:0
+#: field:crm.strategy,date_create:0
+msgid "Create Date"
+msgstr "Create Date"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,subtotal6t_sale:0
+msgid "Total Amortizations R&D"
+msgstr "Total Amortizations R&D"
+
+#. module: onglibre_budgetary
+#: field:administration,name:0
+#: field:crm.strategy,name:0
+#: field:project.activity,name:0
+#: field:project.aeronautical.program,name:0
+#: field:project.location,name:0
+#: field:project.publication,name:0
+#: field:project.publication.type,name:0
+#: field:project.pyramid.test,name:0
+#: field:project.research.line,name:0
+#: field:project.research.subline,name:0
+#: field:project.subactivity,name:0
+#: field:sector,name:0
+#: field:simulation.category,name:0
+#: field:subsector,name:0
+#: field:type.program,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1023
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1175
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1358
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1802
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1937
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1023
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1175
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1358
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1802
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1937
+#, python-format
+msgid "Budgetary analytic line not found for %s expense area"
+msgstr "Budgetary analytic line not found for %s expense area"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:952
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1092
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1270
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:952
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1092
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1270
+#, python-format
+msgid "Purchase product %s, without product sales"
+msgstr "Purchase product %s, without product sales"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_aeronautical_program_call
+msgid "Aeronautical Programs"
+msgstr "Aeronautical Programs"
+
+#. module: onglibre_budgetary
+#: view:strategy.add.note:0
+msgid "_Add"
+msgstr "_Add"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,invoice_type:0
+msgid "Supplier Refund"
+msgstr "Supplier Refund"
+
+#. module: onglibre_budgetary
+#: field:simulation.category,restricted_category:0
+msgid "Restricted"
+msgstr "Restricted"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:914
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:914
+#, python-format
+msgid "You can not modify the project financing, this line belongs to a line of sale order"
+msgstr "You can not modify the project financing, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: view:project.publication:0
+#: field:project.publication,comments:0
+msgid "Comments"
+msgstr "Comments"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:673
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:673
+#, python-format
+msgid "You can not modify the sale product, this line belongs to a line of sale order"
+msgstr "You can not modify the sale product, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: constraint:project.project:0
+msgid "Error! project start-date must be lower then project end-date."
+msgstr "Error! project start-date must be lower then project end-date."
+
+#. module: onglibre_budgetary
+#: field:project.project,project_year:0
+msgid "Project Year"
+msgstr "Project Year"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Type of Cost"
+msgstr "Type of Cost"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_publication_type
+msgid "Project Publication Type"
+msgstr "Project Publication Type"
+
+#. module: onglibre_budgetary
+#: field:project.financing,amount_awarded:0
+msgid "amount_awarded"
+msgstr "amount_awarded"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,invoice_type:0
+msgid "Invoice type"
+msgstr "Invoice type"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: view:crm.strategy:0
+msgid "History"
+msgstr "History"
+
+#. module: onglibre_budgetary
+#: field:project.task,account_analytic_account_id:0
+msgid "Account"
+msgstr "Account"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+#: field:simulation.category,notes:0
+#: view:simulation.cost:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: onglibre_budgetary
+#: field:project.financing,sale_order_id:0
+#: field:simulation.cost.line,sale_order_id:0
+msgid "Sale Order"
+msgstr "Sale Order"
+
+#. module: onglibre_budgetary
+#: field:project.project,project_research_subline_id:0
+msgid "Project Subline"
+msgstr "Project Subline"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+#: field:project.financing,amount_tax:0
+#: field:simulation.cost.line,amount_tax:0
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: onglibre_budgetary
+#: view:res.partner:0
+#: selection:res.partner,state:0
+msgid "Discarded"
+msgstr "Discarded"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Type Project"
+msgstr "Type Project"
+
+#. module: onglibre_budgetary
+#: field:project.financing,simulation_cost_state:0
+#: field:simulation.cost.line,simulation_cost_state:0
+msgid "Simulation Cost State"
+msgstr "Simulation Cost State"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,justified_percent:0
+msgid "Justified %"
+msgstr "Justified %"
+
+#. module: onglibre_budgetary
+#: field:hr.employee,key_parking_barrier:0
+msgid "Key Parking Barrier"
+msgstr "Key Parking Barrier"
+
+#. module: onglibre_budgetary
+#: field:project.financing,expense_area_ids:0
+#: view:simulation.cost:0
+#: field:simulation.cost,expense_area_ids:0
+#: field:simulation.cost.line,expense_area_ids:0
+msgid "Expense Areas"
+msgstr "Expense Areas"
+
+#. module: onglibre_budgetary
+#: field:project.financing,grant:0
+#: field:simulation.cost.line,project_financing_grant:0
+msgid "Grant"
+msgstr "Grant"
+
+#. module: onglibre_budgetary
+#: field:justified.invoice.import,invoice_line_id:0
+msgid "Invoice line"
+msgstr "Invoice line"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:252
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:69
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:252
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:69
+#, python-format
+msgid "Product Supply Method must be BUY"
+msgstr "Product Supply Method must be BUY"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_project_location_form
+#: model:ir.model,name:onglibre_budgetary.model_project_location
+#: view:project.location:0
+#: field:simulation.cost,project_location_id:0
+msgid "Location"
+msgstr "Location"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:973
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:973
+#, python-format
+msgid "Budgetary not found in analytic lines for expense area %s"
+msgstr "Budgetary not found in analytic lines for expense area %s"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+msgid "Indicators"
+msgstr "Indicators"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:187
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:187
+#, python-format
+msgid "The line is associated with analytic line: %s, type: %s"
+msgstr "The line is associated with analytic line: %s, type: %s"
+
+#. module: onglibre_budgetary
+#: field:sale.order,sale_type:0
+msgid "Sale Type"
+msgstr "Sale Type"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/sale_order_ext.py:74
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:805
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1465
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1609
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:956
+#: code:addons/openerp/addons/onglibre_budgetary/sale_order_ext.py:74
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:805
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1465
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1609
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:956
+#, python-format
+msgid "General Account YOUR COMPANY not found"
+msgstr "General Account YOUR COMPANY not found"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_procurement_order
+msgid "Procurement"
+msgstr "Procurement"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:794
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:794
+#, python-format
+msgid "Simulation WITHOUT PROJECT"
+msgstr "Simulation WITHOUT PROJECT"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:456
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:456
+#, python-format
+msgid "This cost simulation have Historical"
+msgstr "This cost simulation have Historical"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+msgid "Leads"
+msgstr "Leads"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_res_partner_address
+msgid "Partner Addresses"
+msgstr "Partner Addresses"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,benefit6:0
+msgid "Total Benefit"
+msgstr "Total Benefit"
+
+#. module: onglibre_budgetary
+#: selection:project.financing,simulation_cost_state:0
+#: view:simulation.cost:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Closed"
+msgstr "Closed"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/procurement_order_ext.py:209
+#: code:addons/onglibre_budgetary/procurement_order_ext.py:353
+#: code:addons/openerp/addons/onglibre_budgetary/procurement_order_ext.py:209
+#: code:addons/openerp/addons/onglibre_budgetary/procurement_order_ext.py:353
+#, python-format
+msgid "PO: %s"
+msgstr "PO: %s"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,state:0
+msgid "Paid"
+msgstr "Paid"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:237
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:237
+#, python-format
+msgid "Product with category restricted"
+msgstr "Product with category restricted"
+
+#. module: onglibre_budgetary
+#: field:crm.case.resource.type,active:0
+#: field:crm.strategy,active:0
+#: view:res.partner:0
+#: selection:res.partner,state:0
+msgid "Active"
+msgstr "Active"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:733
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:733
+#, python-format
+msgid "You can not modify the sale amount, this line belongs to a line of sale order"
+msgstr "You can not modify the sale amount, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2208
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2208
+#, python-format
+msgid "The percentaje for financing all expense areas is %s"
+msgstr "The percentaje for financing all expense areas is %s"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,justified_invoice_id:0
+msgid "Justified Imports"
+msgstr "Justified Imports"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_aeronautical_program
+msgid "Project Aeronautical Programa"
+msgstr "Project Aeronautical Programa"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.simulation.line,simulation_cost_id:0
+#: field:project.financing,simulation_cost_id:0
+#: field:simulation.category,simulation_cost_id:0
+msgid "Simulation Cost"
+msgstr "Simulation Cost"
+
+#. module: onglibre_budgetary
+#: field:sale.order,financing_source_id:0
+msgid "Project Financer"
+msgstr "Project Financer"
+
+#. module: onglibre_budgetary
+#: view:project.justification:0
+#: selection:project.justification,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: onglibre_budgetary
+#: constraint:account.analytic.line:0
+msgid "You can not create analytic line on view account."
+msgstr "You can not create analytic line on view account."
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_account_invoice
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_project_justification_tree_view
+#: model:ir.ui.menu,name:onglibre_budgetary.project_justification_menu
+#: view:project.justification:0
+msgid "Project Justification"
+msgstr "Project Justification"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_pyramid_test_call
+#: model:ir.ui.menu,name:onglibre_budgetary.project_pyramid_test_menu_view
+#: view:project.project:0
+#: field:project.project,project_pyramid_test_id:0
+#: view:project.pyramid.test:0
+#: field:simulation.cost,project_pyramid_test_id:0
+msgid "Pyramid Test"
+msgstr "Pyramid Test"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:241
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:58
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:241
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:58
+#, python-format
+msgid "Product must be kind to buy"
+msgstr "Product must be kind to buy"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:848
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:848
+#, python-format
+msgid "Estimated Margin Error"
+msgstr "Estimated Margin Error"
+
+#. module: onglibre_budgetary
+#: constraint:project.task:0
+msgid "Error ! Task end-date must be greater then task start-date"
+msgstr "Error ! Task end-date must be greater then task start-date"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost.line,sale_uom:0
+msgid "Sale UoM"
+msgstr "Sale UoM"
+
+#. module: onglibre_budgetary
+#: field:crm.case.resource.type,strategy_id:0
+#: view:crm.strategy:0
+msgid "Strategy"
+msgstr "Strategy"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,deductible_iva:0
+#: field:simulation.cost.line,deductible_iva:0
+msgid "Deductible IVA"
+msgstr "Deductible IVA"
+
+#. module: onglibre_budgetary
+#: constraint:project.phase:0
+msgid "Phase start-date must be lower than phase end-date."
+msgstr "Phase start-date must be lower than phase end-date."
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_product_product
+msgid "Product"
+msgstr "Product"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_administration
+msgid "administration"
+msgstr "administration"
+
+#. module: onglibre_budgetary
+#: field:project.financing,overheads:0
+msgid "Overheads"
+msgstr "Overheads"
+
+#. module: onglibre_budgetary
+#: field:project.financing,financial_source_percent:0
+msgid "Financial Source %"
+msgstr "Financial Source %"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_simulation_select_template
+msgid "Wizard Select Template"
+msgstr "Wizard Select Template"
+
+#. module: onglibre_budgetary
+#: field:hr.employee,employee_number:0
+msgid "Employee_number"
+msgstr "Employee_number"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_research_line_menu_view
+msgid "Lines"
+msgstr "Lines"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Budget By Source"
+msgstr "Budget By Source"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:781
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:781
+#, python-format
+msgid "You can not modify the sale price, this line belongs to a line of sale order"
+msgstr "You can not modify the sale price, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_crm_lead
+msgid "crm.lead"
+msgstr "crm.lead"
+
+#. module: onglibre_budgetary
+#: field:hr.employee,publication_ids:0
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_publication_call
+#: model:ir.ui.menu,name:onglibre_budgetary.project_publication_menu_view
+#: field:project.project,publication_ids:0
+#: view:project.publication:0
+#: view:project.publication.type:0
+#: field:project.publication.type,publication_ids:0
+#: field:res.partner.contact,publication_ids:0
+msgid "Publications"
+msgstr "Publications"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_project_activity
+#: model:ir.model,name:onglibre_budgetary.model_project_activity
+#: view:project.activity:0
+#: view:project.project:0
+#: field:project.project,project_activity_id:0
+#: field:project.subactivity,activity_id:0
+#: field:simulation.cost,project_activity_id:0
+msgid "Activity"
+msgstr "Activity"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,check_justification:0
+msgid "Chose"
+msgstr "Chose"
+
+#. module: onglibre_budgetary
+#: view:simulation.category:0
+msgid "Simulation Categories"
+msgstr "Simulation Categories"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_config_es_toponyms
+msgid "config.es.toponyms"
+msgstr "config.es.toponyms"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Recalculation"
+msgstr "Recalculation"
+
+#. module: onglibre_budgetary
+#: view:administration:0
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_custom_administration_form
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_administration_menu_view
+msgid "Administrations"
+msgstr "Administrations"
+
+#. module: onglibre_budgetary
+#: field:project.financing,amount_total:0
+#: field:simulation.cost.line,amount_total:0
+msgid "Total"
+msgstr "Total"
+
+#. module: onglibre_budgetary
+#: constraint:hr.department:0
+msgid "Error! You can not create recursive departments."
+msgstr "Error! You can not create recursive departments."
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,inv_date:0
+msgid "Invoice Date"
+msgstr "Invoice Date"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_ir_sequence
+msgid "ir.sequence"
+msgstr "ir.sequence"
+
+#. module: onglibre_budgetary
+#: field:crm.lead,launch_date:0
+msgid "Launch Date"
+msgstr "Launch Date"
+
+#. module: onglibre_budgetary
+#: field:res.partner,approved:0
+msgid "Approved"
+msgstr "Approved"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: view:crm.strategy:0
+#: model:ir.model,name:onglibre_budgetary.model_strategy_add_note
+msgid "Add Internal Note"
+msgstr "Add Internal Note"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_template_line_ext.py:75
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_template_line_ext.py:75
+#, python-format
+msgid "\n"
+"), AL PRINCIPIO DEBEMOS DE IMPORTAR\n"
+"                ### from tools.translate import _\n"
+"                #\n"
+"                if type == 'Task' or type == 'Others':\n"
+"                    res = {'name': (product.name or '"
+msgstr "\n"
+"), AL PRINCIPIO DEBEMOS DE IMPORTAR\n"
+"                ### from tools.translate import _\n"
+"                #\n"
+"                if type == 'Task' or type == 'Others':\n"
+"                    res = {'name': (product.name or '"
+
+#. module: onglibre_budgetary
+#: field:crm.case.resource.type,message_ids:0
+#: field:crm.strategy,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+#: field:account.invoice.line,project_id:0
+#: model:ir.model,name:onglibre_budgetary.model_project_project
+#: field:project.justification,project_id:0
+#: view:simulation.cost:0
+#: field:simulation.cost,project_id:0
+msgid "Project"
+msgstr "Project"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,state:0
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#. module: onglibre_budgetary
+#: field:strategy.add.note,body:0
+msgid "Note Body"
+msgstr "Note Body"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_research_subline_menu_view
+#: view:project.research.line:0
+#: field:project.research.line,project_sublines_ids:0
+msgid "Sublines"
+msgstr "Sublines"
+
+#. module: onglibre_budgetary
+#: field:sector,subsector_ids:0
+msgid "Subsector lines"
+msgstr "Subsector lines"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_type_program_menu_view
+msgid "Convocatorias"
+msgstr "Convocatorias"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,move_id:0
+msgid "Journal Entry"
+msgstr "Journal Entry"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1025
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1177
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1360
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1804
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1939
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1025
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1177
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1360
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1804
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1939
+#, python-format
+msgid "Budgetary analytic line not found for product: %s"
+msgstr "Budgetary analytic line not found for product: %s"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.line,simulation_cost_line_id:0
+#: field:account.analytic.simulation.line,simulation_cost_line_id:0
+#: model:ir.model,name:onglibre_budgetary.model_simulation_cost_line
+#: field:project.financing,simulation_cost_line_id:0
+#: field:sale.order.line,simulation_cost_line_id:0
+msgid "Simulation Cost Line"
+msgstr "Simulation Cost Line"
+
+#. module: onglibre_budgetary
+#: field:sale.order.line,financied_amount:0
+msgid "Financied Amount"
+msgstr "Financied Amount"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,invoice_type:0
+msgid "Supplier Invoice"
+msgstr "Supplier Invoice"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_hr_employee
+#: field:project.publication,employee_id:0
+msgid "Employee"
+msgstr "Employee"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_account_analytic_simulation_line
+msgid "Account Analytic Simulation Line"
+msgstr "Account Analytic Simulation Line"
+
+#. module: onglibre_budgetary
+#: field:project.justification,justification_line_ids:0
+msgid "Invoice Lines"
+msgstr "Invoice Lines"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_product_category
+msgid "Product Category"
+msgstr "Product Category"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2182
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2182
+#, python-format
+msgid "The percentage of financing is > 100"
+msgstr "The percentage of financing is > 100"
+
+#. module: onglibre_budgetary
+#: selection:project.financing,simulation_cost_state:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Accepted"
+msgstr "Accepted"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,benefit6t:0
+msgid "Amortizations R&D Benefit"
+msgstr "Amortizations R&D Benefit"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,project_text_list:0
+#: model:ir.ui.menu,name:onglibre_budgetary.project_dup_view
+#: field:product.product,project_ids:0
+#: field:project.activity,project_activity_ids:0
+#: field:project.aeronautical.program,project_ids:0
+#: field:project.publication,project_ids:0
+#: field:project.pyramid.test,project_ids:0
+#: field:project.research.line,project_ids:0
+#: field:project.research.subline,project_ids:0
+#: field:project.subactivity,project_subactivity_ids:0
+msgid "Projects"
+msgstr "Projects"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_aeronautical_program_menu_view
+msgid "Aeronatical Programs"
+msgstr "Aeronatical Programs"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Product of Sale"
+msgstr "Product of Sale"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2239
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2239
+#, python-format
+msgid "ERROR"
+msgstr "ERROR"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:934
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:972
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:934
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:972
+#, python-format
+msgid "Expense Area Error"
+msgstr "Expense Area Error"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_simulation_expense_area
+msgid "Simulation Expense Area"
+msgstr "Simulation Expense Area"
+
+#. module: onglibre_budgetary
+#: view:account.invoice.line:0
+#: model:ir.model,name:onglibre_budgetary.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Invoice Line"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,to_justified_import:0
+#: field:justified.invoice.import,to_justified_import:0
+msgid "Import to justified"
+msgstr "Import to justified"
+
+#. module: onglibre_budgetary
+#: selection:project.financing,simulation_cost_state:0
+#: view:simulation.cost:0
+#: selection:simulation.cost.line,simulation_cost_state:0
+msgid "Canceled"
+msgstr "Canceled"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/project_financing_ext.py:87
+#: code:addons/openerp/addons/onglibre_budgetary/project_financing_ext.py:87
+#, python-format
+msgid "You cant not insert financers"
+msgstr "You cant not insert financers"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,justification_ids:0
+#: field:account.invoice.line,project_ids:0
+msgid "Justifications"
+msgstr "Justifications"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost.line,simulation_cost_project_id:0
+msgid "Project1"
+msgstr "Project1"
+
+#. module: onglibre_budgetary
+#: field:project.financing,amount_untaxed:0
+#: field:simulation.cost.line,amount_untaxed:0
+msgid "Untaxed Amount"
+msgstr "Untaxed Amount"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Purchase Order Line"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Cost Prevision"
+msgstr "Cost Prevision"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:952
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1025
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1053
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1092
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1177
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1229
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1270
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1360
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1802
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1804
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1937
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1939
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:952
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1025
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1053
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1092
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1177
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1229
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1270
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1360
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1802
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1804
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1937
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1939
+#, python-format
+msgid "Process Error"
+msgstr "Process Error"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost,financing_source_ids:0
+msgid "Financing Sources"
+msgstr "Financing Sources"
+
+#. module: onglibre_budgetary
+#: view:crm.case.resource.type:0
+#: view:crm.strategy:0
+msgid "Communication & History"
+msgstr "Communication & History"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.project_activity_menu_view
+msgid "Activitys"
+msgstr "Activitys"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Descripción"
+msgstr "Descripción"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:551
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:551
+#, python-format
+msgid "You can not modify the price/amount, this line belongs to a line of sale order"
+msgstr "You can not modify the price/amount, this line belongs to a line of sale order"
+
+#. module: onglibre_budgetary
+#: field:expense.area,habitual_use:0
+msgid "habitual use"
+msgstr "habitual use"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_hr_contract
+msgid "Contract"
+msgstr "Contract"
+
+#. module: onglibre_budgetary
+#: view:crm.lead:0
+msgid "Cost Simulations"
+msgstr "Cost Simulations"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:456
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:456
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:913
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:913
+#, python-format
+msgid "Project Financing Error"
+msgstr "Project Financing Error"
+
+#. module: onglibre_budgetary
+#: field:project.publication,publication_date:0
+msgid "Publication Date"
+msgstr "Publication Date"
+
+#. module: onglibre_budgetary
+#: sql_constraint:account.invoice:0
+msgid "Invoice Number must be unique per Company!"
+msgstr "Invoice Number must be unique per Company!"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:1420
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:1420
+#, python-format
+msgid "Financing Source analytic line not found for product %s"
+msgstr "Financing Source analytic line not found for product %s"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_project_research_subline
+#: view:project.research.subline:0
+#: field:simulation.cost,project_research_subline_id:0
+msgid "Subline"
+msgstr "Subline"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_project_location_menu_view
+msgid "Locations"
+msgstr "Locations"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.line,project_financing_id:0
+#: field:account.analytic.simulation.line,project_financing_id:0
+#: model:ir.model,name:onglibre_budgetary.model_project_financing
+#: view:project.financing:0
+#: view:simulation.cost:0
+#: view:simulation.cost.line:0
+#: field:simulation.cost.line,project_financing_id:0
+msgid "Project Financing"
+msgstr "Project Financing"
+
+#. module: onglibre_budgetary
+#: view:project.financing:0
+#: view:simulation.cost:0
+msgid "General Information"
+msgstr "General Information"
+
+#. module: onglibre_budgetary
+#: view:project.financing:0
+#: view:simulation.cost:0
+msgid "Project Information"
+msgstr "Project Information"
+
+#. module: onglibre_budgetary
+#: view:res.partner:0
+#: selection:res.partner,state:0
+msgid "Oldest"
+msgstr "Oldest"
+
+#. module: onglibre_budgetary
+#: selection:account.invoice.line,state:0
+msgid "Pro-forma"
+msgstr "Pro-forma"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.line,financing_percentage:0
+#: field:account.analytic.simulation.line,financing_percentage:0
+#: field:sale.order.line,financing_percentage:0
+msgid "Financing %"
+msgstr "Financing %"
+
+#. module: onglibre_budgetary
+#: view:res.partner:0
+#: selection:res.partner,state:0
+msgid "Potential"
+msgstr "Potential"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:179
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:179
+#, python-format
+msgid "The line is associated with the sale order: %s, in line with product: %s"
+msgstr "The line is associated with the sale order: %s, in line with product: %s"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_simulation_category
+msgid "simulation.category"
+msgstr "simulation.category"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost.line:0
+msgid "Templates"
+msgstr "Templates"
+
+#. module: onglibre_budgetary
+#: field:justified.invoice.import,justification_id:0
+msgid "Justification"
+msgstr "Justification"
+
+#. module: onglibre_budgetary
+#: view:administration:0
+#: field:administration,description:0
+#: view:project.location:0
+#: field:project.location,description:0
+#: view:project.type:0
+#: field:project.type,description:0
+#: view:sector:0
+#: field:sector,description:0
+#: view:subsector:0
+#: field:subsector,description:0
+#: view:type.program:0
+#: field:type.program,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,purchase_type:0
+msgid "Purchase type"
+msgstr "Purchase type"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_simulation_template
+msgid "Simulation Template"
+msgstr "Simulation Template"
+
+#. module: onglibre_budgetary
+#: field:account.analytic.simulation.line,expense_area_id:0
+#: model:ir.model,name:onglibre_budgetary.model_expense_area
+#: field:sale.order,expense_area_id:0
+#: field:simulation.category,expense_area_id:0
+#: view:simulation.cost.line:0
+#: field:simulation.cost.line,expense_area_id:0
+#: field:simulation.template.line,expense_area_id:0
+msgid "Expense Area"
+msgstr "Expense Area"
+
+#. module: onglibre_budgetary
+#: field:project.financing,project_percent:0
+msgid "Project %"
+msgstr "Project %"
+
+#. module: onglibre_budgetary
+#: model:ir.ui.menu,name:onglibre_budgetary.custom_sector_menu_view
+msgid "Sectors"
+msgstr "Sectors"
+
+#. module: onglibre_budgetary
+#: field:crm.strategy,campaign_num:0
+msgid "Num camp"
+msgstr "Num camp"
+
+#. module: onglibre_budgetary
+#: view:crm.lead:0
+msgid "Convert to Opportunity"
+msgstr "Convert to Opportunity"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_justification
+msgid "project.justification"
+msgstr "project.justification"
+
+#. module: onglibre_budgetary
+#: model:ir.model,name:onglibre_budgetary.model_project_phase
+msgid "Project Phase"
+msgstr "Project Phase"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_line_ext.py:200
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_line_ext.py:200
+#, python-format
+msgid "Rates Error"
+msgstr "Rates Error"
+
+#. module: onglibre_budgetary
+#: field:simulation.cost.line,financied_line:0
+msgid "Financied Line"
+msgstr "Financied Line"
+
+#. module: onglibre_budgetary
+#: code:addons/onglibre_budgetary/simulation_cost_ext.py:2213
+#: code:addons/openerp/addons/onglibre_budgetary/simulation_cost_ext.py:2213
+#, python-format
+msgid "The percentaje for financing %s expense areas is %s"
+msgstr "The percentaje for financing %s expense areas is %s"
+
+#. module: onglibre_budgetary
+#: model:ir.actions.act_window,name:onglibre_budgetary.action_publication_type_call
+#: model:ir.ui.menu,name:onglibre_budgetary.project_publication_type_menu_view
+#: view:project.publication.type:0
+msgid "Publication Types"
+msgstr "Publication Types"
+
+#. module: onglibre_budgetary
+#: constraint:project.phase:0
+msgid "Loops in phases not allowed"
+msgstr "Loops in phases not allowed"
+
+#. module: onglibre_budgetary
+#: field:project.type,project_type_sequence_id:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: onglibre_budgetary
+#: constraint:product.category:0
+msgid "Error ! You cannot create recursive categories."
+msgstr "Error ! You cannot create recursive categories."
+
+#. module: onglibre_budgetary
+#: field:account.invoice.line,to_justified_percent:0
+msgid "Percent to justified"
+msgstr "Percent to justified"
+
+#. module: onglibre_budgetary
+#: view:simulation.cost:0
+msgid "Simulation Lines with Financing Source"
+msgstr "Simulation Lines with Financing Source"
+
+#. module: onglibre_budgetary
+#: view:project.project:0
+#: view:simulation.cost:0
+msgid "Tipo de actividad"
+msgstr "Tipo de actividad"
+
+#. module: onglibre_budgetary
+#: view:justified.invoice.import:0
+msgid "Justified Import"
+msgstr "Justified Import"
+
+#. module: onglibre_budgetary
+#: field:project.justification,year:0
+msgid "Year"
+msgstr "Year"
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_pyramid_test_tree_view">
+			<field name="name">project.pyramid.test.tree.view</field>
+			<field name="model">project.pyramid.test</field>
+			<field name="arch" type="xml">
+				<tree string="Calls">
+					<field name="code" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project_pyramid_test_form_view">
+			<field name="name">project.pyramid.test.form.view</field>
+			<field name="model">project.pyramid.test</field>
+			<field name="arch" type="xml">
+				<form string="Pyramid Test">
+					<group col="6" colspan="4">
+            				<field name="code"/>
+                			<field name="name"/> 
+                    </group>	
+				</form>
+			</field>
+		</record>	
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_pyramid_test_call">
+			<field name="name">Pyramid Test</field>
+			<field name="res_model">project.pyramid.test</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_pyramid_test_menu_view" name="Pyramid Test" sequence="30"
+			parent="project_master_tables_group_view" action="action_pyramid_test_call" />
+
+	</data>
+</openerp>

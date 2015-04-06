@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="purchase_order_search_inh_budgetary">
+			<field name="name">purchase.order.search.inh.budgetary</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+			<field name="arch" type="xml">
+				<field name="product_id" position="after">
+					<field name="origin"/>
+				</field>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="purchase_order_line_form_inh_budgetary">
+			<field name="name">purchase.order.line.form.inh.budgetary</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form" />
+			<field name="arch" type="xml">
+				<field name="account_analytic_id" position="before">
+                    <field name="type" invisible="1" />
+				</field>
+				<field name="account_analytic_id" position="replace">
+                    <field name="account_analytic_id" colspan="4" groups="analytic.group_analytic_accounting" domain="[('parent_id','!=',False)]" />				
+				</field> 
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="purchase_order_form_inh_budgetary">
+			<field name="name">purchase.order.form.inh.budgetary</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+			<field name="arch" type="xml">	
+				<xpath expr="//form//field[@name='order_line']" position="attributes">
+					<attribute name="context">{'type':type}</attribute>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

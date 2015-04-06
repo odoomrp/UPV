@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="administration_tree_view">
+			<field name="name">administration.tree.view</field>
+			<field name="model">administration</field>
+			<field name="arch" type="xml">
+				<tree string="Administrations" >
+					<field name="name" />
+					<field name="description" />
+					<field name="program_type_ids"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="administration_form_view">
+			<field name="name">administration.form.view</field>
+			<field name="model">administration</field>
+			<field name="arch" type="xml">
+				<form string="Administration">
+					<group colspan="4" col="2">
+					<field name="name"/>
+					</group>
+					<notebook colspan="4">
+					<page string="Description">
+						<separator string="Description" />
+						<field name="description" colspan="4" nolabel="1"/>
+					</page>
+					<page string="Calls">
+						<field name="program_type_ids" colspan="4" nolabel="1"/>
+					</page>	
+					</notebook>
+				</form>
+							
+				
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_custom_administration_form">
+			<field name="name">Administrations</field>
+			<field name="res_model">administration</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+			
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+		
+		<menuitem id="custom_administration_menu_view" name="Administrations" sequence="60"
+			parent="project_master_tables_group_view" action="action_custom_administration_form" />
+
+	</data>
+</openerp>

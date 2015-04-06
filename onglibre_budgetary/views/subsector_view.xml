@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="subsector_tree_view">
+			<field name="name">subsector.tree.view</field>
+			<field name="model">subsector</field>
+			<field name="arch" type="xml">
+				<tree string="Subsector" >
+					<field name="name" />
+					<field name="description" />
+					<field name="sector_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="subsector_form_view">
+			<field name="name">subsector.form.view</field>
+			<field name="model">subsector</field>
+			<field name="arch" type="xml">
+				<form string="Subsector">
+					<field name="name" />
+					<field name="sector_id"/>
+					<notebook colspan="4">
+						<page string="Description">
+							<separator string="Description" colspan="4"/>
+							<field name="description" colspan="4" nolabel="1"/>
+						</page>
+					</notebook>
+				</form>
+							
+				
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_custom_subsector_form">
+			<field name="name">Subsector</field>
+			<field name="res_model">subsector</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+			
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+			
+		<menuitem id="custom_subsector_menu_view" name="Subsectors" sequence="55"
+			parent="project_master_tables_group_view" action="action_custom_subsector_form" />
+
+	</data>
+</openerp>

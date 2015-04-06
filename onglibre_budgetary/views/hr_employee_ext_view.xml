@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+        <record model="ir.ui.view" id="view_employee_form_inh_budgetary">
+            <field name="name">view.employee.form.inh.budgetary</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+            	<field name="name" position="replace">
+            		<field colspan="4" name="name" />
+            		<field colspan="2" name="employee_number" />
+            	</field>
+            </field>
+        </record>	
+        
+        <record id="hr_hr_employee_view_form2_inh_budgetary" model="ir.ui.view">
+            <field name="name">hr.hr.employee.view.form2.inh.budgetary</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+            <field name="arch" type="xml">
+            	<field name="vehicle_distance" position="after">
+            		<field name="key_parking_barrier" />
+            	</field>
+            </field>
+        </record>
+
+	</data>
+</openerp>

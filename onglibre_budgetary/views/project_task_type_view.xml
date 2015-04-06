@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- ******************* VISTA FORM ******************** -->
+	
+		<record model="ir.ui.view" id="task_type_edit_inh_budgetary">
+			<field name="name">task.type.edit.inh.budgetary</field>
+			<field name="model">project.task.type</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="project.task_type_edit" />
+			<field name="arch" type="xml">
+				<field name="project_id" position="after">
+					<field name="account_analytic_account_id" />
+				</field>
+				
+			</field>
+		</record>
+
+	</data>
+</openerp>

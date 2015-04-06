@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_search_view_inh_budgetary">
+			<field name="name">simulation.cost.search.view.inh.budgetary</field>
+			<field name="model">simulation.cost</field>
+			<field name="inherit_id" ref="costs_simulator.simulation_cost_search_view" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="replace" />
+				<field name="historical_date" position="replace" />
+                <filter string="Customer" position="replace" />
+			</field>
+		</record>
+
+        <!-- *********************** VISTA TREE ****************** -->
+    
+    		 <record model="ir.ui.view" id="simulation_cost_tree_view_inh_budgetary">
+                <field name="name">simulation.cost.ext.tree.view.inh.budgetary</field>
+                <field name="model">simulation.cost</field>
+                <field name="inherit_id" ref="costs_simulator.simulation_cost_tree_view"/>
+                <field name="arch" type="xml">
+                	<field name="state" position ="after">
+                		<field name="project_id" invisible="1" />
+                	</field>
+                    <field name="historical_date" position="replace" />
+                    <field name="partner_id" position="replace" />
+                    <field name="total_costs" position="replace" />
+                    <field name="total_sales" position="replace" />
+                    <field name="total_benefits" position="replace" />
+                    <field name="net_cost" position="replace" />
+                    <field name="gross_margin" position="replace" />
+                    <field name="contribution_margin" position="replace" />
+                    <field name="net_margin" position="replace" />
+                </field>      
+            </record>    
+    
+    		 <record model="ir.ui.view" id="simulation_cost_form_view_inh_budgetary">
+                <field name="name">simulation.cost.form.view.inh.budgetary</field>
+                <field name="model">simulation.cost</field>
+                <field name="inherit_id" ref="costs_simulator.simulation_cost_form_view"/>
+                <field name="arch" type="xml">
+                
+                	<xpath expr="//form/group/button[@string='Insert Lines From Template']" position="replace" />
+                	<field name="partner_id" position ="replace" />
+                	<field name="overhead_costs" position="replace" />
+                	<field name="purchase_insale" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</field>
+                	
+                	<group name="head" position="replace">
+               			<field name="partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1}" invisible="1"/>
+               			<field name="department_id" invisible="1"/>
+               			<field name="crm_case_resource_type_id" invisible="1"/>
+               			<field name="project_location_id" invisible="1"/>
+               			<field name="final_partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1}" colspan="5" invisible="1"/>
+						<field name="crm_opportunity_id" invisible="1"/>
+						<field name="historical_date" invisible="1"/>
+						<field name="historical_ok" invisible="1" />
+                		
+                		<group name="head1" colspan="4" col="10">
+	                		<field name="simulation_number" colspan="5" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<field name="project_type_id" on_change="onchange_project_type(project_type_id)" colspan="3" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+                			<field name="generate_by_lines" colspan="2" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+						</group>
+						<group name="head2" colspan="4" col="15">
+							<field name="name" colspan="15" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<field name="use_project_id" colspan="5" domain="[('simulation_cost_id','=',False)]" on_change="onchange_use_project_id(use_project_id)" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<field name="parent_project_id" colspan="5" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<field name="project_id" colspan="5"/>
+						</group>
+						<group name="head3" colspan="4" col="15">
+							<field name="overhead_costs" colspan="3" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<field name="deductible_iva" colspan="2" attrs="{'readonly':[('state','not in',('draft'))]}"/>
+							<button name="%(costs_simulator.act_unique_id)d" string="Insert Lines From Template" type="action" colspan="10" />
+                		</group>
+                	</group>
+                	
+                	<xpath expr="//page[@string='Total Costs']" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</xpath>
+                	<xpath expr="//form/group/button[@name='button_historificar']" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</xpath>
+                	<xpath expr="//form/group/button[@name='button_confirm_create_sale_order']" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</xpath>
+                	<xpath expr="//form/group/button[@name='button_recalculation']" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</xpath> 
+                	<xpath expr="//form/group/button[@name='button_copy_cost_simulation']" position="attributes">
+                		<attribute name="invisible">1</attribute>
+                	</xpath>
+
+                	<xpath expr="//page[@string='Simulation Lines']" position="before">
+						<page string="Expense Areas Permitted" >
+		                    <group colspan="4">	  
+		                    	<separator string="Expense Areas" colspan="4"/>   
+		                    	<field name="expense_area_ids" on_change="onchange_expense_area(expense_area_ids, simulation_category_ids)" nolabel="1" />
+		                    	<separator string="Categories" colspan="4"/>   
+		                    	<field name="simulation_category_ids" nolabel="1" height="300" />            
+		                    </group>
+		                </page>
+                		<page string="Notes">
+                			<group colspan="4" col="4">
+                				<group colspan="4" col="4">
+                					<separator string="Resumen" colspan="4"/>
+                					<field name="resume" colspan="4" nolabel="1" height="200"/>
+                				</group>
+                				<group colspan="2" col="4" invisible="1">
+                					<separator string="Tipo de actividad" colspan="4"/>
+                					<field name="project_activity_id" colspan="4"/>
+                					<field name="project_subactivity_id" domain="[('activity_id','=',project_activity_id)]" colspan="4"/>
+                					<separator string="Programa de ayudas/Administración" colspan="4"/>
+                					<field name="administration_id" colspan="4" />
+                					<field name="type_program_id" colspan="4" domain="[('administration_id','=',administration_id)]"/>
+                					<separator string="Aeronave y tipo de componente" colspan="4"/>
+                					<field name="project_aeronautical_program_id" colspan="4"/>
+                					<field name="project_pyramid_test_id" colspan="4"/>
+                				</group>
+                				<group colspan="2" col="4" invisible="1">
+                					<separator string="Línea de investigación" colspan="4"/>
+                					<field name="project_research_line_id" colspan="4"/>
+                    				<field name="project_research_subline_id"  domain="[('project_research_line_id','=',project_research_line_id)]" colspan="4"/>
+                					<separator string="Sector de actividad" colspan="4"/>
+                					<field name="sector_id" colspan="4"/>
+                					<field name="subsector_id" colspan="4" domain="[('sector_id','=',sector_id)]"/>
+                					<separator string="Resumen" colspan="4"/>
+                					<group colspan="4" string=" ">
+                					<field name="resume" colspan="4" nolabel="1" height="200"/>
+                					</group>
+                				</group>
+                			</group>			
+						</page>
+                	</xpath>
+
+                	<page string="Simulation Lines" position="replace">
+						<page string="Budget">
+                            <field name="others_cost_lines_ids" nolabel="1" attrs="{'readonly':[('historical_ok','=',True)]}" 
+                                domain="[('type_cost','=','Others')]" context="{'simulation_cost_id':active_id,'simulation_cost_state':state,'simulation_cost_project_id':project_id,'deductible_iva':deductible_iva,'type_cost':'Others','simu_category_ids':simulation_category_ids,'simu_expense_area_ids':expense_area_ids,'purchase_insale':purchase_insale}" >
+                                <tree string="Budget Lines" editable="bottom">
+                                    <field name="sale_order_line_id" invisible="1" />
+                                    <field name="category_ids" invisible="1" />
+                                    <field name="expense_area_ids" invisible="1" />
+                                    <field name="purchase_insale" invisible="1"/>
+                                    <field name="deductible_iva" invisible="1"/>
+                                    <field name="simulation_cost_id" invisible="1"/>
+                                    <field name="simulation_cost_state" invisible="1"/>
+                                    <field name="simulation_cost_project_id" invisible="1"/>
+                                    <!-- 
+                                    <field name="month_start_cost" invisible="1"/>
+                                    <field name="month_duration" invisible="1"/>
+                                    <field name="month_end_cost" invisible="1"/>
+                                    <field name="delay_cost" invisible="1"/>
+                                    <field name="month_start_sale" invisible="1"/>
+                                    <field name="month_end_sale" invisible ="1"/>
+                                    <field name="sale_duration" invisible="1"/>
+                                    <field name="delay_sale" invisible="1"/>
+                                    -->
+                                    <field name="expense_area_id" attrs="{'readonly':[('simulation_cost_state','not in',('draft','inmodif_budgetary'))]}" 
+                                            domain="[('id','in',expense_area_ids[0][2])]" 
+                                            on_change="onchange_expense_area_id(expense_area_id, simulation_cost_state, simulation_cost_project_id, simulation_cost_id)"/>
+                                    <field name="project_financing_id" invisible="1"
+                                            context="{'form_view_ref':'onglibre_budgetary.project_financing_form_view_budgetary3','simulation_cost_state':simulation_cost_state,'simulation_cost_project_id':simulation_cost_project_id}"
+                                            domain="[('simulation_cost_line_id','=',active_id),('simulation_cost_line_id','!=',False)]"
+                                            attrs="{'invisible': [('simulation_cost_state','not in',('financing','inmodif_budgetary'))]}"                       
+                                            on_change="onchange_project_financing_id(project_financing_id)" />
+                                    <field name="product_id" on_change="onchange_product(simulation_cost_id, product_id, type_cost, amount, sale_amount, subtotal_purchase, estimated_date_purchase_completion, subtotal_sale)" />
+                                    <field name="name" />
+                                    <field name="template_id" invisible="1"/>
+                                    <field name="description" invisible="1"/>
+                                    <field name="supplier_id" colspan="2" attrs="{'invisible': [('type_cost', 'in', ['Task','Amortization'])]}"
+                                                                      on_change="onchange_supplier(supplier_id, type_cost, product_id, amount, sale_amount, uom_id, estimated_date_purchase_completion, subtotal_purchase, sale_price, subtotal_sale, estimated_margin, benefit)" 
+                                                                      context="{'search_default_supplier':1,'search_default_customer':0,'default_supplier':1,'default_customer':0}" options="{'quick_create': false}"/>                         
+                                    <field name="purchase_price" colspan="2" on_change="onchange_purchase_price_amount(type_cost, amortization_rate, indirect_cost_rate, purchase_price, amount, sale_amount, subtotal_purchase, sale_price, subtotal_sale, estimated_margin, benefit, purchase_insale)" />
+                                    <field name="amount" on_change="onchange_purchase_price_amount(type_cost, amortization_rate, indirect_cost_rate, purchase_price, amount, sale_amount, subtotal_purchase, sale_price, subtotal_sale, estimated_margin, benefit, purchase_insale)" />  
+                                    <field name="uom_id" />
+                                    <field name="subtotal_purchase" />
+                                    <field name="estimated_date_purchase_completion" invisible="1"/>
+                                    <field name="type_cost" invisible="1" on_change="onchange_type_cost(type_cost)"/>     
+                                    <field name="type2" invisible="1"/>
+                                    <field name="type3" invisible="1"/>
+                                    <field name="amortization_rate" invisible="1"/>
+                                    <field name="amortization_cost" invisible="1" />
+                                    <field name="indirect_cost_rate" invisible="1" />
+                                    <field name="indirect_cost" invisible="1" />
+                                    <field name="product_sale_id" invisible="1" on_change="onchange_sale_product(product_sale_id, product_id, purchase_price, amount, sale_amount, subtotal_sale, estimated_margin, subtotal_purchase, benefit, amortization_cost, indirect_cost)" />
+                                    <field name="sale_amount" invisible="1" on_change="onchange_sale_amount(purchase_price, amount, sale_price, sale_amount, subtotal_sale, estimated_margin, subtotal_purchase, benefit, amortization_cost, indirect_cost)"/>
+                                    <field name="sale_price" invisible="1" on_change="onchange_sale_price(purchase_price, amount, sale_amount, sale_price, subtotal_sale, estimated_margin, subtotal_purchase, benefit, amortization_cost, indirect_cost)" />
+                                    <field name="margin_percent" invisible="1" on_change="onchange_margin_percent(margin_percent, estimated_margin, purchase_price, sale_price, amount, sale_amount, subtotal_sale, subtotal_purchase, benefit, amortization_cost, indirect_cost)" /> 
+                                    <field name="estimated_margin" invisible="1" on_change="onchange_estimated_margin(estimated_margin, purchase_price, sale_price, amount, sale_amount, subtotal_sale, subtotal_purchase, benefit, amortization_cost, indirect_cost)" />       
+                                    <field name="subtotal_sale" invisible="1"/>   
+                                    <field name="benefit" invisible="1"/>
+                                </tree>
+
+							</field>
+							<newline/>
+							<group colspan="4" col="8">
+								<field name="subtotal5_purchase" />
+								<field name="subtotal5_sale" />
+								<field name="benefit5" />	
+								<button name="button_recalculation" string="Recalculation" type="object" icon="gtk-ok"/>
+							</group>
+						</page>
+                        <page string="Financing Source" attrs="{'invisible':[('state','=','draft')]}" >
+                            <group colspan="4">                     
+                                <field name="financing_source_ids" nolabel="1" 
+                                    context="{'search_default_simulation_cost_id':[active_id], 'default_simulation_cost_id':active_id, 'simulation_cost_id':active_id, 'simulation_cost_state':state,'simulation_cost_project_id':project_id,'simu_expense_area_ids':expense_area_ids}" 
+                                    on_change="onchange_financing_source_ids(financing_source_ids)" 
+                                    height="200">
+                                    <tree string="Financing Source">
+                                        <field name="simulation_cost_id" invisible="1"/>
+                                        <field name="simulation_cost_state" invisible="1"/>
+                                        <field name="priority" />
+                                        <field name="expense_area_id" />
+                                        <field name="project_percent" />
+                                        <field name="financing_source_id" />
+                                        <field name="grant" />
+                                        <field name="sale_order_id" />
+                                        <field name="amount_untaxed" invisible="1"/>
+                                        <field name="amount_tax" />
+                                        <field name="amount_total" />
+                                    </tree>
+                                    <form string="Project Financing">
+                                        <field name="simulation_cost_id" invisible="1"/>
+                                        <field name="simulation_cost_state" invisible="1"/>
+                                        <field name="expense_area_ids" invisible="1" />
+                                        <group colspan="4" col="4">
+                                            <separator string="General Information" colspan="4" />
+                                            <field name="priority" />
+                                            <field name="expense_area_id" domain="[('id','in',expense_area_ids[0][2])]"/>
+                                        </group>
+                                        <group colspan="4" col="4" >
+                                            <separator string="Project Information" colspan="4" />
+                                            <field name="project_percent" required="1"/>
+                                            <field name="project_id" attrs="{'invisible':[('simulation_cost_state','in',['draft','financing'])]}"/>
+                                        </group>
+                                        <group colspan="4" col="4" >
+                                            <separator string="Financial Source Information" colspan="4" />
+                                            <field name="financing_source_id" required="1"/>
+                                            <field name="financial_source_percent" attrs="{'invisible':[('simulation_cost_state','in',['draft','financing'])]}"/>
+                                        </group>
+                                        <group colspan="4" col="6" attrs="{'invisible':[('simulation_cost_state','in',['draft','financing'])]}">
+                                            <separator string="Project Financing Information" colspan="6" />
+                                            <field name="grant" />
+                                            <field name="amount_awarded" />
+                                            <field name="overheads" />
+                                        </group>
+                                    </form>         
+                                </field>
+                            </group>
+                            <group colspan="4">                   
+                                <field name="project_financing_lines_ids" nolabel="1" readonly="1"
+                                        domain="[('project_financing_id','!=',False)]" context="{'project_financing_id':False}" 
+                                        height="200">
+                                    <tree string="Simulation Lines with Financing Source">
+                                        <field name="product_id" />
+                                        <field name="project_financing_id" />
+                                        <field name="project_financing_grant" />
+                                        <field name="sale_order_id" />
+                                        <field name="amount_untaxed" invisible="1"/>
+                                        <field name="amount_tax" />
+                                        <field name="amount_total" />
+                                    </tree>     
+                                </field>
+                            </group>                
+                        </page>   
+                		<page string="Amortizations I+D" invisible="1">
+                			<field name="amortization_cost_lines_ids" nolabel="1" colspan="4" attrs="{'readonly':[('historical_ok','=',True)]}" 
+									   domain="[('type_cost','=','Amortization')]" 
+									   context="{'simulation_cost_id':active_id,'simulation_cost_state':state,'simulation_cost_project_id':project_id,'deductible_iva':deductible_iva,'type_cost':'Amortization', 'type2':'variable','type3':'production'}" />
+							<newline/>
+							<group colspan="4" col="8">
+								<field name="subtotal6_purchase" />
+								<field name="subtotal6_sale" />
+								<field name="benefit6" />	
+								<button name="button_recalculation" string="Recalculation" type="object" icon="gtk-ok"/>
+							</group>
+								
+						</page>
+                	</page>
+                	
+                	<field name="total_indirects" position="after">
+						<newline/>
+						<field name="subtotal6t_purchase" colspan="2"/>
+						<field name="subtotal6t_sale" colspan="2"/>
+						<field name="benefit6t" colspan="2"/>
+						<newline/>
+					</field>
+					
+					<xpath expr="//page[@string='Sales Order']" position="attributes">
+                		<attribute name="string">Budget By Source</attribute>
+                	</xpath>
+                	<xpath expr="//page[@string='Projects/Subprojects']" position="replace">
+						<page string="Project">
+							<group colspan="4">
+								<field name="project_ids" nolabel="1" colspan="4" height="600"/>
+							</group>
+						</page>
+                	</xpath>
+                	
+                    <button name="button_canceled" position="replace" >
+                        <button name="button_canceled" states="draft,financing,open,open2,inmodif_budgetary" string="Canceled" groups="base.group_user"/>
+                    </button>
+                    <button name="button_accepted" position="replace" />
+                    <button name="button_draft" position="before">
+                        <button name="button_financing" states="draft,open" string="Financing" groups="base.group_user"/>
+                        <button name="button_open" states="financing,inmodif_budgetary" string="Open" groups="base.group_user"/>
+                        <button name="button_inmodif_budgetary" states="open" string="In Modif.Budgetary" groups="base.group_user"/>
+                        <button name="button_closed" states="open" string="Closed" groups="base.group_user"/>
+                    </button>
+                    <button name="button_draft" position="replace">
+                        <button name="button_draft" states="canceled,financing" string="Draft" groups="base.group_user"/>
+                    </button>
+                	
+                </field>
+            </record>
+
+    </data>
+</openerp>

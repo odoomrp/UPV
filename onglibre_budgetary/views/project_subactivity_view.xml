@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="project_subactivity_tree_view">
+			<field name="name">project.subactivity.tree.view</field>
+			<field name="model">project.subactivity</field>
+			<field name="arch" type="xml">
+				<tree string="Subactivity">
+					<field name="name" />
+					<field name="activity_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="project.subactivity_form_view">
+			<field name="name">project.subactivity.form.view</field>
+			<field name="model">project.subactivity</field>
+			<field name="arch" type="xml">
+				<form string="Subactivity">
+					<group colspan="4">
+						<field name="name" />
+						<field name="activity_id" />
+					</group>	
+				</form>
+			</field>
+		</record>
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_project_subactivity">
+			<field name="name">Subactivity</field>
+			<field name="res_model">project.subactivity</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+
+		<menuitem id="project_subactivity_menu_view" name="Subactivitys" sequence="15"
+			parent="project_master_tables_group_view" action="action_project_subactivity" />
+
+	</data>
+</openerp>

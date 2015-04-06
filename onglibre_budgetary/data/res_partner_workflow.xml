@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<!-- DEFINIMOS EL WORKFLOW PARA EL OBJETO RES.PARTNER -->
+    	<record id="wkf_res_partner" model="workflow">
+    		<field name="name">res.partner.basic</field> 
+    		<field name="osv">res.partner</field>
+    		<field name="on_create">True</field>
+    	</record>
+    
+    	<!-- DEFINIMOS LAS DISTINTAS ACTIVIDADES DEL WORKFLOW -->
+    	<record id="act_potential" model="workflow.activity">
+    		<!-- Le indico a que workflow pertenece este estado -->
+            <field name="wkf_id" ref="wkf_res_partner"/>
+            <!-- Le indico que este es el primer estado del workflow -->
+            <field name="flow_start">True</field>
+            <!-- Le indico el valor del estado del workflow -->
+            <field name="name">potential</field>
+            <!-- Le indico que va a ejecutar una función -->
+            <field name="kind">function</field>
+            <!-- Nombre de la función que va a ejecutar -->
+            <field name="action">action_potential()</field>
+        </record>	
+        
+    	<record id="act_active" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_res_partner"/>
+            <field name="name">active</field>
+            <field name="kind">function</field>
+            <field name="action">action_active()</field>
+        </record>	
+ 
+   		<record id="act_oldest" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_res_partner"/>
+            <field name="name">oldest</field>
+            <field name="kind">function</field>
+            <field name="action">action_oldest()</field>
+        </record>	
+        
+   		<record id="act_discarded" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_res_partner"/>
+            <field name="name">discarded</field>
+            <field name="kind">function</field>
+            <field name="action">action_discarded()</field>
+        </record>	
+ 
+    	<!-- 
+    		DEFINIMOS LAS DISTINTAS TRANSICIONES DEL WORKFLOW 
+    		Y LAS RELACIONAMOS CON LOS BOTONES
+    	--> 
+   	   <record id="trans_active_potential" model="workflow.transition">
+            <field name="act_from" ref="act_active"/>
+            <field name="act_to" ref="act_potential"/>
+            <field name="signal">button_potential</field>
+       </record>
+    
+   	   <record id="trans_oldest_potential" model="workflow.transition">
+            <field name="act_from" ref="act_oldest"/>
+            <field name="act_to" ref="act_potential"/>
+            <field name="signal">button_potential</field>
+       </record>
+
+   	   <record id="trans_discarded_potential" model="workflow.transition">
+            <field name="act_from" ref="act_discarded"/>
+            <field name="act_to" ref="act_potential"/>
+            <field name="signal">button_potential</field>
+       </record>
+
+   	   <record id="trans_potential_active" model="workflow.transition">
+            <field name="act_from" ref="act_potential"/>
+            <field name="act_to" ref="act_active"/>
+            <field name="signal">button_active</field>
+       </record>
+       
+   	   <record id="trans_oldest_active" model="workflow.transition">
+            <field name="act_from" ref="act_oldest"/>
+            <field name="act_to" ref="act_active"/>
+            <field name="signal">button_active</field>
+       </record>
+       
+   	   <record id="trans_discarded_active" model="workflow.transition">
+            <field name="act_from" ref="act_discarded"/>
+            <field name="act_to" ref="act_active"/>
+            <field name="signal">button_active</field>
+       </record>
+       
+   	   <record id="trans_potential_oldest" model="workflow.transition">
+            <field name="act_from" ref="act_potential"/>
+            <field name="act_to" ref="act_oldest"/>
+            <field name="signal">button_oldest</field>
+       </record>
+       
+   	   <record id="trans_active_oldest" model="workflow.transition">
+            <field name="act_from" ref="act_active"/>
+            <field name="act_to" ref="act_oldest"/>
+            <field name="signal">button_oldest</field>
+       </record>
+       
+   	   <record id="trans_discarded_oldest" model="workflow.transition">
+            <field name="act_from" ref="act_discarded"/>
+            <field name="act_to" ref="act_oldest"/>
+            <field name="signal">button_oldest</field>
+       </record>
+       
+   	   <record id="trans_potential_discarded" model="workflow.transition">
+            <field name="act_from" ref="act_potential"/>
+            <field name="act_to" ref="act_discarded"/>
+            <field name="signal">button_discarded</field>
+       </record>
+       
+   	   <record id="trans_active_discarded" model="workflow.transition">
+            <field name="act_from" ref="act_active"/>
+            <field name="act_to" ref="act_discarded"/>
+            <field name="signal">button_discarded</field>
+       </record>
+       
+   	   <record id="trans_oldest_discarded" model="workflow.transition">
+            <field name="act_from" ref="act_oldest"/>
+            <field name="act_to" ref="act_discarded"/>
+            <field name="signal">button_discarded</field>
+       </record> 
+    
+    </data>
+</openerp>
