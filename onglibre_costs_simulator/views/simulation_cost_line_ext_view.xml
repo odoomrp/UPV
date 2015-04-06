@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_line_form_inh_onglibrecostsim">
+			<field name="name">simulation.cost.line.form.inh.onglibrecostsim</field>
+			<field name="model">simulation.cost.line</field>
+			<field name="inherit_id" ref="onglibre_budgetary.simulation_cost_line_form_view_inh_budgetary" />
+			<field name="arch" type="xml">
+				<field name="estimated_date_purchase_completion" position="replace">
+					<field name="estimated_date_purchase_completion"/>
+					<field name="month_start_cost" />
+					<field name="month_duration"/>
+					<field name="month_end_cost" invisible="1"/>
+					<field name="delay_cost" />
+				</field>
+				<xpath expr="/form/group[5]" position="after">
+					<separator string="Previsión de venta" colspan="4"/>
+					<group colspan="4" col="6">
+						<field name="month_start_sale" />
+						<field name="month_end_sale" invisible ="1"/>
+						<field name="sale_duration"/>
+						<field name="delay_sale" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

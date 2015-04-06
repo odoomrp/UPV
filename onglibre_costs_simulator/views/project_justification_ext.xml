@@ -1,0 +1,20 @@
+<openerp>
+    <data>
+    		 <record model="ir.ui.view" id="project_justification_form_view_ext">
+                <field name="name">project.justification.ext.form</field>
+                <field name="model">project.justification</field>
+                <field name="inherit_id" ref="onglibre_budgetary.project_justification_form_view"/>
+                <field name="arch" type="xml">
+                   
+                  	<field name="project_id" position="replace"/>
+                      <field name="program_id" position="replace">
+                       	<field name="project_id" on_change="on_change_project(project_id)" colspan="2"/>
+                        <field name="program_id" colspan="2"/>
+                       	<button name="%(action_start_par_just_tree_view)d" context="{'no_final_round':True}" type="action" string="Add Lines" icon="gtk-add" colspan="2"/>
+                      </field>
+                    
+                </field>
+            </record>
+
+    </data>
+</openerp>

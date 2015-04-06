@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_prevision_tree_view">
+			<field name="name">simulation.cost.prevision.tree.view</field>
+			<field name="model">simulation.cost.prevision</field>
+			<field name="arch" type="xml">
+				<tree string="Simulation Cost Previsions">
+					<field name="month" />
+					<field name="period_date"/>
+					<field name="costs_amount_month" />
+					<field name="payment_prevision_month" />
+					<field name="sales_amount_month" />
+					<field name="charge_prevision_month" />
+					<field name="percentage_invoice" />
+					<field name="percentage_charge" />						
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_prevision_search_view">
+			<field name="name">simulation.cost.prevision.search.view</field>
+			<field name="model">simulation.cost.prevision</field>
+			<field name="arch" type="xml">
+                <search string="Search Cost Simulation Prevision">
+                    <group>
+						<field name="month" />
+						<field name="period_date"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="month" domain="[]" context="{'group_by':'mont'}" />
+                   </group>
+                 </search>
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="simulation_cost_prevision_form_view">
+			<field name="name">simulation.cost.prevision.form.view</field>
+			<field name="model">simulation.cost.prevision</field>
+			<field name="arch" type="xml">
+				<form string="Costs Simulation Prevision">
+					<group colspan="4" col="8">
+						<field name="month" colspan="2" />
+						<field name="period_date"/>
+						<group colspan="6" />
+					</group>
+					<group colspan="4" col="8">
+						<field name="costs_amount_month" />
+						<field name="payment_prevision_month" />
+						<field name="percentage_invoice" />
+						<field name="percentage_charge" />
+						<field name="sales_amount_month" />
+						<field name="charge_prevision_month" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>
