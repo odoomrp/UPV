@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+        <record model="ir.ui.view" id="view_employee_form_inh_employee_learning">
+            <field name="name">view.employee.form.inh.employee.learning</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+				<xpath expr="//page[@string='Personal Information']" position="after">
+                	<page string="Titles" >
+                    	<field name="title_ids" nolabel="1"/>
+                    </page>
+                	<page string="Internal Formation" >
+                    	<field name="internal_formation_ids" nolabel="1" domain="[('type','=','Internal')]" context="{'type':'Internal'}"/>
+                    </page>
+                	<page string="External Formation" >
+                    	<field name="external_formation_ids" nolabel="1" domain="[('type','=','External')]" context="{'type':'External'}"/>
+                    </page>
+				</xpath>
+            </field>
+        </record>	
+
+	</data>
+</openerp>

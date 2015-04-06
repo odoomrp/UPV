@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- *********************** VISTA TREE ****************** -->
+
+		<record model="ir.ui.view" id="formation_tree_view">
+			<field name="name">formation.tree.view</field>
+			<field name="model">formation</field>
+			<field name="arch" type="xml">
+				<tree string="Formations" >
+					<field name="name" />
+					<field name="code" />
+					<field name="type" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="realized" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="formation_search_view">
+			<field name="name">formation.search.view</field>
+			<field name="model">formation</field>
+			<field name="arch" type="xml">
+                <search string="Search Formations">
+                    <group>
+						<field name="name" />
+						<field name="code" />
+						<field name="type" />
+						<field name="start_date" />
+						<field name="end_date" />
+						<field name="realized" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Type" domain="[]" context="{'group_by':'type'}" />
+						<filter string="Start Date" domain="[]" context="{'group_by':'start_date'}" />
+						<filter string="End Date" domain="[]" context="{'group_by':'end_date'}" />
+						<filter string="Realized" domain="[]" context="{'group_by':'realized'}" />
+                   </group>
+                 </search>				
+			</field>
+		</record>
+
+		<!-- ******************* VISTA FORM ******************** -->
+
+		<record model="ir.ui.view" id="formation_form_view">
+			<field name="name">formation.form.view</field>
+			<field name="model">formation</field>
+			<field name="arch" type="xml">
+				<form string="Formation">
+					<group col="6" colspan="4">
+            			<field name="name" colspan="2"/>
+            			<field name="code" colspan="2"/>
+            			<field name="type" colspan="2"/>
+            		</group>
+					<group col="6" colspan="4">
+            			<field name="start_date" colspan="2"/>
+            			<field name="end_date" colspan="2"/>
+            			<field name="realized" colspan="2"/>
+            		</group>
+				</form>
+			</field>
+		</record>
+		
+		
+
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_formation_form">
+			<field name="name">Formation</field>
+			<field name="res_model">formation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ********** DISEÑO SUBMENUS (DERECHA) **********  -->
+		<menuitem id="menu_formation_group_view" name="Formations" parent="hr.menu_hr_configuration" />
+		<menuitem id="custom_formation_menu_view" name="Formations"
+			parent="menu_formation_group_view" action="action_formation_form" />		
+
+	</data>
+</openerp>
