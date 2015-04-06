@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_form_inh_budgetary_ext3">
+            <field name="name">view.order.form.inh.budgetary.ext3</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="10"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="order_line" position="attributes">
+                        <attribute name="context">{'partner_id':partner_id}</attribute>
+                    </field>
+
+                </data>
+            </field>
+        </record>
+    
+        <record model="ir.ui.view" id="view_order_form_inh_budgetary_ext2">
+            <field name="name">view.order.form.inh.budgetary.ext2</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <label for="name" position="before">
+                        <group colspan="4">
+                            <field name="partner_id" invisible="1" colspan="4"/>
+                            <field name="financing_source_id" invisible="1" colspan="4" domain="[('res_partner_id', '=', partner_id)]" />
+                        </group>
+                    </label>
+	                <xpath expr="//tree[@string='Sales Order Lines']/field[@name='price_subtotal']" position="after">
+	                	<field name="financing_source_id" invisible="1"/>
+					</xpath>
+                </data>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

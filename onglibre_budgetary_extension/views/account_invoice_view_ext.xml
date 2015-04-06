@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="invoice_form_inh_budgetay_ext">
+			<field name="name">invoice.form.inh.budgetay.ext</field>
+			<field name="model">account.invoice</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<field name="invoice_line" position="replace">
+					<field colspan="4" name="invoice_line" nolabel="1" widget="one2many_list" context="{'type': type,'partner_id': partner_id,'invoice_type': type}"/>
+				</field>
+				<field name="name" position="after">
+					<field name="financing_source_id" domain="[('res_partner_id', '=', partner_id)]" colspan="2" attrs="{'invisible': [('type', '!=', 'out_invoice')]}"/>
+					<newline/>
+					<field name="rd_serpa" colspan="2" />
+					<field name="serpa_date" colspan="2" />
+				</field>					
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="invoice_supplier_form_inh_budgetay_ext">
+			<field name="name">invoice.supplier.form.inh.budgetay.ext</field>
+			<field name="model">account.invoice</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form" />
+			<field name="arch" type="xml">
+			    <field name="supplier_invoice_number" position="after">
+			         <field name="expedient_serpa" />
+			    </field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

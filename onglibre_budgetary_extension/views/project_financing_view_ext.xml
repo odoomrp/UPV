@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+		<!-- *********************** VISTA SEARCH ****************** -->
+
+		<record model="ir.ui.view" id="project_financing_search_view">
+			<field name="name">project.financing.search.view</field>
+			<field name="model">project.financing</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+                <search string="Search Project Financing">
+                    <group>
+						<field name="financing_source_id" />
+						<field name="project_id" />
+						<field name="expense_area_id" />
+                    </group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Financing Source" context="{'group_by':'financing_source_id'}"
+							icon="terp-folder-violet" />
+					</group>
+                 </search>				
+			</field>
+		</record>
+		
+		<!-- ******************* VISTA TREE ******************** -->
+		
+		<record model="ir.ui.view" id="project_financing_tree_view_budgetary2">
+			<field name="name">project.financing.tree.view.budgetary2</field>
+			<field name="model">project.financing</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Project Financing">
+					<field name="project_id" />
+					<field name="financing_source_id" />	
+					<field name="project_percent" />	
+					<field name="expense_area_id" />	
+					<field name="grant" />		
+					<field name="sum_expense_budget" />	
+					<field name="sum_remainder" />	
+					<field name="sum_expense_request" />	
+					<field name="sum_updated_expense_budget" />	
+					<field name="sum_expense_compromised" />	
+					<field name="sum_available_expense" />	
+					<field name="sum_real_expense" />	
+					<field name="sum_paid_expense" />	
+					<field name="sum_justified_expense" />	
+				</tree>   
+			</field>
+		</record>	
+    
+    	<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+
+		<record model="ir.actions.act_window" id="action_project_financing_form_view_budgetary3">
+			<field name="name">Project Financing</field>
+			<field name="res_model">project.financing</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>			
+    		<field name="view_id" ref="project_financing_tree_view_budgetary2"/>
+		</record>	
+
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		
+		<menuitem id="project_financing_menu_view" name="Project Financing"
+			parent="onglibre_financial_source.menu_financing_source_management" action="action_project_financing_form_view_budgetary3" />	
+        
+    </data>
+</openerp>
