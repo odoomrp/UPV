@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="project_type_tree_view">
+			<field name="name">project.type.tree.view</field>
+			<field name="model">project.type</field>
+			<field name="arch" type="xml">
+				<tree string="Project Types" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="project_type_search_view">
+			<field name="name">project.type.search.view</field>
+			<field name="model">project.type</field>
+			<field name="arch" type="xml">
+                <search string="Search Project Type">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="project_type_form_view">
+			<field name="name">project.type.form.view</field>
+			<field name="model">project.type</field>
+			<field name="arch" type="xml">
+				<form string="Project Type">
+					<group colspan="4">
+						<field name="name" />
+                   	</group>
+				</form>
+			</field>
+		</record>
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+		<record model="ir.actions.act_window" id="action_project_type_form">
+			<field name="name">Project Type</field>
+			<field name="res_model">project.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- *** DEFINO CARPETA EN CONFIGURACION DE PROYECTOS *** -->
+		<menuitem id="menu_project_config_master_tables" name="Master Tables" parent="base.menu_definitions" sequence="10"/>
+		<menuitem id="project_type_menu_view" name="Project Types"
+			parent="onglibre_project_financer.menu_project_config_master_tables" action="action_project_type_form" />
+
+	</data>
+</openerp>

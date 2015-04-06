@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- *********************** VISTA TREE ****************** -->
+		<record model="ir.ui.view" id="project_role_tree_view">
+			<field name="name">project.role.tree.view</field>
+			<field name="model">project.role</field>
+			<field name="arch" type="xml">
+				<tree string="Project Roles" >
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<!-- *********************** VISTA SEARCH ****************** -->
+		<record model="ir.ui.view" id="project_role_search_view">
+			<field name="name">project.role.search.view</field>
+			<field name="model">project.role</field>
+			<field name="arch" type="xml">
+                <search string="Search Project Role">
+                    <group>
+						<field name="name" />
+                    </group>
+                 </search>
+			</field>
+		</record>
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="project_role_form_view">
+			<field name="name">project.role.form.view</field>
+			<field name="model">project.role</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Project Role">
+					<group colspan="4">
+						<field name="name" />
+                   	</group>
+				</form>
+			</field>
+		</record>
+		<!-- ***** ACCIÓN PARA LA VENTANA DE LAS VISTAS ***** -->
+		<record model="ir.actions.act_window" id="action_project_role_form2">
+			<field name="name">Project Role</field>
+			<field name="res_model">project.role</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- *** DEFINO LA OPCION DE MENU *** -->
+		<menuitem id="project_role_menu_view" name="Project Roles"
+			parent="onglibre_project_financer.menu_project_config_master_tables" action="action_project_role_form2" />
+
+	</data>
+</openerp>

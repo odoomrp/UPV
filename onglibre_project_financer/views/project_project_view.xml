@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ******************* VISTA SEARCH ******************** -->
+		<record model="ir.ui.view" id="view_project_project_filter_inh_onglibre_projectfinan">
+			<field name="name">view.project.project.filter.inh.onglibre.projectfinan</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.view_project_project_filter" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after"> 
+					<field name="parent_project_id" />
+					<field name="project_code" />
+					<newline/>
+					<field name="application_code" />
+                	<field name="application_type" />
+                	<field name="travel_restrictions" />
+                	<field name="project_type_ids" />
+                	<field name="project_center_ids" />
+                	<field name="project_ambit_id" />
+                	<field name="competitive_concurrence" />
+                	<newline/>
+                	<field name="investigation" />
+                	<field name="biotechnology" />
+                	<field name="date_start" />
+                	<field name="date" />
+				</field> 
+				<filter name="Parent" position="after"> 
+					<separator orientation="vertical"/>
+					<filter string="Parent Project" name="ParentProject" icon="terp-folder-blue" domain = "[]" context="{'group_by':'parent_project_id'}"/>
+					<filter string="Application Type" name="ApplitacionType" icon="terp-folder-blue" domain = "[]" context="{'group_by':'application_type'}"/>
+					<filter string="Travel Restrictions" name="TravelRestrictions" icon="terp-folder-blue" domain = "[]" context="{'group_by':'travel_restrictions'}"/>
+                    <filter string="Type" name="ProjectType" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_type_ids'}"/>
+                    <filter string="Center" name="ProjectCenter" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_center_ids'}"/>      
+                    <filter string="Ambit" name="ProjectAmbit" icon="terp-folder-blue" domain = "[]" context="{'group_by':'project_ambit_id'}"/>
+                    <filter string="Compet. Concurrence" name="CompetitiveConcurrence" icon="terp-folder-blue" domain = "[]" context="{'group_by':'competitive_concurrence'}"/> 
+                    <filter string="Investigation" name="Investigation" icon="terp-folder-blue" domain = "[]" context="{'group_by':'investigation'}"/>
+                    <filter string="Biotechnology" name="Biotechnology" icon="terp-folder-blue" domain = "[]" context="{'group_by':'biotechnology'}"/>
+				</filter>
+			</field>
+		</record>
+		<!-- ******************* VISTA TREE ******************** -->
+		<record model="ir.ui.view" id="view_project_inh_projectfinan">
+			<field name="name">view.project.inh.projectfinan</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.view_project" />
+			<field name="arch" type="xml">
+				<field name="name" position="before"> 
+					<field name="parent_project_id" invisible="1"/>
+					<field name="project_code" />
+				</field> 	
+				<field name="planned_hours" position="replace" />
+				<field name="total_hours" position="replace" />
+				<field name="effective_hours" position="replace" />
+				<field name="progress_rate" position="replace" />
+				<field name="state" position="before">
+					<field name="deductible_iva" />
+					<field name="sum_expense_budget" />
+					<field name="sum_remainder" />
+					<field name="sum_expense_request" />
+					<field name="sum_updated_expense_budget" />
+					<field name="sum_expense_compromised" />
+					<field name="sum_available_expense" />
+					<field name="sum_real_expense" />
+					<field name="sum_paid_expense" />
+					<field name="sum_justified_expense" />
+				</field>
+				<field name="state" position="after">
+					<field name="application_code" />
+                	<field name="application_type" />
+                	<field name="travel_restrictions" />
+                	<field name="project_ambit_id" />
+                	<field name="competitive_concurrence" />
+                	<field name="investigation" />
+                	<field name="biotechnology" />
+				</field>
+			</field>
+		</record>
+	
+		<!-- ******************* VISTA FORM ******************** -->
+		<record model="ir.ui.view" id="edit_project_inh_projectfinan">
+			<field name="name">edit.project.inh.projectfinan</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.edit_project" />
+			<field name="arch" type="xml">
+                <field name="parent_id"  position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="user_id" position="before">
+                    <group colspan="4" col="6">
+                        <field name="project_code" colspan="2"/>
+						<field name="application_code" colspan="2"/>
+	                	<field name="application_type" colspan="2"/>
+                    </group>    
+                    <group colspan="4" col="6">
+                        <field name="analytic_account_id2" />
+                        <field name="parent_project_id" on_change="onchange_parent_project_id(parent_project_id)"/>
+                    </group>
+                    <group colspan="4" col="10">
+                        <field name="travel_restrictions" />
+                        <field name="project_ambit_id"/>
+                        <field name="competitive_concurrence" />
+                        <field name="investigation"/>
+                        <field name="biotechnology"/>
+                    </group>  
+				</field>
+
+				<xpath expr="//page[@string='Other Info']" position="after">
+					<page string="Project Types and Centers" >
+	                    <group colspan="4">
+	                    	<separator string="Project Types" colspan="2"/>
+	                    	<separator string="Project Centers" colspan="2"/>
+	                        <field name="project_type_ids" colspan="2" nolabel="1" />
+	                        <field name="project_center_ids" colspan="2" nolabel="1" />
+	                    </group>
+					</page>
+					<page string="Economic Information"  >
+	                    <group colspan="4" col="8">
+	                        <field name="deductible_iva" />
+	                        <field name="sum_expense_budget" />
+	                        <field name="sum_remainder" />
+	                        <field name="sum_expense_request" />
+							<field name="sum_updated_expense_budget" />
+							<field name="sum_expense_compromised" />
+							<field name="sum_available_expense" />
+							<field name="sum_real_expense" />
+							<field name="sum_paid_expense" />
+							<field name="sum_justified_expense" />
+	                    </group>
+					</page>
+					<page string="Subprojects" >
+	                    <group colspan="4">	
+	                    	<field name="childrend_project_ids" nolabel="1" widget="one2many_list" colspan="4" context="{'group_by':'parent_project_id'}" height="600">                              
+                            	<tree string="Subprojects Tree">
+                            		<field name="parent_project_id" readonly="1"/>
+                            		<field name="project_code" readonly="1" />		
+			                        <field name="sum_expense_budget" widget="float" readonly="0"/>
+			                        <field name="sum_updated_expense_budget" widget="float" readonly="0"/>
+			                        <field name="sum_available_expense" widget="float" readonly="0"/>
+			                        <field name="sum_remainder" widget="float" readonly="0"/>
+			                        <field name="sum_expense_request" widget="float" readonly="0"/>
+			                        <field name="sum_expense_compromised" widget="float" readonly="0"/>
+			                        <field name="sum_real_expense" widget="float" readonly="0"/>
+			                        <field name="sum_paid_expense" widget="float" readonly="0"/>
+			                        <field name="sum_justified_expense" widget="float" readonly="0" />
+                                </tree>
+	                        </field>
+	                    </group>
+					</page>
+				</xpath>
+				<xpath expr="//button[@name='set_cancel']" position="after">
+					<button name="set_approved" string="Approved" states="draft" type="object" icon="gtk-ok"/>
+					<button name="set_running" string="Running" states="approved" type="object" icon="gtk-ok"/>
+				</xpath>
+				<xpath expr="//button[@name='set_cancel']" position="attributes">
+                    <attribute name="states">"draft,pending,approved,open"</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		<act_window context="{'my_project_id':active_id}"
+	            	id="action_account_analytic_chart_projfinanc"
+	            	name="Chart of Analytic Accounts" 
+	            	res_model="account.analytic.chart" 
+	            	src_model="project.project"
+	            	view_type="form" 
+	            	view_mode="form"
+	                view_id="account.account_analytic_chart_view" 
+	                target="new"/>
+
+	</data>
+</openerp>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_account_analytic_line_tree_inh_projectfinan">
+			<field name="name">view.account.analytic.line.tree.inh.projectfinan</field>
+			<field name="model">account.analytic.line</field>
+			<field name="inherit_id" ref="account.view_account_analytic_line_tree" />
+			<field name="arch" type="xml">
+				<field name="user_id" position="after">
+				    <field name="expense_budget" />
+				    <field name="updated_expense_budget" />
+				    <field name="remainder" />
+				    <field name="available_expense" />
+				    <field name="expense_request" />
+				    <field name="expense_compromised" />
+					<field name="real_expense" />
+					<field name="paid_expense" />
+					<field name="justified_expense" />
+					<field name="project_id" invisible="1" />
+				</field>
+                <field name="journal_id" position="replace" />
+                <field name="amount" position="replace" />
+                <field name="product_id" position="replace" />
+                <field name="unit_amount" position="replace" />
+                <field name="product_uom_id" position="replace" />
+                <field name="general_account_id" position="replace" />
+			</field>
+		</record>
+
+		<record id="view_account_analytic_line_tree_sum" model="ir.ui.view">
+			<field name="name">view.account.analytic.line.tree.sum</field>
+			<field name="model">account.analytic.line</field>
+            <field name="priority" eval="17"/>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Analytic Lines">
+					<field name="date" />
+					<field name="account_id" />
+					<field name="type" />
+					<field name="name" />
+					<field name="sum_expense_budget" />
+					<field name="sum_updated_expense_budget" />
+					<field name="sum_remainder" />
+					<field name="sum_available_expense" />
+					<field name="sum_expense_request" />
+					<field name="sum_expense_compromised" />
+					<field name="sum_real_expense" />
+					<field name="sum_paid_expense" />
+					<field name="sum_justified_expense" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_analytic_line_form_inh_projectfinan">
+			<field name="name">view.account.analytic.line.form.inh.projectfinan</field>
+			<field name="model">account.analytic.line</field>
+			<field name="inherit_id" ref="account.view_account_analytic_line_form" />
+			<field name="arch" type="xml">
+				<xpath expr="/form" position="replace">
+					<form string="Analytic Entry">
+						<group colspan="4" col="6">
+							<field name="name" />
+							<field name="ref" />
+							<field name="account_id" />
+							<field name="journal_id" />
+							<field name="date" />
+							<field name="partner_id" invisible="1" />
+							<field name="company_id" groups="base.group_multi_company" />
+						</group>
+						<notebook colspan="4" col="8">
+							<page string="Information">
+								<group colspan="4" col="8" name="budgetaryfields" attrs="{'invisible':[('type','!=','budgetary'),('type','!=','imputation')]}">
+									<separator string="Budgetary Fields" colspan="8" />
+									<field name="expense_budget" />
+									<field name="remainder" />
+									<field name="updated_expense_budget" />
+									<field name="expense_request" />
+									<field name="expense_compromised" />
+									<field name="real_expense" />
+									<field name="available_expense" />
+									<field name="paid_expense" />
+									<field name="justified_expense" />
+									<field name="project_id" invisible="1" />
+								</group>
+								<group colspan="2" col="4">
+									<separator string="Amount" colspan="4" />
+									<field name="amount" colspan="4" />
+									<field name="amount_currency" colspan="2" />
+									<field name="currency_id" colspan="2" nolabel="1" />
+								</group>
+								<group colspan="2" col="4">
+									<separator string="Product Information" colspan="4" />
+									<field name="product_id" colspan="4" />
+									<field name="unit_amount" colspan="2" />
+									<field name="product_uom_id" colspan="2" nolabel="1" />
+								</group>
+								<group name="foot" colspan="4" col="4" groups="base.group_extended">
+									<separator string="General Accounting" colspan="4" />
+									<field name="general_account_id" />
+									<field name="move_id" readonly="1" />
+								</group>
+							</page>
+						</notebook>
+					</form>
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_analytic_line_tree_inh_projectfinan">
+			<field name="name">view.analytic.line.tree.inh.projectfinan</field>
+			<field name="model">account.analytic.line</field>
+			<field name="inherit_id" ref="hr_timesheet_invoice.view_account_analytic_line_tree_inherit" />
+			<field name="arch" type="xml">
+				<field name="to_invoice" position="replace" />
+			</field>
+		</record>
+	</data>
+</openerp>
